@@ -138,6 +138,7 @@ var answerposition = 0;
 var guessnumber = 0;
 var score = 0;
 
+window.onload = getCountry;
 document.getElementById('button').onclick = getCountry;
 document.getElementById('good').onclick = getAnswerGood;
 document.getElementById('bad').onclick = getAnswerBad;
