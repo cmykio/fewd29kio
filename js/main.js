@@ -108,6 +108,15 @@ var scene9 = new ScrollMagic.Scene({
 controller.addScene(scene9);
 
 
+// var controller = new ScrollMagic.Controller();
+// var scene10 = new ScrollMagic.Scene({
+//   triggerElement: trigger10, 
+//   duration: $(window).height(),
+  
+//   reverse: true,
+// })
+// .setPin(pin10);
+// controller.addScene(scene10);
 
 
 
