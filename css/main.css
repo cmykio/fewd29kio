@@ -1,7 +1,7 @@
 /* 
-Project Name: Blank Template
-Client: Your Client
-Author: Your Name
+Project Name: Flag Design Quiz
+Client: FEWD29 GA Final Project
+Author: Kio McLoughlin
 */
 
 /******************************************
@@ -29,6 +29,17 @@ Author: Your Name
 /* LAYOUT                   
 /*******************************************/
 
+@media screen and (min-width: 25em) {
+     .site-container {
+          background-color: blue;
+     }
+}
+
+@media screen and (min-width: 50em) {
+     .site-container {
+          background-color: pink;
+     }
+}
 .site-container {
 	max-width: 960px;
 	margin: 0 auto;
