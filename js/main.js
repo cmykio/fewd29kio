@@ -1,30 +1,18 @@
-// SCROLLMAGIC STUFF - CANT GET IT TO WORK JUST NOW
-// $(function () { // wait for document ready
-// 		// init
-// 		var controller = new ScrollMagic.Controller({
-// 			globalSceneOptions: {
-// 				triggerHook: 'onLeave'
-// 			}
-// 		});
 
-// 		// get all slides
-// 		var slides = document.querySelectorAll("section.panel");
+var controller = new ScrollMagic.Controller();
+var scene = new ScrollMagic.Scene({
+  offset: 100, // start scene after scrolling for 100px
+  duration: 400 // pin the element for 400px of scrolling
+});
 
-// 		// create scene for every slide
-// 		for (var i=0; i<slides.length; i++) {
-// 			new ScrollMagic.Scene({
-// 					triggerElement: slides[i]
-// 				})
-// 				.setPin(slides[i])
-// 				.addIndicators() // add indicators (requires plugin)
-// 				.addTo(controller);
-// 		}
-// 	});
+var scene = new ScrollMagic.Scene({
+  triggerElement: panel4, // starting scene, when reaching this element
+  duration: 400 // pin the element for a total of 400px
+})
+.setPin(panel4); // the element we want to pin
 
-
-
-
-
+// Add Scene to ScrollMagic Controller
+controller.addScene(scene);
 
 
 
