@@ -1,18 +1,124 @@
 
+// var controller = new ScrollMagic.Controller();
+// var scene = new ScrollMagic.Scene({
+//   offset: 100, // start scene after scrolling for 100px
+//   duration: 400 // pin the element for 400px of scrolling
+// });
+
+// var scene = new ScrollMagic.Scene({
+//   triggerElement: panel4, // starting scene, when reaching this element
+//   duration: 400 // pin the element for a total of 400px
+// })
+// .setPin(panel4); // the element we want to pin
+
+// // Add Scene to ScrollMagic Controller
+// controller.addScene(scene);
+
+
 var controller = new ScrollMagic.Controller();
-var scene = new ScrollMagic.Scene({
-  offset: 100, // start scene after scrolling for 100px
-  duration: 400 // pin the element for 400px of scrolling
-});
-
-var scene = new ScrollMagic.Scene({
-  triggerElement: panel4, // starting scene, when reaching this element
-  duration: 400 // pin the element for a total of 400px
+var scene1 = new ScrollMagic.Scene({
+  triggerElement: trigger1,
+  duration: $(window).height(),
+  reverse: true,
 })
-.setPin(panel4); // the element we want to pin
+.setPin(pin1); 
+controller.addScene(scene1);
 
-// Add Scene to ScrollMagic Controller
-controller.addScene(scene);
+
+var controller = new ScrollMagic.Controller();
+var scene2 = new ScrollMagic.Scene({
+  triggerElement: trigger2, 
+  duration: $(window).height(),
+  
+  reverse: true,
+})
+.setPin(pin2);
+controller.addScene(scene2);
+
+
+var controller = new ScrollMagic.Controller();
+var scene3 = new ScrollMagic.Scene({
+  triggerElement: trigger3, 
+  duration: $(window).height(),
+  
+  reverse: true,
+})
+.setPin(pin3);
+controller.addScene(scene3);
+
+
+var controller = new ScrollMagic.Controller();
+var scene4 = new ScrollMagic.Scene({
+  triggerElement: trigger4, 
+  duration: $(window).height(),
+  
+  reverse: true,
+})
+.setPin(pin4);
+controller.addScene(scene4);
+
+var controller = new ScrollMagic.Controller();
+var scene5 = new ScrollMagic.Scene({
+  triggerElement: trigger5, 
+  duration: $(window).height(),
+  
+  reverse: true,
+})
+.setPin(pin5);
+controller.addScene(scene5);
+
+var controller = new ScrollMagic.Controller();
+var scene6 = new ScrollMagic.Scene({
+  triggerElement: trigger6, 
+  duration: $(window).height(),
+  
+  reverse: true,
+})
+.setPin(pin6);
+controller.addScene(scene6);
+
+var controller = new ScrollMagic.Controller();
+var scene7 = new ScrollMagic.Scene({
+  triggerElement: trigger7, 
+  duration: $(window).height(),
+  
+  reverse: true,
+})
+.setPin(pin7);
+controller.addScene(scene7);
+
+var controller = new ScrollMagic.Controller();
+var scene8 = new ScrollMagic.Scene({
+  triggerElement: trigger8, 
+  duration: $(window).height(),
+  
+  reverse: true,
+})
+.setPin(pin8);
+controller.addScene(scene8);
+
+var controller = new ScrollMagic.Controller();
+var scene9 = new ScrollMagic.Scene({
+  triggerElement: trigger9, 
+  duration: $(window).height(),
+  
+  reverse: true,
+})
+.setPin(pin9);
+controller.addScene(scene9);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
