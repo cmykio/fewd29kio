@@ -6,6 +6,7 @@
     	<meta name="keywords" content="flags, quiz, design, roman, mars, kio, mcloughlin, 99 percent invisible, cmykio">
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 		
+		<!-- Placeholder title -->
 		<title>Flag Design</title>
 
 		<link rel="stylesheet" href="css/normalize.css">
@@ -31,54 +32,65 @@
 				
 
 				<body>
+					<!-- ScrollMagic is enabled in scripts below. Each main section here should display one or two sentences as an independent screen
+					and the sentences should stay in position while scrolling to the next screen becoming available 
+					Screen 1, on load-->
 					<section id="trigger1" class="panel">
 						<div id="pin1">
 							<p>what makes a good flag?</p>
 						</div>
 					</section>
 
+					<!-- Screen2 -->
 					<section id="trigger2" class="panel">
 						<div id="pin2">
 							<p>Have you ever thought about that? Maybe you should?</p>
 						</div>
 					</section>
 
+					<!-- Screen 3 -->
 					<section id="trigger3" class="panel">
 						<div id="pin3">
 							<p>According to Nava...</p>
 						</div>
 					</section>
 
+					<!-- Screen 4 -->
 					<section id="trigger4" class="panel">
 						<div id="pin4">
 							<p>Principle 1 - Keep it simple</p>
 						</div>
 					</section>
 
+					<!-- Screen 5 -->
 					<section id="trigger5" class="panel">
 						<div id="pin5">
 							<p>Principle 2 - Use meaningful symbolism</p>
 						</div>
 					</section>
 
+					<!-- Screen 6 -->
 					<section id="trigger6" class="panel">
 						<div id="pin6">
 							<p>Principle 3 - Use two to three basic colours</p>
 						</div>
 					</section>
 
+					<!-- Screen 7 -->
 					<section id="trigger7" class="panel">
 						<div id="pin7">
 							<p>Principle 4 - No lettering or seals</p>
 						</div>
 					</section>
 
+					<!-- Screen 8 -->
 					<section id="trigger8" class="panel">
 						<div id="pin8">
 							<p>Principle 5 - Be distinctive or related</p>
 						</div>
 					</section>
 
+					<!-- Screen 9 -->
 					<section id="trigger9" class="panel">
 						<div id="pin9">
 							<p>Summaries</p>
@@ -86,21 +98,25 @@
 						</div>
 					</section>
 
-
-					<section id="trigger10" class = "quiz_section panel">	
+					<!-- Screen 10 - this is the key page, where the quiz begins, and the main piece of content anyone interacts with on site -->
+					<section id="trigger10" class = "quiz_section_master panel">	
 						<h1 id="pin10">
 			  				Le country: <span id="result"></span>
 						</h1>
 						
-						<img id="image">
-			
-						<button id="good">I think this is good</button>
-						<button id="bad">Seems bad to me</button>
-						<button id="button">HIT ME</button>
-			
-						<span id="quizresponse"></span>
-			
-						<span id="yourscore"></span>
+						<section class="flagcontainer">
+							<img id="flag" class="flagdisplay">
+						</section>
+						
+						<section class="quiz_controls">
+							<button id="good">I think this is good</button>
+							<button id="bad">Seems bad to me</button>
+							<button id="button">HIT ME</button>
+				
+							<span id="quizresponse"></span>
+				
+							<span id="yourscore"></span>
+						</section>
 					</section>
 				</body>
 
@@ -111,6 +127,7 @@
 			</footer>
 		</div><!-- .site-container -->
 		
+		<!-- jquery loaded, as is 'chance', which is what generates the random country codes. ScrollMagic scripts controlling the panels and parallax on main screens -->
 		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="js/chance.js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>

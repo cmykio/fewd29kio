@@ -60,6 +60,23 @@ Author: Kio McLoughlin
      height: 100%;
 }
 
+.flagcontainer {
+     min-height: 30em;
+}
+.flagdisplay {
+     display: block;
+     max-width: 100%;
+     /*max-width:230px;*/
+     min-height:40em;
+     width: auto;
+     height: auto;
+     margin: 2em 0em 2em 0em;
+}
+
+.quiz_controls {
+     margin-bottom: 30em;
+}
+
 .site-footer {
 
 }

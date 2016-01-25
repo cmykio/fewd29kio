@@ -168,7 +168,8 @@ function checkFlag() {
 function printFlag (){
 	console.log('printFlag is firing');
 	var image_file = "../fewd29kio/flags-big/"+country_code+".png"
-	document.getElementById('image').src=image_file;
+	document.getElementById('flag').src=image_file;
+	
 };
 
 function getAnswerGood (){
