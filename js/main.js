@@ -16,7 +16,7 @@ $(document).ready(function(){
 
 
 		// this is showing or hiding each element depending on whether the viewport is above or below a certain width
-		if ( windowWidth > 640 ) {
+		if ( windowWidth > 200 ) {
 			$('.site-nav ul').show();
 			$('.nav-icon').hide();
 		}	else {
@@ -25,7 +25,7 @@ $(document).ready(function(){
 		}
 	});
 
-});
+
 
 
 
@@ -656,3 +656,5 @@ var allowed_codes = [
 ];
 
 
+}); 
+// this is closing the ready method

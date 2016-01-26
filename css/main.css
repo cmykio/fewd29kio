@@ -29,36 +29,105 @@ Author: Kio McLoughlin
 /* LAYOUT                   
 /*******************************************/
 
-@media screen and (min-width: 25em) {
+/*BASELINE BREAKPOINT FOR SMALLEST VIEWPORT*/
+@media screen and (min-width: 5em) {
      .site-container {
           background-color: goldenrod;
+          max-width: 100%;
+          margin: 0 auto;
+     }
+
+     .site-header {
+
+     }
+     
+     .site-header h1 {
+          
+     }
+     
+     .site-content {
+
+     }
+
+     .panel {
+          display: block;
+          height: 100%;
+     }
+
+     .flagcontainer {
+          min-height: 30em;
+     }
+
+     .flagdisplay {
+          display: block;
+          max-width: 100%;
+          /*max-width:230px;*/
+          min-height:40em;
+          width: auto;
+          height: auto;
+          margin: 2em 0em 2em 0em;
+     }    
+
+     .quiz_controls {
+          margin-bottom: 30em;
+     }
+
+     .site-footer {
+
      }
 }
+/*END BASELINE VIEWPORT STYLING*/
 
-@media screen and (min-width: 50em) {
+/*BREAKPOINT 2*/
+@media screen and (min-width: 10em) {
+     .site-container {
+          background-color: grey;
+     }
+}
+/*END BREAKPOINT 2*/
+
+
+/*BREAKPOINT 3*/
+@media screen and (min-width: 20em) {
+     .site-container {
+          background-color: yellow;
+     }
+}
+/*END BREAKPOINT 3*/
+
+
+/*BREAKPOINT 4*/
+@media screen and (min-width: 30em) {
+     .site-container {
+          background-color: lightblue;
+     }
+}
+/*END BREAKPOINT 4*/
+
+
+/*BREAKPOINT 5*/
+@media screen and (min-width: 40em) {
      .site-container {
           background-color: pink;
      }
 }
-.site-container {
-	max-width: 960px;
-	margin: 0 auto;
-}
-
-.site-header {
-
-}
-.site-header h1 {
-	color:red;
-}
-.site-content {
-
-}
+/*END BREAKPOINT 5*/
 
 
 
+
+
+
+
+
+
+
+
+
+/******************************NAVIGATION EXPERIMENTING*/
+/*Need to change this to get the nav operational - it'll need to linked to the media queries - as it's the screensize at the mo that's making it w*/
 /*Navigation tomfoolery - need to refactor this, but it's appearing*/
-
+/*
 .nav-icon,
 .nav-icon:before,
 .nav-icon:after {
@@ -70,6 +139,7 @@ Author: Kio McLoughlin
      border-top:0.25em solid #fff45a;
 }
 
+change this to EMS
 @media screen and (max-width: 640px) {
      .nav-icon { display:block; }
 }
@@ -81,38 +151,14 @@ Author: Kio McLoughlin
 .nav-icon:after {
      top:0.75em;
      right:0;
-}
+}*/
+/******************************NAVIGATION EXPERIMENTING*/
 
 
 
 
 
 
-.panel {
-     display: block;
-     height: 100%;
-}
-
-.flagcontainer {
-     min-height: 30em;
-}
-.flagdisplay {
-     display: block;
-     max-width: 100%;
-     /*max-width:230px;*/
-     min-height:40em;
-     width: auto;
-     height: auto;
-     margin: 2em 0em 2em 0em;
-}
-
-.quiz_controls {
-     margin-bottom: 30em;
-}
-
-.site-footer {
-
-}
 
 /******************************************
 /* HELPER CLASSES
