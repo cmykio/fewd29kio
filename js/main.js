@@ -9,9 +9,11 @@ $(document).ready(function(){
 
 	$(window).on('resize', function(){
 		var windowWidth = $(window).width();
+		var windowHeight = $(window).height();
 		// this is checking for the width of the window, so that on resize, we will be checking for when the icon/nav is hidden.
 		// if the width is greater than a certain number, we need to show/hide the nav - because it's gotten lost based on slideToggle
 		console.log(windowWidth);
+		console.log(windowHeight);
 		// this is being printed in the Console
 
 
@@ -37,6 +39,7 @@ $(document).ready(function(){
 
 
 
+	
 
 
 
@@ -64,9 +67,12 @@ $(document).ready(function(){
 // controller.addScene(scene);
 
 
+
+// ******************************WINDOWHEIGHT HERE IS RELATED TO THE FUNCTION AT THE TOP FOR THE NAV: AS THE VIEWPORT IS RESIZED IT RECALCALCULATES THE SIZE NEEDED FR THE THE SCROLL - THIS SHOULD BE REFACTORED INTO THE WHOLE CODE ITS
 var controller = new ScrollMagic.Controller();
 var scene1 = new ScrollMagic.Scene({
   triggerElement: trigger1,
+  offset:20,
   duration: $(window).height(),
   reverse: true,
 })
@@ -78,7 +84,6 @@ var controller = new ScrollMagic.Controller();
 var scene2 = new ScrollMagic.Scene({
   triggerElement: trigger2, 
   duration: $(window).height(),
-  
   reverse: true,
 })
 .setPin(pin2);
@@ -189,13 +194,14 @@ var score = 0;
 var flag_to_print = 0;
 var countryflag = 0;
 
+
 window.onload = getCountry;
 document.getElementById('button').onclick = getCountry;
 document.getElementById('good').onclick = getAnswerGood;
 document.getElementById('bad').onclick = getAnswerBad;
 
 function getCountry () {
-	flag_position_in_array =Math.floor(Math.random()*197)
+	flag_position_in_array = Math.floor(Math.random()*197)
 	console.log(flag_position_in_array);
 	flag_to_print = flags_list[flag_position_in_array];
 	countryflag = country_names[flag_position_in_array];

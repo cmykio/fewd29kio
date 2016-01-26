@@ -123,8 +123,53 @@ Author: Kio McLoughlin
           height: 100%;
      }
 
+
+
+
+     .panel1 {
+          background-color: lightblue;
+     }
+
+      .panel2 {
+          background-color: pink;
+     }
+
+      .panel3 {
+          background-color: yellow;
+     }
+
+      .panel4 {
+          background-color: lightblue;
+     }
+
+      .panel5 {
+          background-color: pink;
+     }
+
+      .panel6 {
+          background-color: yellow;
+     }
+
+      .panel7 {
+          background-color: lightblue;
+     }
+
+      .panel8 {
+          background-color: pink;
+     }
+
+      .panel9 {
+          background-color: yellow;
+     }
+
+
+
+
+
+
      .paneltext {
           margin-right: 25%;
+          padding-left: 1em;
      }
 
      .object-fit_scale-down {
