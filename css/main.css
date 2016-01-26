@@ -31,7 +31,7 @@ Author: Kio McLoughlin
 
 @media screen and (min-width: 25em) {
      .site-container {
-          background-color: blue;
+          background-color: goldenrod;
      }
 }
 
@@ -54,6 +54,39 @@ Author: Kio McLoughlin
 .site-content {
 
 }
+
+
+
+/*Navigation tomfoolery - need to refactor this, but it's appearing*/
+
+.nav-icon,
+.nav-icon:before,
+.nav-icon:after {
+     content:"";
+     position:absolute;
+     right:1em;
+     width:2em;
+     height:2em;
+     border-top:0.25em solid #fff45a;
+}
+
+@media screen and (max-width: 640px) {
+     .nav-icon { display:block; }
+}
+
+.nav-icon:before {
+     top:0.25em;
+     right:0;
+}
+.nav-icon:after {
+     top:0.75em;
+     right:0;
+}
+
+
+
+
+
 
 .panel {
      display: block;

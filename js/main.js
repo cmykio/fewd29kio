@@ -1,4 +1,53 @@
 
+// Responsive Navigation and slider - just getting it functional for now
+$(document).ready(function(){
+    
+	$('.nav-icon').on('click', function(){
+		$('.site-nav ul').slideToggle();
+		// this slideToggle is part of the effect library in jQuery library - has lots of things you can do
+	});
+
+	$(window).on('resize', function(){
+		var windowWidth = $(window).width();
+		// this is checking for the width of the window, so that on resize, we will be checking for when the icon/nav is hidden.
+		// if the width is greater than a certain number, we need to show/hide the nav - because it's gotten lost based on slideToggle
+		console.log(windowWidth);
+		// this is being printed in the Console
+
+
+		// this is showing or hiding each element depending on whether the viewport is above or below a certain width
+		if ( windowWidth > 640 ) {
+			$('.site-nav ul').show();
+			$('.nav-icon').hide();
+		}	else {
+			$('.site-nav ul').hide();
+			$('.nav-icon').show();
+		}
+	});
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // var controller = new ScrollMagic.Controller();
 // var scene = new ScrollMagic.Scene({
 //   offset: 100, // start scene after scrolling for 100px
