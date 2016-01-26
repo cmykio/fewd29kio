@@ -137,12 +137,7 @@ var guess = 0;
 var answerposition = 0;
 var guessnumber = 0;
 var score = 0;
-
-
 var flag_to_print = 0;
-
-
-
 
 window.onload = getCountry;
 document.getElementById('button').onclick = getCountry;
@@ -156,29 +151,6 @@ function getCountry () {
 	console.log(flag_to_print);
 	printFlag();
 };
-
-
-
-// function getCountry (){
-// 	console.log('getcountry firing');
-// 	document.getElementById('quizresponse').innerText = '';
-// 	country_code = chance.country();
-// 	console.log(country_code + ' is the random country');
-// 	checkFlag();
-// 	// printFlag();
-// };
-
-// function checkFlag() {
-// 	console.log('checkFlag is firing');
-// 	if (allowed_codes.indexOf(country_code) != -1) {
-// 		flag_position_in_array=allowed_codes.indexOf(country_code);
-// 		console.log(flag_position_in_array);
-// 		printFlag();
-// 	} else {
-// 		getCountry();
-// 	}
-	
-// };
 
 function printFlag (){
 	console.log('printFlag is firing');
