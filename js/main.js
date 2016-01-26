@@ -187,6 +187,7 @@ var answerposition = 0;
 var guessnumber = 0;
 var score = 0;
 var flag_to_print = 0;
+var countryflag = 0;
 
 window.onload = getCountry;
 document.getElementById('button').onclick = getCountry;
@@ -197,7 +198,9 @@ function getCountry () {
 	flag_position_in_array =Math.floor(Math.random()*198)
 	console.log(flag_position_in_array);
 	flag_to_print = flags_list[flag_position_in_array];
+	countryflag = country_names[flag_position_in_array];
 	console.log(flag_to_print);
+	console.log(countryflag);
 	printFlag();
 };
 
@@ -205,6 +208,7 @@ function printFlag (){
 	console.log('printFlag is firing');
 	var image_file = "../fewd29kio/flags-big/"+flag_to_print+".png"
 	document.getElementById('flag').src=image_file;
+	document.getElementById('result').innerText = countryflag;
 };
 
 function getAnswerGood (){
@@ -213,13 +217,13 @@ function getAnswerGood (){
 	answerposition = flag_position_in_array + 1;
 	console.log('the guess is ' + guess);
 	console.log('answerposition is '+ answerposition);
-	answer = allowed_codes[answerposition];
+	answer = answer_codes[answerposition];
 	console.log('the answer from the file is '+ answer);
 	if (answer === guess) {
-		document.getElementById('quizresponse').innerText = 'You Got it!'
+		document.getElementById('quizresponse').innerText = 'You got it!'
 		score = score + 1;
 	} else {
-		document.getElementById('quizresponse').innerText = 'No, sorry you are wrong.'
+		document.getElementById('quizresponse').innerText = "No, sorry, it's not great..."
 	}
 	updateScore();
 };
@@ -231,7 +235,7 @@ function getAnswerBad (){
 	answerposition = flag_position_in_array + 1;
 	console.log(guess);
 	console.log('answerposition is '+ answerposition);
-	answer = allowed_codes[answerposition];
+	answer = answer_codes[answerposition];
 	console.log('the answer from the file is '+ answer);
 	if (answer === guess) {
 		document.getElementById('quizresponse').innerText = 'You Got it!'
@@ -456,7 +460,7 @@ var flags_list = [
 
 
 
-var allowed_codes = [
+var answer_codes = [
 		"AD", "bad",
 		"AE", "good",		
 		"AF",
@@ -654,6 +658,205 @@ var allowed_codes = [
 		"ZM",
 		"ZW"
 ];
+
+var country_names = [
+		"Andorra",
+		"United Arab Emirates",
+		"Afghanistan",
+		"Antigua and Barbuda",
+		"Albania",
+		"Armenia",
+		"Angola",
+		"Argentina",
+		"Austria",
+		"Australia",
+		"Azerbaijan",
+		"Bosnia and Herzegovina",
+		"Barbados",
+		"Bangladesh",
+		"Belgium",
+		"Burkina Faso",
+		"Bulgaria",
+		"Bahrain",
+		"Burundi",
+		"Benin",
+		"Brunei Darussalam",
+		"Bolivia",
+		"Brazil",
+		"Bahamas",
+		"Bhutan",
+		"Botswana",
+		"Belarus",
+		"Belize",
+		"Canada",
+		"the Democratic Republic of the Congo",
+		"Central African Republic",
+		"Congo",
+		"Switzerland",
+		"Cote d'Ivoire",
+		"Chile",
+		"Cameroon",
+		"China",
+		"Colombia",
+		"Costa Rica",
+		"Cuba",
+		"Cape Verde",
+		"Cyprus",
+		"Czech Republic",
+		"Germany",
+		"Djibouti",
+		"Denmark",
+		"Dominica",
+		"Dominican Republic",
+		"Algeria",
+		"Ecuador",
+		"Estonia",
+		"Egypt",
+		"Western Sahara",
+		"Eritrea",
+		"Spain",
+		"Ethiopia",
+		"Finland",
+		"Fiji",
+		"the Federated States of Micronesia",
+		"France",
+		"Gabon",
+		"United Kingdom",
+		"Grenada",
+		"Georgia",
+		"Ghana",
+		"Gambia",
+		"Guinea",
+		"Equatorial Guinea",
+		"Greece",
+		"Guatemala",
+		"Guinea-Bissau",
+		"Guyana",
+		"Honduras",
+		"Croatia",
+		"Haiti",
+		"Hungary",
+		"Indonesia",
+		"Ireland",
+		"Israel",
+		"India",
+		"Iraq",
+		"Iran",
+		"Iceland",
+		"Italy",
+		"Jamaica",
+		"Jordan",
+		"Japan",
+		"Kenya",
+		"Kyrgyzstan",
+		"Cambodia",
+		"Kiribati",
+		"Comoros",
+		"Saint Kitts and Nevis",
+		"North Korea",
+		"South Korea",
+		"Kosovo",
+		"Kuwait",
+		"Kazakhstan",
+		"the Democratic Republic of Lao",
+		"Lebanon",
+		"Saint Lucia",
+		"Liechtenstein",
+		"Sri Lanka",
+		"Liberia",
+		"Lesotho",
+		"Lithuania",
+		"Luxembourg",
+		"Latvia",
+		"Libya",
+		"Morocco",
+		"Monaco",
+		"Moldova",
+		"Montenegro",
+		"Madagascar",
+		"Marshall Islands",
+		"Macedonia",
+		"Mali",
+		"Myanmar",
+		"Mongolia",
+		"Mauritania",
+		"Malta",
+		"Mauritius",
+		"Maldives",
+		"Malawi",
+		"Mexico",
+		"Malaysia",
+		"Mozambique",
+		"Namibia",
+		"Niger",
+		"Nigeria",
+		"Nicaragua",
+		"Netherlands",
+		"Norway",
+		"Nepal",
+		"Nauru",
+		"New Zealand",
+		"Oman",
+		"Panama",
+		"Peru",
+		"Papua New Guinea",
+		"Philippines",
+		"Pakistan",
+		"Poland",
+		"Portugal",
+		"Palau",
+		"Paraguay",
+		"Qatar",
+		"Romania",
+		"Serbia",
+		"the Russian Federation",
+		"Rwanda",
+		"Saudi Arabia",
+		"Solomon Islands",
+		"Seychelles",
+		"Sudan",
+		"Sweden",
+		"Singapore",
+		"Slovenia",
+		"Slovakia",
+		"Sierra Leone",
+		"San Marino",
+		"Senegal",
+		"Somalia",
+		"Suriname",
+		"Sao Tome and Principe",
+		"El Salvador",
+		"Syria",
+		"Swaziland",
+		"Chad",
+		"Togo",
+		"Thailand",
+		"Tajikistan",
+		"Timor-Leste",
+		"Turkmenistan",
+		"Tunisia",
+		"Tonga",
+		"Turkey",
+		"Trinidad and Tobago",
+		"Tuvalu",
+		"Taiwan",
+		"Tanzania",
+		"Ukraine",
+		"Uganda",
+		"United States",
+		"Uruguay",
+		"Uzbekistan",
+		"the Holy See (Vatican City State)",
+		"Saint Vincent and the Grenadines",
+		"Venezuela",
+		"Viet Nam",
+		"Vanuatu",
+		"Samoa",
+		"Yemen",
+		"South Africa",
+		"Zambia",
+		"Zimbabwe"
+	]
 
 
 }); 

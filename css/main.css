@@ -78,7 +78,7 @@ Author: Kio McLoughlin
           left: 0;
           top: 0;
           width: 6em;
-          z-index: 10;
+          z-index: 12;
           background: rgba(0, 0, 0, 0.15);
      }
 
@@ -113,17 +113,15 @@ Author: Kio McLoughlin
           height: 100%;
      }
 
-     .flagcontainer {
-          min-height: 30em;
+     .object-fit_scale-down {
+          -o-object-fit: scale-down;
+          object-fit: scale-down;
      }
 
      .flagdisplay {
           display: block;
           max-width: 100%;
-          /*max-width:230px;*/
-          min-height:40em;
-          width: auto;
-          height: auto;
+          max-height:35em;
           margin: 2em 0em 2em 0em;
      }    
 
@@ -133,17 +131,13 @@ Author: Kio McLoughlin
 
      .site-footer {
           position: fixed;
+          background-color: pink;
           padding-left: 20%;
           bottom: 0;
           left: 0;
           right: 0;
           width: 100%;
           z-index: 10;
-     }
-
-     .site-footer {
-          background-color: pink;
-          z-index: 11;
      }
 
      .footer-nav {
