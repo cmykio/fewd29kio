@@ -195,7 +195,7 @@ document.getElementById('good').onclick = getAnswerGood;
 document.getElementById('bad').onclick = getAnswerBad;
 
 function getCountry () {
-	flag_position_in_array =Math.floor(Math.random()*198)
+	flag_position_in_array =Math.floor(Math.random()*197)
 	console.log(flag_position_in_array);
 	flag_to_print = flags_list[flag_position_in_array];
 	countryflag = country_names[flag_position_in_array];

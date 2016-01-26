@@ -16,6 +16,8 @@ Author: Kio McLoughlin
 
 * {
      box-sizing: border-box;
+     outline: 1px dotted red;
+
 }
 
 /******************************************
@@ -44,10 +46,18 @@ Author: Kio McLoughlin
           background-color: pink;
           z-index: 11;
      }
-     
-     .site-header h1 {
-          
+
+     h1 {
+          font-family: 'Playfair Display';
+          font-style: italic;
+          font-weight: 400;
+          font-size: 5em;
      }
+
+     p {
+          font-family: 'lato';
+     }
+     
 
      a {
           text-decoration: none;
@@ -111,6 +121,10 @@ Author: Kio McLoughlin
      .panel {
           display: block;
           height: 100%;
+     }
+
+     .paneltext {
+          margin-right: 25%;
      }
 
      .object-fit_scale-down {
