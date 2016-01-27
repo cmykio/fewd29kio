@@ -34,16 +34,13 @@ Author: Kio McLoughlin
 /*BASELINE BREAKPOINT FOR SMALLEST VIEWPORT*/
 @media screen and (min-width: 5em) {
      .site-container {
-          background-color: pink;
           max-width: 100%;
           margin: 0 auto;
-          padding-left: 20%;
      }
 
      .site-header {
           position: fixed;
           width: 100%;
-          background-color: pink;
           z-index: 11;
      }
 
@@ -51,7 +48,7 @@ Author: Kio McLoughlin
           font-family: 'Playfair Display';
           font-style: italic;
           font-weight: 400;
-          font-size: 5em;
+          font-size: 4em;
      }
 
      p {
@@ -61,7 +58,31 @@ Author: Kio McLoughlin
 
      a {
           text-decoration: none;
+          background-color: #307FB5;
      }
+
+
+
+     /*for scrollmagic experiments this is working*/
+   /*  span .active {
+          background-color: red;
+          color: pink;
+     }*/
+
+    /* .shape {
+          position: fixed;
+          height: 3em;
+          width: 3em;
+          border-radius: 45%;
+          border: 2px red solid;
+     }*/
+
+     
+
+
+
+
+
 
      .site-nav {
           padding-left: 30%;
@@ -80,16 +101,18 @@ Author: Kio McLoughlin
      }
 
      .sidebar-nav {
-          float: left;
           position: fixed;
-          padding-top: 20%;
-          padding-bottom: auto;
           bottom: 0;
           left: 0;
           top: 0;
           width: 6em;
           z-index: 12;
           background: rgba(0, 0, 0, 0.15);
+     }
+
+     .sidebar-positioning {
+          position: absolute;
+          top: 35%;
      }
 
      .sidebar-nav li {
@@ -109,29 +132,29 @@ Author: Kio McLoughlin
 
 
 
+.active1 {
+          font-size: 10em;
+     }
 
 
 
 
      .scroll-container {
-          
-          
+                 
      }
 
      .panel {
-          display: block;
           height: 100%;
+
      }
-
-
 
 
      .panel1 {
-          background-color: lightblue;
+          background-color: rgba(160, 202, 219, 1.0);
      }
 
       .panel2 {
-          background-color: pink;
+          background-color: rgba(121, 187, 181, 1.0);
      }
 
       .panel3 {
@@ -168,9 +191,12 @@ Author: Kio McLoughlin
 
 
      .paneltext {
-          margin-right: 25%;
-          padding-left: 1em;
+          margin-right: 25%;  
+          padding-left: 10%;
      }
+
+
+
 
      .object-fit_scale-down {
           -o-object-fit: scale-down;

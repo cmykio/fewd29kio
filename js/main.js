@@ -67,34 +67,36 @@ $(document).ready(function(){
 // controller.addScene(scene);
 
 
-
-// ******************************WINDOWHEIGHT HERE IS RELATED TO THE FUNCTION AT THE TOP FOR THE NAV: AS THE VIEWPORT IS RESIZED IT RECALCALCULATES THE SIZE NEEDED FR THE THE SCROLL - THIS SHOULD BE REFACTORED INTO THE WHOLE CODE ITS
 var controller = new ScrollMagic.Controller();
 var scene1 = new ScrollMagic.Scene({
   triggerElement: trigger1,
-  offset:20,
-  duration: $(window).height(),
+  duration: "100%",
+  triggerHook: 0.35,
   reverse: true,
 })
-.setPin(pin1); 
+.setClassToggle("#testshape", "active")
+// the code here is injecting class changes on a specific ID element. Use this to apply one-off transition classes like entrance / exit to the elements in question.
+.setPin(pin1) 
 controller.addScene(scene1);
 
 
 var controller = new ScrollMagic.Controller();
 var scene2 = new ScrollMagic.Scene({
   triggerElement: trigger2, 
-  duration: $(window).height(),
+  duration: "100%",
+  triggerHook: 0.35,
   reverse: true,
 })
-.setPin(pin2);
+.setClassToggle("#navslider2", "active1")
+.setPin(pin2)
 controller.addScene(scene2);
 
 
 var controller = new ScrollMagic.Controller();
 var scene3 = new ScrollMagic.Scene({
   triggerElement: trigger3, 
-  duration: $(window).height(),
-  
+  duration: "100%",
+  triggerHook: 0.35,
   reverse: true,
 })
 .setPin(pin3);
@@ -104,8 +106,8 @@ controller.addScene(scene3);
 var controller = new ScrollMagic.Controller();
 var scene4 = new ScrollMagic.Scene({
   triggerElement: trigger4, 
-  duration: $(window).height(),
-  
+  duration: "100%",
+  triggerHook: 0.35,
   reverse: true,
 })
 .setPin(pin4);
@@ -114,8 +116,8 @@ controller.addScene(scene4);
 var controller = new ScrollMagic.Controller();
 var scene5 = new ScrollMagic.Scene({
   triggerElement: trigger5, 
-  duration: $(window).height(),
-  
+  duration: "100%",
+  triggerHook: 0.35,
   reverse: true,
 })
 .setPin(pin5);
@@ -124,8 +126,8 @@ controller.addScene(scene5);
 var controller = new ScrollMagic.Controller();
 var scene6 = new ScrollMagic.Scene({
   triggerElement: trigger6, 
-  duration: $(window).height(),
-  
+  duration: "100%",
+  triggerHook: 0.35,
   reverse: true,
 })
 .setPin(pin6);
@@ -134,8 +136,8 @@ controller.addScene(scene6);
 var controller = new ScrollMagic.Controller();
 var scene7 = new ScrollMagic.Scene({
   triggerElement: trigger7, 
-  duration: $(window).height(),
-  
+  duration: "100%",
+  triggerHook: 0.35,
   reverse: true,
 })
 .setPin(pin7);
@@ -144,8 +146,8 @@ controller.addScene(scene7);
 var controller = new ScrollMagic.Controller();
 var scene8 = new ScrollMagic.Scene({
   triggerElement: trigger8, 
-  duration: $(window).height(),
-  
+  duration: "100%",
+  triggerHook: 0.35,
   reverse: true,
 })
 .setPin(pin8);
@@ -154,8 +156,8 @@ controller.addScene(scene8);
 var controller = new ScrollMagic.Controller();
 var scene9 = new ScrollMagic.Scene({
   triggerElement: trigger9, 
-  duration: $(window).height(),
-  
+  duration: "100%",
+  triggerHook: 0.35,
   reverse: true,
 })
 .setPin(pin9);
