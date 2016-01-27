@@ -59,31 +59,10 @@ Author: Kio McLoughlin
      a {
           text-decoration: none;
           background-color: #307FB5;
-     }
+     }  
 
 
-
-     /*for scrollmagic experiments this is working*/
-   /*  span .active {
-          background-color: red;
-          color: pink;
-     }*/
-
-    /* .shape {
-          position: fixed;
-          height: 3em;
-          width: 3em;
-          border-radius: 45%;
-          border: 2px red solid;
-     }*/
-
-     
-
-
-
-
-
-
+     /*BEGIN TOP NAV STYLING*/
      .site-nav {
           padding-left: 30%;
      }
@@ -95,11 +74,17 @@ Author: Kio McLoughlin
      .site-nav li {
           display:inline-block;
      }
-     
+     /*END TOP NAV STYLING*/
+
+
+     /*BEGIN SITE CONTENT STYLING*/
      .site-content {
 
      }
+     /*END SITE CONTENT STYLING*/
 
+
+     /*BEGIN SIDEBAR NAV STYLING*/
      .sidebar-nav {
           position: fixed;
           bottom: 0;
@@ -129,13 +114,15 @@ Author: Kio McLoughlin
           right: -2em;
           background: rgba(0, 0, 0, 0.15);
      }
+     /*END SIDEBAR NAV STYLING*/
 
 
 
-.active1 {
+     /*BEGIN SCROLLMAGIC CLASS TOGGLES - THIS DEFINES CLASS INJECTIONS AT CERTAIN TRIGGER POINTS IN THE PAGE*/
+     .active1 {
           font-size: 10em;
      }
-
+     /*END SCROLLMAGIC CLASS TOGGLES STYLING*/
 
 
 
@@ -143,11 +130,12 @@ Author: Kio McLoughlin
                  
      }
 
+
+     /*BEGIN SCENE STORY PANELS STYLING FOR MAIN PAGE*/
      .panel {
           height: 100%;
 
      }
-
 
      .panel1 {
           background-color: rgba(160, 202, 219, 1.0);
@@ -185,19 +173,14 @@ Author: Kio McLoughlin
           background-color: yellow;
      }
 
-
-
-
-
-
      .paneltext {
           margin-right: 25%;  
           padding-left: 10%;
      }
+     /*END SCENE STORY PANELS STYLING FOR MAIN PAGE*/
 
 
-
-
+     /*BEGIN STYLING AROUND FLAG AND QUIZ DISPLAY SECTION*/
      .object-fit_scale-down {
           -o-object-fit: scale-down;
           object-fit: scale-down;
@@ -213,7 +196,10 @@ Author: Kio McLoughlin
      .quiz_controls {
           margin-bottom: 30em;
      }
+     /*END FLAG AND QUIZ DISPLAY STYLING*/
 
+
+     /*BEGIN SITE FOOTER AND NAV STYLING*/
      .site-footer {
           position: fixed;
           background-color: pink;
@@ -236,7 +222,7 @@ Author: Kio McLoughlin
      .footer-nav li {
           display:inline-block;
      }
-
+     /*END SITE FOOTER AND NAV STYLING*/
 }
 /*END BASELINE VIEWPORT STYLING*/
 
