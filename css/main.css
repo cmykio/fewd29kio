@@ -103,7 +103,19 @@ Author: Kio McLoughlin
           list-style: none;
      }
 
-     .sidebar-nav .arrow {
+     .arrow {
+          width: 2.5em;
+          height: 2.5em;
+          border-radius: 50%;
+          background: red;
+          margin: 1em 0;
+     }
+
+     .arrow_active {
+          background: blue;
+     }
+
+    /* .sidebar-nav .arrow {
           position: absolute;
           width: 3em;
           height: 1.5em;
@@ -112,15 +124,15 @@ Author: Kio McLoughlin
           -o-transform: skew(15deg);
           right: -2em;
           background: rgba(0, 0, 0, 0.15);
-     }
+     }*/
      /*END SIDEBAR NAV STYLING*/
 
 
 
      /*BEGIN SCROLLMAGIC CLASS TOGGLES - THIS DEFINES CLASS INJECTIONS AT CERTAIN TRIGGER POINTS IN THE PAGE*/
-     .active {
+     /*.active {
           color: blue;
-     }
+     }*/
      /*END SCROLLMAGIC CLASS TOGGLES STYLING*/
 
      .site-container .active {
