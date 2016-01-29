@@ -58,7 +58,6 @@ Author: Kio McLoughlin
 
      a {
           text-decoration: none;
-          background-color: #307FB5;
      }  
 
 
@@ -119,26 +118,93 @@ Author: Kio McLoughlin
 
 
      /*BEGIN SCROLLMAGIC CLASS TOGGLES - THIS DEFINES CLASS INJECTIONS AT CERTAIN TRIGGER POINTS IN THE PAGE*/
-     .active1 {
-          font-size: 10em;
+     .active {
+          color: blue;
      }
      /*END SCROLLMAGIC CLASS TOGGLES STYLING*/
 
-
-
-     .scroll-container {
-                 
+     .site-container .active {
+          /*just testing this*/
+          /*background: url(../flags-big/ae.png) no-repeat center center fixed; */
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
      }
 
 
      /*BEGIN SCENE STORY PANELS STYLING FOR MAIN PAGE*/
-     .panel {
-          height: 100%;
+     .scene {
+          /*position: relative;*/
+          padding: 2% 5%;
+          background-color: rgba(160, 202, 219, 1.0);
+          height: 100vh;
+
 
      }
 
-     .panel1 {
+     
+
+     .card {
+          
+          min-height: 80vh;
+          max-height: 90vh;
+          max-width: 90vw;
+          min-width: 80vw;
+          padding: 20% 5%;
+          background-color: rgba(255, 255, 255, 1.0);
+          border: solid, .2em, grey;
+          -webkit-box-shadow: 0em .5em .45em 0em rgba(0,0,0,0.75);
+          
+     }
+
+     @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+     @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+     @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+     .cardtext .active {
+          opacity:0;  /* make things invisible upon start */
+          -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+          -moz-animation:fadeIn ease-in 1;
+          animation:fadeIn ease-in 1;
+      
+          -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+          -moz-animation-fill-mode:forwards;
+          animation-fill-mode:forwards;
+      
+          -webkit-animation-duration:1s;
+          -moz-animation-duration:1s;
+          animation-duration:1s;
+          -webkit-animation-delay: 0.7s;
+          -moz-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+     }
+
+
+
+
+
+
+
+
+
+
+     .cardtext {
+     /*drop caps in here*/
+
+     }
+
+   
+
+     /*.panel1 {
           background-color: rgba(160, 202, 219, 1.0);
+          height: 100%;
+          margin: 5% 15%;
+     }
+
+       .card {
+          margin: 5% 20%;
+          background-color: rgba(255, 255, 255, 1.0);
      }
 
       .panel2 {
@@ -173,10 +239,6 @@ Author: Kio McLoughlin
           background-color: yellow;
      }
 
-     .paneltext {
-          margin-right: 25%;  
-          padding-left: 10%;
-     }
      /*END SCENE STORY PANELS STYLING FOR MAIN PAGE*/
 
 
@@ -187,16 +249,48 @@ Author: Kio McLoughlin
      }
 
      .flagdisplay {
-          display: block;
-          max-width: 100%;
-          max-height:35em;
-          margin: 2em 0em 2em 0em;
+          position: absolute;
+          top: 5%;max-width: 100%;
+          max-height:55vh;
+          -webkit-box-shadow: 0em .5em 2em 0em rgba(0,0,0,0.75);
      }    
 
+     .quiztitle {
+          display: inline-block;
+          position: absolute;
+          top: 75%;
+     }
+     
+     .principles_hint {
+          position: absolute;
+          top: 5%;
+          left: 75%;
+     }
+
+     .answer_explanation {
+          position: absolute;
+          top: 80%;
+     }  
+
      .quiz_controls {
-          margin-bottom: 30em;
+          position: absolute;
+          top: 90%;
+     }
+
+     .quiz_controls {
+          /*margin-bottom: 30em;*/
      }
      /*END FLAG AND QUIZ DISPLAY STYLING*/
+
+
+
+
+
+
+
+
+
+
 
 
      /*BEGIN SITE FOOTER AND NAV STYLING*/

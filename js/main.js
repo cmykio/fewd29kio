@@ -70,109 +70,118 @@ $(document).ready(function(){
 var controller = new ScrollMagic.Controller();
 var scene1 = new ScrollMagic.Scene({
   triggerElement: trigger1,
-  duration: "100%",
-  triggerHook: 0.35,
+  duration: "0%",
+  triggerHook: -0,
   reverse: true,
 })
-.setClassToggle("#testshape", "active")
-// the code here is injecting class changes on a specific ID element. Use this to apply one-off transition classes like entrance / exit to the elements in question.
+.setClassToggle("#trigger1", "active")
 .setPin(pin1) 
+.addIndicators()
 controller.addScene(scene1);
 
 
 var controller = new ScrollMagic.Controller();
 var scene2 = new ScrollMagic.Scene({
   triggerElement: trigger2, 
-  duration: "100%",
-  triggerHook: 0.35,
+  duration: "0%",
+  triggerHook: 0,
   reverse: true,
 })
-.setClassToggle("#navslider2", "active1")
+.setClassToggle("#trigger2", "active")
 .setPin(pin2)
+.addIndicators()
 controller.addScene(scene2);
 
 
 var controller = new ScrollMagic.Controller();
 var scene3 = new ScrollMagic.Scene({
   triggerElement: trigger3, 
-  duration: "100%",
-  triggerHook: 0.35,
+  duration: "0%",
+  triggerHook: 0,
   reverse: true,
 })
-.setPin(pin3);
+.setPin(pin3)
+.addIndicators()
 controller.addScene(scene3);
 
 
 var controller = new ScrollMagic.Controller();
 var scene4 = new ScrollMagic.Scene({
   triggerElement: trigger4, 
-  duration: "100%",
-  triggerHook: 0.35,
+  duration: "0%",
+  triggerHook: 0,
   reverse: true,
 })
-.setPin(pin4);
+.setPin(pin4)
+.addIndicators()
 controller.addScene(scene4);
 
 var controller = new ScrollMagic.Controller();
 var scene5 = new ScrollMagic.Scene({
   triggerElement: trigger5, 
-  duration: "100%",
-  triggerHook: 0.35,
+  duration: "0%",
+  triggerHook: 0,
   reverse: true,
 })
-.setPin(pin5);
+.setPin(pin5)
+.addIndicators()
 controller.addScene(scene5);
 
 var controller = new ScrollMagic.Controller();
 var scene6 = new ScrollMagic.Scene({
   triggerElement: trigger6, 
-  duration: "100%",
-  triggerHook: 0.35,
+  duration: "0%",
+  triggerHook: 0,
   reverse: true,
 })
-.setPin(pin6);
+.setPin(pin6)
+.addIndicators()
 controller.addScene(scene6);
 
 var controller = new ScrollMagic.Controller();
 var scene7 = new ScrollMagic.Scene({
   triggerElement: trigger7, 
-  duration: "100%",
-  triggerHook: 0.35,
+  duration: "0%",
+  triggerHook: 0,
   reverse: true,
 })
-.setPin(pin7);
+.setPin(pin7)
+.addIndicators()
 controller.addScene(scene7);
 
 var controller = new ScrollMagic.Controller();
 var scene8 = new ScrollMagic.Scene({
   triggerElement: trigger8, 
-  duration: "100%",
-  triggerHook: 0.35,
+  duration: "0%",
+  triggerHook: 0,
   reverse: true,
 })
-.setPin(pin8);
+.setPin(pin8)
+.addIndicators()
 controller.addScene(scene8);
 
 var controller = new ScrollMagic.Controller();
 var scene9 = new ScrollMagic.Scene({
   triggerElement: trigger9, 
-  duration: "100%",
-  triggerHook: 0.35,
+  duration: "0%",
+  triggerHook: 0,
   reverse: true,
 })
-.setPin(pin9);
+.setPin(pin9)
+.addIndicators()
 controller.addScene(scene9);
 
 
-// var controller = new ScrollMagic.Controller();
-// var scene10 = new ScrollMagic.Scene({
-//   triggerElement: trigger10, 
-//   duration: $(window).height(),
-  
-//   reverse: true,
-// })
-// .setPin(pin10);
-// controller.addScene(scene10);
+var controller = new ScrollMagic.Controller();
+var scene10 = new ScrollMagic.Scene({
+  triggerElement: trigger10, 
+  duration: "0%",
+  triggerHook: 0,
+  reverse: true,
+})
+.setPin(pin10)
+.addIndicators()
+controller.addScene(scene9);
 
 
 
@@ -198,18 +207,22 @@ var countryflag = 0;
 
 
 window.onload = getCountry;
-document.getElementById('button').onclick = getCountry;
+document.getElementById('play').onclick = getCountry;
 document.getElementById('good').onclick = getAnswerGood;
 document.getElementById('bad').onclick = getAnswerBad;
 
 function getCountry () {
 	flag_position_in_array = Math.floor(Math.random()*197)
 	console.log(flag_position_in_array);
-	flag_to_print = flags_list[flag_position_in_array];
-	countryflag = country_names[flag_position_in_array];
-	console.log(flag_to_print);
-	console.log(countryflag);
-	printFlag();
+	if (flag_position_in_array != 'undefined') {
+		flag_to_print = flags_list[flag_position_in_array];
+		countryflag = country_names[flag_position_in_array];
+		console.log(flag_to_print);
+		console.log(countryflag);
+		printFlag();
+	} else {
+		getCountry();
+	}
 };
 
 function printFlag (){
