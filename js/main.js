@@ -74,7 +74,8 @@ var scene1 = new ScrollMagic.Scene({
   triggerHook: -0,
   reverse: true,
 })
-.setClassToggle("#trigger1", "active")
+// NEED TO CREATE A CLASS CALLED SCENE ACTIVE IN CSS
+.setClassToggle("#pin1", "card_active")
 .setClassToggle("#navslide1", "arrow_active")
 .setPin(pin1) 
 .addIndicators()
@@ -88,8 +89,10 @@ var scene2 = new ScrollMagic.Scene({
   triggerHook: 0,
   reverse: true,
 })
-.setClassToggle("#trigger2", "active")
+
 .setClassToggle("#navslide2", "arrow_active")
+.setClassToggle("#trigger1", "")
+.setClassToggle("#navslide1", "arrow")
 .setPin(pin2)
 .addIndicators()
 controller.addScene(scene2);
@@ -102,6 +105,8 @@ var scene3 = new ScrollMagic.Scene({
   triggerHook: 0,
   reverse: true,
 })
+.setClassToggle("#trigger3", "active")
+.setClassToggle("#navslide3", "arrow_active")
 .setPin(pin3)
 .addIndicators()
 controller.addScene(scene3);
@@ -114,6 +119,8 @@ var scene4 = new ScrollMagic.Scene({
   triggerHook: 0,
   reverse: true,
 })
+.setClassToggle("#trigger4", "active")
+.setClassToggle("#navslide4", "arrow_active")
 .setPin(pin4)
 .addIndicators()
 controller.addScene(scene4);
@@ -125,6 +132,8 @@ var scene5 = new ScrollMagic.Scene({
   triggerHook: 0,
   reverse: true,
 })
+.setClassToggle("#trigger5", "active")
+.setClassToggle("#navslide5", "arrow_active")
 .setPin(pin5)
 .addIndicators()
 controller.addScene(scene5);
@@ -136,6 +145,8 @@ var scene6 = new ScrollMagic.Scene({
   triggerHook: 0,
   reverse: true,
 })
+.setClassToggle("#trigger6", "active")
+.setClassToggle("#navslide6", "arrow_active")
 .setPin(pin6)
 .addIndicators()
 controller.addScene(scene6);
@@ -147,6 +158,8 @@ var scene7 = new ScrollMagic.Scene({
   triggerHook: 0,
   reverse: true,
 })
+.setClassToggle("#trigger7", "active")
+.setClassToggle("#navslide7", "arrow_active")
 .setPin(pin7)
 .addIndicators()
 controller.addScene(scene7);
@@ -158,6 +171,8 @@ var scene8 = new ScrollMagic.Scene({
   triggerHook: 0,
   reverse: true,
 })
+.setClassToggle("#trigger8", "active")
+.setClassToggle("#navslide8", "arrow_active")
 .setPin(pin8)
 .addIndicators()
 controller.addScene(scene8);
@@ -169,6 +184,8 @@ var scene9 = new ScrollMagic.Scene({
   triggerHook: 0,
   reverse: true,
 })
+.setClassToggle("#trigger9", "active")
+.setClassToggle("#navslide9", "arrow_active")
 .setPin(pin9)
 .addIndicators()
 controller.addScene(scene9);
@@ -181,6 +198,8 @@ var scene10 = new ScrollMagic.Scene({
   triggerHook: 0,
   reverse: true,
 })
+.setClassToggle("#trigger10", "active")
+.setClassToggle("#navslide10", "arrow_active")
 .setPin(pin10)
 .addIndicators()
 controller.addScene(scene9);

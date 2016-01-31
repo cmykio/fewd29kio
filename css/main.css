@@ -116,7 +116,11 @@ Author: Kio McLoughlin
      }
 
      .arrow_active {
+          width: 2.5vw;
+          height: 2.5vh;
+          border-radius: 50%;
           background: blue;
+          margin: 1em 0;
      }
 
     /* .sidebar-nav .arrow {
@@ -155,15 +159,14 @@ Author: Kio McLoughlin
           padding: 2% 5%;
           background-color: rgba(160, 202, 219, 1.0);
           height: 100vh;
-
-
      }
 
      
 
+     
+
      .card {
-          
-          min-height: 80vh;
+          min-height: 90vh;
           max-height: 90vh;
           max-width: 90vw;
           min-width: 80vw;
@@ -174,28 +177,11 @@ Author: Kio McLoughlin
           
      }
 
-     @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-     @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-     @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-
-     .cardtext .active {
-          opacity:0;  /* make things invisible upon start */
-          -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-          -moz-animation:fadeIn ease-in 1;
-          animation:fadeIn ease-in 1;
-      
-          -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
-          -moz-animation-fill-mode:forwards;
-          animation-fill-mode:forwards;
-      
-          -webkit-animation-duration:1s;
-          -moz-animation-duration:1s;
-          animation-duration:1s;
-          -webkit-animation-delay: 0.7s;
-          -moz-animation-delay: 0.7s;
-          animation-delay: 0.7s;
+     .card_active {
+          background-color: red;
      }
 
+    /**/
 
 
 
@@ -313,7 +299,7 @@ Author: Kio McLoughlin
      /*BEGIN SITE FOOTER AND NAV STYLING*/
      .site-footer {
           position: fixed;
-          background-color: pink;
+          background-color: lightblue;
           padding-left: 20%;
           bottom: 0;
           left: 0;
@@ -370,7 +356,7 @@ Author: Kio McLoughlin
 /*BREAKPOINT 5*/
 @media screen and (min-width: 40em) {
      .site-container {
-          background-color: pink;
+          background-color: lightblue;
      }
 }
 /*END BREAKPOINT 5*/
