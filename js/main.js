@@ -71,12 +71,10 @@ var controller = new ScrollMagic.Controller();
 var scene1 = new ScrollMagic.Scene({
   triggerElement: trigger1,
   duration: "0%",
-  triggerHook: -0,
+  triggerHook: 0,
   reverse: true,
 })
-// NEED TO CREATE A CLASS CALLED SCENE ACTIVE IN CSS
-.setClassToggle("#pin1", "card_active")
-.setClassToggle("#navslide1", "arrow_active")
+.setClassToggle('#navslide1', 'active')
 .setPin(pin1) 
 .addIndicators()
 controller.addScene(scene1);
@@ -89,10 +87,8 @@ var scene2 = new ScrollMagic.Scene({
   triggerHook: 0,
   reverse: true,
 })
-
-.setClassToggle("#navslide2", "arrow_active")
-.setClassToggle("#trigger1", "")
-.setClassToggle("#navslide1", "arrow")
+.setClassToggle("#navslide1", 'arrow')
+.setClassToggle('#navslide2', 'active')
 .setPin(pin2)
 .addIndicators()
 controller.addScene(scene2);
@@ -106,7 +102,7 @@ var scene3 = new ScrollMagic.Scene({
   reverse: true,
 })
 .setClassToggle("#trigger3", "active")
-.setClassToggle("#navslide3", "arrow_active")
+.setClassToggle("#navslide3", "active")
 .setPin(pin3)
 .addIndicators()
 controller.addScene(scene3);
@@ -121,6 +117,7 @@ var scene4 = new ScrollMagic.Scene({
 })
 .setClassToggle("#trigger4", "active")
 .setClassToggle("#navslide4", "arrow_active")
+
 .setPin(pin4)
 .addIndicators()
 controller.addScene(scene4);
@@ -233,7 +230,7 @@ document.getElementById('good').onclick = getAnswerGood;
 document.getElementById('bad').onclick = getAnswerBad;
 
 function getCountry () {
-	flag_position_in_array = Math.floor(Math.random()*197)
+	flag_position_in_array = Math.floor(Math.random()*196)
 	console.log(flag_position_in_array);
 	if (flag_position_in_array != 'undefined') {
 		flag_to_print = flags_list[flag_position_in_array];

@@ -12,8 +12,11 @@
 		<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
 
+		
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/animate.css">
+
 	</head>
 	<body>
 		<div class="site-container">
@@ -35,13 +38,10 @@
 			
 			<!--Sidebar navigation, allowing users to jump between scrollmagic screens non-sequentially. Not viewable at smaller viewports  -->
 			<aside id="sidebar" class="sidebar-nav">
-				<div class="sidebar-positioning">
-					<!-- <div class="arrow">
-					</div> -->
 					<nav class="sidebar-controls">
 						<ul>
 							<li>
-								<a href="#trigger1"><div id="navslide1" class="arrow"></div></a>
+								<a href="#trigger1"><div id="navslide1" class=""></div></a>
 							</li>
 							<li>
 								<a href="#trigger2"><div id="navslide2" class="arrow"></div></a>
@@ -73,11 +73,9 @@
 						</ul>
 					</nav>
 				
-				</div>
-
 			</aside>
 
-				<body class="scroll-container">
+				
 					<!-- ScrollMagic is enabled in scripts below. Each main section here should display one or two sentences as an independent screen
 					and the sentences should stay in position while scrolling to the next screen becoming available 
 					Screen 1, on load-->
@@ -191,7 +189,7 @@
 					<div id="trigger9" class="scene">
 						<div id="pin9" class="card">
 							<div  class="cardtext">
-								<p>Summaries</p>
+								<h1>Summaries</h1>
 								<p>Scroll to test your knowledge</p>
 							</div>
 						</div>
@@ -199,48 +197,57 @@
 
 					<!-- Screen 10 - this is the key page, where the quiz begins, and the main piece of content anyone interacts with on site -->
 					<div id="trigger10" class = "scene">
-						<div id="pin10" class = "card">	
-							
-								<h1 class="quiztitle">
+						<div id="pin10" class = "quizcard">
+
+							<div class ="quiztitle">
+								<h2>
 				  					<span id="result"></span>
-								</h1>
+								</h2>
+							</div>
 
-								<img id="flag" class="flagdisplay object-fit_scale-down">
+							<div class ="flagposition">
+								<span class="">
+									<img id="flag" class="flagdisplay animated flipInX" alt= "flag">
+								</span>
+							</div>
 							
-								<div id="hint" class="principles_hint">
-									<p>THIS BIT SHOWS REMINDER OF PRINCIPLES. HIDDEN ON LOAD. TOGGLE ON AND OFF
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-									consequat.</p>
-								</div>
+							<div id="hint" class="principles_hint">
+								<p>THIS BIT SHOWS REMINDER OF PRINCIPLES. HIDDEN ON LOAD. TOGGLE ON AND OFF
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat.</p>
+							</div>
 
-								<div class="answer_explanation">
-									<p>THIS SECTION GIVES SOME WAFFLE ABOUT WHETHER THE FLAG IS GOOD OR BAD PER PRINCIPLES.
-									IT WILL DISPLAY IN THIS SPAN
-									<span id="explanation"></span>
-								</div>
-							
-								<div class="quiz_controls">
-									<button id="good">It's great!</button>
-									<button id="bad">Could be better...</button>
-									<button id="play">Play</button>
+							<div class="answer_explanation">
+								<p>THIS SECTION GIVES SOME WAFFLE ABOUT WHETHER THE FLAG IS GOOD OR BAD PER PRINCIPLES.
+								T WILL DISPLAY IN THIS SPAN</p>
+								<span id="explanation"></span>
+							</div>
+
+							<div class="feedback">
+								<span id="quizresponse"></span>
 						
-									<span id="quizresponse"></span>
-						
-									<span id="yourscore"></span>
-								</div>
+								<span id="yourscore"></span>
+							</div>
 							
+							<div class="quiz_controls">
+								<div class="row">
+									<button id="play" class="control">Play</button>
+									<button id="good" class="control">&#10004;</button>
+									<button id="bad" class="control">&#10008;</button>
+
+								</div>
+								<div class="row">
+																	</div>
+							</div>							
 						</div>
 					</div>
-
-
-
-
-				</body>
+				
 
 
 			</main>
+
 			<footer class="site-footer">
 				&copy; 2016. Kio McLoughlin.
 
@@ -256,6 +263,7 @@
 					</li>
 				</nav>
 			</footer>
+
 		</div><!-- .site-container -->
 		
 		<!-- jquery loaded. ScrollMagic scripts controlling the panels and parallax on main screen. I don't think the second scrollmagic library is needed though - for deletion later-->

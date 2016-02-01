@@ -33,6 +33,10 @@ Author: Kio McLoughlin
 
 /*BASELINE BREAKPOINT FOR SMALLEST VIEWPORT*/
 @media screen and (min-width: 5em) {
+     body {
+          min-height: 100vh;
+     }
+
      .site-container {
           max-width: 100%;
           margin: 0 auto;
@@ -48,18 +52,32 @@ Author: Kio McLoughlin
           font-family: 'Playfair Display';
           font-style: italic;
           font-weight: 400;
-          font-size: 4em;
+          font-size: 1.5em;
+     }
+
+     h2 {
+          font-family: 'Playfair Display';
+          font-style: italic;
+          font-weight: 400;
+          font-size: 1.8em;
+          margin: 0;
      }
 
      p {
           font-family: 'lato';
+          font-weight: 400;
+          font-size: .8em;
      }
      
 
      a {
           text-decoration: none;
-     }  
+     } 
 
+     /*do not change this - flag is now displaying correctly*/
+     img {
+          display: block;
+     }
 
      /*BEGIN TOP NAV STYLING*/
      .site-nav {
@@ -85,6 +103,7 @@ Author: Kio McLoughlin
 
      /*BEGIN SIDEBAR NAV STYLING*/
      .sidebar-nav {
+          display:none;
           position: fixed;
           bottom: 0;
           left: 0;
@@ -93,10 +112,6 @@ Author: Kio McLoughlin
           z-index: 12;
           background: rgba(0, 0, 0, 0.15);
      }
-
-     /*.sidebar-positioning {
-          position: relative;
-     }using the positioning with vh I don't need this now*/
 
      .sidebar-controls {
           position: relative;
@@ -107,19 +122,19 @@ Author: Kio McLoughlin
           list-style: none;
      }
 
+     .active {
+          width: 2.5vw;
+          height: 2.5vh;
+          border-radius: 50%;
+          background: blue;
+          margin: 1em 0;
+     }
+
      .arrow {
           width: 2.5vw;
           height: 2.5vh;
           border-radius: 50%;
           background: red;
-          margin: 1em 0;
-     }
-
-     .arrow_active {
-          width: 2.5vw;
-          height: 2.5vh;
-          border-radius: 50%;
-          background: blue;
           margin: 1em 0;
      }
 
@@ -143,60 +158,30 @@ Author: Kio McLoughlin
      }*/
      /*END SCROLLMAGIC CLASS TOGGLES STYLING*/
 
-     .site-container .active {
-          /*just testing this*/
-          /*background: url(../flags-big/ae.png) no-repeat center center fixed; */
-          -webkit-background-size: cover;
-          -moz-background-size: cover;
-          -o-background-size: cover;
-          background-size: cover;
-     }
-
 
      /*BEGIN SCENE STORY PANELS STYLING FOR MAIN PAGE*/
      .scene {
-          /*position: relative;*/
-          padding: 2% 5%;
+          /*padding: 2% 5%;*/
           background-color: rgba(160, 202, 219, 1.0);
           height: 100vh;
      }
 
-     
-
-     
-
      .card {
           min-height: 90vh;
           max-height: 90vh;
-          max-width: 90vw;
+          max-width: 100vw;
           min-width: 80vw;
-          padding: 20% 5%;
+          padding: 25vh 5vw;
           background-color: rgba(255, 255, 255, 1.0);
           border: solid, .2em, grey;
           -webkit-box-shadow: 0em .5em .45em 0em rgba(0,0,0,0.75);
-          
      }
-
-     .card_active {
-          background-color: red;
-     }
-
-    /**/
-
-
-
-
-
-
-
-
 
      .cardtext {
      /*drop caps in here*/
-
      }
 
-   
+     
 
      /*.panel1 {
           background-color: rgba(160, 202, 219, 1.0);
@@ -245,59 +230,82 @@ Author: Kio McLoughlin
 
 
      /*BEGIN STYLING AROUND FLAG AND QUIZ DISPLAY SECTION*/
-     .object-fit_scale-down {
-          -o-object-fit: scale-down;
-          object-fit: scale-down;
+     .quizcard {
+          min-height: 100vh;
+          max-width: 100vw;
+          min-width: 80vw;
+          padding: 10vh 5vw;
+          background-color: rgba(255, 255, 255, 1.0);
+          -webkit-box-shadow: 0em .5em .45em 0em rgba(0,0,0,0.75);
+     }
+
+
+     .quiztitle {
+          margin: 0;
+          text-align: center;
+          
      }
 
      .flagdisplay {
-          position: absolute;
-          top: 5%;
-          max-width: 100%;
-          max-height:55vh;
-          -webkit-box-shadow: 0em .5em 2em 0em rgba(0,0,0,0.75);
-     }    
-
-     .quiztitle {
-          display: inline-block;
-          position: absolute;
-          top: 75%;
+          margin: 1em auto;
+          max-width: 90vw;
+          max-height:35vh;
+          -o-object-fit: scale-down;
+          object-fit: scale-down;
+          /*-webkit-box-shadow: 0em .5em 2em 0em rgba(0,0,0,0.75);*/
      }
-     
+
      .principles_hint {
-          position: absolute;
-          top: 5%;
-          left: 75%;
+          max-width: 90vw; 
      }
 
      .answer_explanation {
-          position: absolute;
-          top: 80%;
-     }  
+          
+     } 
+
+     .feedback {
+
+     } 
+
 
      .quiz_controls {
           position: absolute;
-          top: 90%;
+          bottom: 0;
+          width: 90vw;
      }
 
-     .quiz_controls {
-          /*margin-bottom: 30em;*/
+     .control{
+          display: block;
+          float: left;
+          margin: .5em .5em;
+          min-height: 2em;
+          min-width: 2em;
+          font-family: 'lato';
+          font-weight: 400;
+          font-size: 1.2em;
      }
+
+    /* .control2{
+          float: left;
+          max-height: 2em;
+          width: 90vw;
+          margin: .5em 0;
+          font-family: 'lato';
+          font-weight: 400;
+          font-size: 1.2em;
+     }*/
+
+     .control:hover {
+
+     }
+
      /*END FLAG AND QUIZ DISPLAY STYLING*/
-
-
-
-
-
-
-
-
-
 
 
 
      /*BEGIN SITE FOOTER AND NAV STYLING*/
      .site-footer {
+          display: none;
           position: fixed;
           background-color: lightblue;
           padding-left: 20%;
