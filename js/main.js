@@ -1,4 +1,7 @@
 
+
+
+
 // Responsive Navigation and slider - just getting it functional for now
 $(document).ready(function(){
     
@@ -248,6 +251,10 @@ function printFlag (){
 	var image_file = "../fewd29kio/flags-big/"+flag_to_print+".png"
 	document.getElementById('flag').src=image_file;
 	document.getElementById('result').innerText = countryflag;
+	$("#flag").addClass("animated flipInX").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",
+		function(){
+			$(this).removeClass("animated flipInX");
+		})
 };
 
 function getAnswerGood (){
