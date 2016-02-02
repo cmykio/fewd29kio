@@ -225,12 +225,16 @@ var guessnumber = 0;
 var score = 0;
 var flag_to_print = 0;
 var countryflag = 0;
-
+var animation;
+var endanimation = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
 
 window.onload = getCountry;
 document.getElementById('play').onclick = getCountry;
 document.getElementById('good').onclick = getAnswerGood;
 document.getElementById('bad').onclick = getAnswerBad;
+$('#cardflip').click(function() {
+	$(this).toggleClass('.flip-container:hover .flipper, .flip-container.hover .flipper');
+});
 
 function getCountry () {
 	flag_position_in_array = Math.floor(Math.random()*196)
@@ -251,9 +255,13 @@ function printFlag (){
 	var image_file = "../fewd29kio/flags-big/"+flag_to_print+".png"
 	document.getElementById('flag').src=image_file;
 	document.getElementById('result').innerText = countryflag;
-	$("#flag").addClass("animated flipInX").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",
+
+	var map="https://www.google.com/maps/embed/v1/search?key=AIzaSyA00nFCVfgsnGqEIEpmO-sjelodI3op1MI&q="+countryflag;
+	document.getElementById('map').src=map;
+	animation="animated flipInX";
+	$("#flag").addClass(animation).one(endanimation,
 		function(){
-			$(this).removeClass("animated flipInX");
+			$(this).removeClass(animation);
 		})
 };
 

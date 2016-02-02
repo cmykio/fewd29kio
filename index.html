@@ -212,13 +212,39 @@
 									<img id="flag" class="flagdisplay" alt= "flag">
 								</span>
 							</div>
+
+							<iframe id="map"
+							  width="450"
+							  height="250"
+							  frameborder="0" style="border:0"
+							  allowfullscreen>
+							</iframe>
+
+
+
+
 							
-							<div id="hint" class="principles_hint">
-								<p>THIS BIT SHOWS REMINDER OF PRINCIPLES. HIDDEN ON LOAD. TOGGLE ON AND OFF
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat.</p>
+							<div id="cardflip" class="flip-container">
+								<div class="flipper">
+									<div class="front">
+										<div class="feedback">
+											<span id="quizresponse"></span>
+											<span id="yourscore"></span>
+										</div>	
+									</div>
+									<div class="back">
+										<div id="hint" class="principles_hint">
+											<h1>The Principles</h1>
+											<ol>
+												<li><p>Keep it simple.</p></li>
+												<li><p>Meaningful symbolism.</p></li>
+												<li><p>Use 2-3 basic colours.</p></li>
+												<li><p>No lettering or seals.</p></li>
+												<li><p>Be distinctive or be related.</p></li>
+											</ol>
+										</div>
+									</div>
+								</div>
 							</div>
 
 							<div class="answer_explanation">
@@ -227,17 +253,13 @@
 								<span id="explanation"></span>
 							</div>
 
-							<div class="feedback">
-								<span id="quizresponse"></span>
-						
-								<span id="yourscore"></span>
-							</div>
+							
 							
 							<div class="quiz_controls">
 								<div class="row">
-									<button id="play" class="control hvr-grow">Play</button>
-									<button id="good" class="control">&#10004;</button>
-									<button id="bad" class="control">&#10008;</button>
+									<button id="play" class="control1 hvr-bounce-to-bottom">Play</button>
+									<button id="good" class="control2 hvr-bounce-to-bottom">&#10004;</button>
+									<button id="bad" class="control2 hvr-bounce-to-bottom">&#10008;</button>
 
 								</div>
 								<div class="row">
