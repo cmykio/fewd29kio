@@ -232,9 +232,10 @@ window.onload = getCountry;
 document.getElementById('play').onclick = getCountry;
 document.getElementById('good').onclick = getAnswerGood;
 document.getElementById('bad').onclick = getAnswerBad;
-$('#cardflip').click(function() {
-	$(this).toggleClass('.flip-container:hover .flipper, .flip-container.hover .flipper');
-});
+document.getElementById('mapinfo').onclick = printMap;
+// $('#cardflip').click(function() {
+// 	$(this).toggleClass('.cardflip-container:hover .cardflipper, .cardflip-container.hover .cardflipper');
+// });
 
 function getCountry () {
 	flag_position_in_array = Math.floor(Math.random()*196)
@@ -255,15 +256,25 @@ function printFlag (){
 	var image_file = "../fewd29kio/flags-big/"+flag_to_print+".png"
 	document.getElementById('flag').src=image_file;
 	document.getElementById('result').innerText = countryflag;
-
-	var map="https://www.google.com/maps/embed/v1/search?key=AIzaSyA00nFCVfgsnGqEIEpmO-sjelodI3op1MI&q="+countryflag;
-	document.getElementById('map').src=map;
 	animation="animated flipInX";
 	$("#flag").addClass(animation).one(endanimation,
 		function(){
 			$(this).removeClass(animation);
 		})
 };
+
+function printMap (){
+	var map="https://www.google.com/maps/embed/v1/search?key=AIzaSyA00nFCVfgsnGqEIEpmO-sjelodI3op1MI&q="+countryflag;
+	document.getElementById('map').src=map;
+	animation="animated flipInX";
+	$("#map").addClass(animation).one(endanimation,
+		function(){
+			$(this).removeClass(animation);
+		})
+};
+
+
+
 
 function getAnswerGood (){
 	console.log('getAnswerGood is now firing');
@@ -743,7 +754,7 @@ var country_names = [
 		"Belarus",
 		"Belize",
 		"Canada",
-		"the Democratic Republic of the Congo",
+		"Congo",
 		"Central African Republic",
 		"Congo",
 		"Switzerland",
@@ -772,7 +783,7 @@ var country_names = [
 		"Ethiopia",
 		"Finland",
 		"Fiji",
-		"the Federated States of Micronesia",
+		"Micronesia",
 		"France",
 		"Gabon",
 		"United Kingdom",
@@ -806,13 +817,13 @@ var country_names = [
 		"Cambodia",
 		"Kiribati",
 		"Comoros",
-		"Saint Kitts and Nevis",
+		"Saint Kitts & Nevis",
 		"North Korea",
 		"South Korea",
 		"Kosovo",
 		"Kuwait",
 		"Kazakhstan",
-		"the Democratic Republic of Lao",
+		"Laos",
 		"Lebanon",
 		"Saint Lucia",
 		"Liechtenstein",
@@ -863,7 +874,7 @@ var country_names = [
 		"Qatar",
 		"Romania",
 		"Serbia",
-		"the Russian Federation",
+		"Russia",
 		"Rwanda",
 		"Saudi Arabia",
 		"Solomon Islands",
@@ -878,7 +889,7 @@ var country_names = [
 		"Senegal",
 		"Somalia",
 		"Suriname",
-		"Sao Tome and Principe",
+		"Sao Tome & Principe",
 		"El Salvador",
 		"Syria",
 		"Swaziland",
@@ -900,8 +911,8 @@ var country_names = [
 		"United States",
 		"Uruguay",
 		"Uzbekistan",
-		"the Holy See (Vatican City State)",
-		"Saint Vincent and the Grenadines",
+		"Holy See (Vatican City State)",
+		"Saint Vincent & the Grenadines",
 		"Venezuela",
 		"Viet Nam",
 		"Vanuatu",

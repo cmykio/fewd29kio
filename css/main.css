@@ -237,9 +237,21 @@ Author: Kio McLoughlin
 
 
      .quiztitle {
+          position: relative;
           margin: 0;
-          text-align: center;
-          
+          text-align: center; 
+     }
+
+     .quiztitle h2 {
+          /*display: inline-block;*/
+     }
+
+     .where_button {
+          position: absolute;
+          top: .1em;
+          right:.1em;
+          /*display: inline-block;*/
+          font-style: italic;
      }
 
      .flagdisplay {
@@ -254,102 +266,12 @@ Author: Kio McLoughlin
      /*do not change this - flag is now displaying correctly*/
      img {
           display: block;
-          /*-webkit-animation-duration:;*/
-          /*webkit-animation-delay:.5s;*/
-          /*-webkit-animation-iteration-count: infinite;*/
-     }
-
-     /* entire container, keeps perspective */
-     .flagflip-container {
-          perspective: 1000;
-     }
-     /* flip the pane when hovered */
-     .flagflip-container:hover .flagflipper, .flagflip-container.hover .flagflipper {
-          transform: rotateY(180deg);
-     }
-     
-     .flagflip-container, .flagfront, .flagback {
-          width: 90vw;
-          height: 30vh;
-     }
-     
-     /* flip speed goes here */
-     .flagflipper {
-          transition: 0.8s;
-          transform-style: preserve-3d;
-          position: relative;
-     }
-     
-     /* hide back of pane during swap */
-     .flagfront, .flagback {
-          backface-visibility: hidden;
-          position: absolute;
-     }
-     
-     /* front pane, placed above back */
-     .flagfront {
-          z-index: 2;
-          /* for firefox 31 */
-          transform: rotateY(0deg);
-     }
-     
-     /* back, initially hidden pane */
-     .flagback {
-          transform: rotateY(180deg);
      }
 
 
-
-
-
-
-
-     /* entire container, keeps perspective */
-     .flip-container {
-          perspective: 1000;
+     iframe {
+          -webkit-animation-delay: 1s;
      }
-     /* flip the pane when hovered */
-     .flip-container:hover .flipper, .flip-container.hover .flipper {
-          transform: rotateY(180deg);
-     }
-     
-     .flip-container, .front, .back {
-          width: 90vw;
-          height: 30vh;
-     }
-     
-     /* flip speed goes here */
-     .flipper {
-          transition: 0.8s;
-          transform-style: preserve-3d;
-          position: relative;
-     }
-     
-     /* hide back of pane during swap */
-     .front, .back {
-          backface-visibility: hidden;
-          position: absolute;
-          top: 0;
-          left: 0;
-     }
-     
-     /* front pane, placed above back */
-     .front {
-          z-index: 2;
-          /* for firefox 31 */
-          transform: rotateY(0deg);
-     }
-     
-     /* back, initially hidden pane */
-     .back {
-          transform: rotateY(180deg);
-     }
-     
-     
-     
-
-
-
 
 
 
@@ -358,6 +280,7 @@ Author: Kio McLoughlin
      }*/
 
      .answer_explanation {
+          margin-top: 0vh;
           
      } 
 
