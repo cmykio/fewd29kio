@@ -217,6 +217,38 @@ controller.addScene(scene9);
 
 
 
+
+// THIS IS THE TOGGLE CLASS WORKING
+$('#classchangetester').on('click', function(){
+	$('#map').toggleClass('on');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var country_code = 0;
 var flag_position_in_array = 0;
 var guess = 0;
@@ -225,18 +257,45 @@ var guessnumber = 0;
 var score = 0;
 var flag_to_print = 0;
 var countryflag = 0;
+var image_file = 0;
+var playlabel = 'Play';
 var animation;
 var endanimation = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
 
-window.onload = getCountry;
+window.onload = setQuiz;
 document.getElementById('play').onclick = getCountry;
+document.getElementById('hint').onclick = getHints;
+
 document.getElementById('good').onclick = getAnswerGood;
 document.getElementById('bad').onclick = getAnswerBad;
 document.getElementById('mapinfo').onclick = printMap;
-// $('#cardflip').click(function() {
-// 	$(this).toggleClass('.cardflip-container:hover .cardflipper, .cardflip-container.hover .cardflipper');
-// });
 
+
+// Runs once at page load to set up the quiz area and show first flag
+function setQuiz () {
+	flag_position_in_array = Math.floor(Math.random()*196)
+	console.log(flag_position_in_array);
+	if (flag_position_in_array != 'undefined') {
+		flag_to_print = flags_list[flag_position_in_array];
+		countryflag = country_names[flag_position_in_array];
+		console.log(flag_to_print);
+		console.log(countryflag);
+		image_file = "../fewd29kio/flags-big/"+flag_to_print+".png"
+		document.getElementById('flag').src=image_file;
+		document.getElementById('result').innerText = countryflag;
+		document.getElementById('playdisplay').innerText = playlabel;
+		animation="animated flipInX";
+		$("#flag").addClass(animation).one(endanimation,
+			function(){
+				$(this).removeClass(animation);
+			})
+	} else {
+		setQuiz();
+	}
+};
+
+// Returns a random number which is used to call an index in an array of country codes
+// this will determine what flag and flag labels display
 function getCountry () {
 	flag_position_in_array = Math.floor(Math.random()*196)
 	console.log(flag_position_in_array);
@@ -251,19 +310,26 @@ function getCountry () {
 	}
 };
 
-function printFlag (){
+// Returns a flag image from directory
+// Also relabels the 'Play' button to 'Hints', so the same button can be used to call another
+// function to display hints re flag design principles
+function printFlag () {
 	console.log('printFlag is firing');
-	var image_file = "../fewd29kio/flags-big/"+flag_to_print+".png"
+	image_file = "../fewd29kio/flags-big/"+flag_to_print+".png"
+	playlabel = 'Play Again';
 	document.getElementById('flag').src=image_file;
 	document.getElementById('result').innerText = countryflag;
+	document.getElementById('playdisplay').innerText = playlabel;
 	animation="animated flipInX";
 	$("#flag").addClass(animation).one(endanimation,
 		function(){
 			$(this).removeClass(animation);
 		})
+	$('#hint').toggleClass('on');
+	$('#play').toggleClass('disabled');
 };
 
-function printMap (){
+function printMap () {
 	var map="https://www.google.com/maps/embed/v1/search?key=AIzaSyA00nFCVfgsnGqEIEpmO-sjelodI3op1MI&q="+countryflag;
 	document.getElementById('map').src=map;
 	animation="animated flipInX";
@@ -273,8 +339,11 @@ function printMap (){
 		})
 };
 
-
-
+function getHints () {
+	console.log('getHints firing');
+	$('#hintdisplay').toggleClass('on');
+	
+};
 
 function getAnswerGood (){
 	console.log('getAnswerGood is now firing');
@@ -291,6 +360,8 @@ function getAnswerGood (){
 		document.getElementById('quizresponse').innerText = "No, sorry, it's not great..."
 	}
 	updateScore();
+	$('#play').toggleClass('disabled');
+	$('#hint').toggleClass('on');
 };
 
 function getAnswerBad (){
@@ -309,6 +380,8 @@ function getAnswerBad (){
 		document.getElementById('quizresponse').innerText = 'No, sorry you are wrong.'
 	}
 	updateScore();
+	$('#play').toggleClass('disabled');
+	$('#hint').toggleClass('on');
 };
 
 function updateScore(){
@@ -316,7 +389,7 @@ function updateScore(){
 	console.log('the score is ' + score);
 	console.log('the total number of guesses is ' + guessnumber);
 	document.getElementById('yourscore').innerText = 'Your score is ' + score + ' out of a total of ' + guessnumber + ' guesses.'
-}
+};
 
 var flags_list = [
 		"AD", 
