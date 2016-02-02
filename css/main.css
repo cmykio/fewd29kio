@@ -259,7 +259,52 @@ Author: Kio McLoughlin
           /*-webkit-animation-iteration-count: infinite;*/
      }
 
-          /* entire container, keeps perspective */
+     /* entire container, keeps perspective */
+     .flagflip-container {
+          perspective: 1000;
+     }
+     /* flip the pane when hovered */
+     .flagflip-container:hover .flagflipper, .flagflip-container.hover .flagflipper {
+          transform: rotateY(180deg);
+     }
+     
+     .flagflip-container, .flagfront, .flagback {
+          width: 90vw;
+          height: 30vh;
+     }
+     
+     /* flip speed goes here */
+     .flagflipper {
+          transition: 0.8s;
+          transform-style: preserve-3d;
+          position: relative;
+     }
+     
+     /* hide back of pane during swap */
+     .flagfront, .flagback {
+          backface-visibility: hidden;
+          position: absolute;
+     }
+     
+     /* front pane, placed above back */
+     .flagfront {
+          z-index: 2;
+          /* for firefox 31 */
+          transform: rotateY(0deg);
+     }
+     
+     /* back, initially hidden pane */
+     .flagback {
+          transform: rotateY(180deg);
+     }
+
+
+
+
+
+
+
+     /* entire container, keeps perspective */
      .flip-container {
           perspective: 1000;
      }

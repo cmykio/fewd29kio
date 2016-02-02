@@ -207,24 +207,27 @@
 								</h2>
 							</div>
 
-							<div class ="flagposition">
-								<span class="">
-									<img id="flag" class="flagdisplay" alt= "flag">
-								</span>
+
+							<div id="flagflip" class="flagflip-container">
+								<div class="flagflipper">
+									<div class="flagfront">
+										<div class ="flagposition">
+											<span class="">
+												<img id="flag" class="flagdisplay" alt= "flag">
+											</span>
+										</div>
+									</div>
+								<div class="flagback">
+									<iframe id="map"
+									  width= 100%
+									  height= 100%
+									  frameborder="0" style="border:0"
+									  allowfullscreen>
+									</iframe>
+								</div>
 							</div>
-
-							<iframe id="map"
-							  width="450"
-							  height="250"
-							  frameborder="0" style="border:0"
-							  allowfullscreen>
-							</iframe>
-
-
-
-
 							
-							<div id="cardflip" class="flip-container">
+							<div id="cardflip" class="cardflip-container">
 								<div class="flipper">
 									<div class="front">
 										<div class="feedback">
@@ -247,14 +250,13 @@
 								</div>
 							</div>
 
+
+
 							<div class="answer_explanation">
-								<p>THIS SECTION GIVES SOME WAFFLE ABOUT WHETHER THE FLAG IS GOOD OR BAD PER PRINCIPLES.
-								T WILL DISPLAY IN THIS SPAN</p>
+								<p>THIS SECTION GIVES SOME WAFFLE ABOUT WHETHER THE FLAG IS GOOD OR BAD PER PRINCIPLES.</p>
 								<span id="explanation"></span>
 							</div>
 
-							
-							
 							<div class="quiz_controls">
 								<div class="row">
 									<button id="play" class="control1 hvr-bounce-to-bottom">Play</button>
