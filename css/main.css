@@ -9,6 +9,68 @@ Author: Kio McLoughlin
 /*******************************************/
 
 /* add a list of colours used in the project */
+SCENE 1
+Text: #FFFFFF white
+Paper: #F44336 red
+Background | Dropcap: #FF9800 orange
+Shadow: #727272 grey
+
+SCENE 2
+Text: #FFFFFF white
+Paper: #009688 teal 
+Background | Dropcap: #CDDC39 lime
+Shadow: #727272 grey
+
+SCENE 3
+Text: #FFFFFF white
+Paper: #607D8B blue grey
+Background | Dropcap: #FF4081 pink
+Shadow: #727272 grey
+
+SCENE 4
+Text: #212121 black
+Paper: #FFC107 yellow
+Background | Dropcap: #536DFE violet
+Shadow: #727272 grey
+
+SCENE 5
+Text: #FFFFFF white
+Paper: #4CAF50 green
+Background | Dropcap: #7C4DFF purple
+Shadow: #727272 grey
+
+SCENE 6
+Text: #FFFFFF white
+Paper: #FF5722 orange
+Background | Dropcap: #536DFE lilac
+Shadow: #727272 grey
+
+SCENE 7
+Text: #FFFFFF white
+Paper: #673AB7
+Background | Dropcap: #FFC107
+Shadow: #727272 grey
+
+SCENE 8
+Text: #212121 black
+Paper: #8BC34A light green
+Background | Dropcap: #448AFF blue
+Shadow: #727272 grey
+
+SCENE 9
+Text: #FFFFFF white
+Paper: #2196F3 blue
+Background | Dropcap: #FF5722 orange
+Shadow: #727272 grey
+
+SCENE 10
+Text: 
+Paper:
+Background | Dropcap: #F5F5F5 white
+Shadow: #727272 grey
+
+
+
 
 /******************************************
 /* SENSIBLE DEFAULTS                   
@@ -152,72 +214,128 @@ Author: Kio McLoughlin
 
      /*BEGIN SCENE STORY PANELS STYLING FOR MAIN PAGE*/
      .scene {
-          /*padding: 2% 5%;*/
-          background-color: rgba(160, 202, 219, 1.0);
           height: 100vh;
      }
 
+     .scenecolor1 {
+          background-color: #FF9800;
+     }
+
+     .scenecolor2 {
+          background-color: #CDDC39;
+     }
+
+     .scenecolor3 {
+          background-color: #FF4081;
+     }
+
+     .scenecolor4 {
+          background-color: #536DFE;
+     }
+
+     .scenecolor5 {
+          background-color: #7C4DFF;
+     }
+
+     .scenecolor6 {
+          background-color: #536DFE;
+     }
+
+     .scenecolor7 {
+          background-color: #FFC107;
+     }
+
+     .scenecolor8 {
+          background-color: #448AFF;
+     }
+
+     .scenecolor9 {
+          background-color: #FF5722;
+     }
+
+     .scenecolor10 {
+          background-color: #3F51B5;
+     }
+
+
+
      .card {
-          min-height: 90vh;
-          max-height: 90vh;
+          min-height: 75vh;
+          max-height: 75vh;
           max-width: 100vw;
           min-width: 80vw;
           padding: 25vh 5vw;
-          background-color: rgba(255, 255, 255, 1.0);
-          border: solid, .2em, grey;
-          -webkit-box-shadow: 0em .5em .45em 0em rgba(0,0,0,0.75);
+          border: solid, .2em, #727272;
+     }     
+
+     .cardcolor1 {
+          color: #FFFFFF;
+          background-color: #F44336;
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
      }
+
+     .cardcolor2 {
+          color: #FFFFFF;
+          background-color: #009688;
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
+     }
+
+     .cardcolor3 {
+          color: #FFFFFF;
+          background-color: #607D8B;
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
+     }
+
+     .cardcolor4 {
+          color: #FFFFFF;
+          background-color: #FFC107;
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
+     }
+
+     .cardcolor5 {
+          color: #FFFFFF;
+          background-color: #4CAF50;
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
+     }
+
+     .cardcolor6 {
+          color: #FFFFFF;
+          background-color: #FF5722;
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
+     }
+
+     .cardcolor7 {
+          color: #FFFFFF;
+          background-color: #673AB7;
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
+     }
+
+     .cardcolor8 {
+          color: #FFFFFF;
+          background-color: #8BC34A;
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
+     }
+
+     .cardcolor9 {
+          color: #FFFFFF;
+          background-color: #2196F3;
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
+     }
+
+     .cardcolor10 {
+          color: #FFFFFF;
+          background-color: #4CAF50;
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
+     }
+
+
+
 
      .cardtext {
      /*drop caps in here*/
      }
 
-     
-
-     /*.panel1 {
-          background-color: rgba(160, 202, 219, 1.0);
-          height: 100%;
-          margin: 5% 15%;
-     }
-
-       .card {
-          margin: 5% 20%;
-          background-color: rgba(255, 255, 255, 1.0);
-     }
-
-      .panel2 {
-          background-color: rgba(121, 187, 181, 1.0);
-     }
-
-      .panel3 {
-          background-color: yellow;
-     }
-
-      .panel4 {
-          background-color: lightblue;
-     }
-
-      .panel5 {
-          background-color: pink;
-     }
-
-      .panel6 {
-          background-color: yellow;
-     }
-
-      .panel7 {
-          background-color: lightblue;
-     }
-
-      .panel8 {
-          background-color: pink;
-     }
-
-      .panel9 {
-          background-color: yellow;
-     }
-
-     /*END SCENE STORY PANELS STYLING FOR MAIN PAGE*/
+     /*END SCENE STORY PANELS STYLING FOR MAIN PAGE
 
 
      /*BEGIN STYLING AROUND FLAG AND QUIZ DISPLAY SECTION*/
@@ -226,8 +344,7 @@ Author: Kio McLoughlin
           max-width: 100vw;
           min-width: 80vw;
           padding: 5vh 5vw;
-          background-color: rgba(255, 255, 255, 1.0);
-          -webkit-box-shadow: 0em .5em .45em 0em rgba(0,0,0,0.75);
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
      }
 
      .image_panel {
@@ -338,6 +455,7 @@ Author: Kio McLoughlin
           font-family: 'lato';
           font-weight: 400;
           font-size: 1em;
+          background-color: #4CAF50;
      }
 
      .quiz_controls {

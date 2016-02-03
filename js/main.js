@@ -79,6 +79,7 @@ var scene1 = new ScrollMagic.Scene({
   reverse: true,
 })
 .setClassToggle('#navslide1', 'active')
+// .setClassToggle('#pin1', 'cardcolor1')
 .setPin(pin1) 
 .addIndicators()
 controller.addScene(scene1);
@@ -93,6 +94,7 @@ var scene2 = new ScrollMagic.Scene({
 })
 .setClassToggle("#navslide1", 'arrow')
 .setClassToggle('#navslide2', 'active')
+// .setClassToggle('#pin2', 'cardcolor2')
 .setPin(pin2)
 .addIndicators()
 controller.addScene(scene2);
