@@ -264,7 +264,7 @@ var endanimation = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimation
 
 window.onload = setQuiz;
 document.getElementById('play').onclick = getCountry;
-document.getElementById('hint').onclick = getHints;
+document.getElementById('hintbutton').onclick = getHints;
 
 document.getElementById('good').onclick = getAnswerGood;
 document.getElementById('bad').onclick = getAnswerBad;
@@ -325,8 +325,9 @@ function printFlag () {
 		function(){
 			$(this).removeClass(animation);
 		})
-	$('#hint').toggleClass('on');
-	$('#play').toggleClass('disabled');
+	$('#answer_buttons').addClass('on');
+	$('#play_panel').addClass('off');
+	$('#hintbutton').removeClass('off');
 };
 
 function printMap () {
@@ -341,8 +342,7 @@ function printMap () {
 
 function getHints () {
 	console.log('getHints firing');
-	$('#hintdisplay').toggleClass('on');
-	
+	$('#hintpanel').toggleClass('on');	
 };
 
 function getAnswerGood (){
@@ -360,8 +360,9 @@ function getAnswerGood (){
 		document.getElementById('quizresponse').innerText = "No, sorry, it's not great..."
 	}
 	updateScore();
-	$('#play').toggleClass('disabled');
-	$('#hint').toggleClass('on');
+	$('#hintpanel').removeClass('on');
+	$('#hintbutton').addClass('off');
+	$('#play_panel').removeClass('off');
 };
 
 function getAnswerBad (){
@@ -380,8 +381,9 @@ function getAnswerBad (){
 		document.getElementById('quizresponse').innerText = 'No, sorry you are wrong.'
 	}
 	updateScore();
-	$('#play').toggleClass('disabled');
-	$('#hint').toggleClass('on');
+	$('#hintpanel').removeClass('on');
+	$('#hintbutton').addClass('off');
+	$('#play_panel').removeClass('off');
 };
 
 function updateScore(){

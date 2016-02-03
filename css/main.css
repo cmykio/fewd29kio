@@ -273,7 +273,7 @@ Author: Kio McLoughlin
           display: none;
      }
 
-     .hintcontrol {
+     .hintpanel {
           display: none;
      }
 
@@ -281,11 +281,23 @@ Author: Kio McLoughlin
           display: none;
      }
 
+     .answer_controls {
+          display: none;
+     }
 
 
 
 
-
+     .playcontrol {
+          display: block;
+          float: left;
+          margin: .5em 1%;
+          /*padding: 5% 20%;*/
+          width: 88vw;
+          font-family: 'lato';
+          font-weight: 400;
+          font-size: 1.2em;
+     }
 
 
 
@@ -300,20 +312,14 @@ Author: Kio McLoughlin
 
 
 /*THIS IS THE TOGGLE CLASS WORKING*/
-     .on {
-          display: block;
-          -webkit-animation-delay: 1s;
-     }
 
-
-     .off {
-          display: none;
-     }
 
      .disabled {
           cursor: default;
           pointer-events: none;
-          background-color: red;
+          background-color: grey;
+          color: grey;
+
      }
 
 
@@ -365,21 +371,11 @@ Author: Kio McLoughlin
           width: 90vw;
      }
 
-     .playcontrol {
-          display: block;
-          float: left;
-          margin: .5em 1%;
-          /*padding: 5% 20%;*/
-          width: 88vw;
-          font-family: 'lato';
-          font-weight: 400;
-          font-size: 1.2em;
-     }
+  
 
      .hintcontrol {
           float: left;
           margin: .5em 1%;
-          /*padding: 5% 20%;*/
           width: 88vw;
           font-family: 'lato';
           font-weight: 400;
@@ -395,6 +391,16 @@ Author: Kio McLoughlin
           font-family: 'lato';
           font-weight: 400;
           font-size: 1.2em;
+     }
+
+     .on {
+          display: block;
+          -webkit-animation-delay: 1s;
+     }
+
+
+     .off {
+          display: none;
      }
 
      /*END FLAG AND QUIZ DISPLAY STYLING*/
