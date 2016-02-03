@@ -268,7 +268,7 @@ document.getElementById('hintbutton').onclick = getHints;
 document.getElementById('good').onclick = getAnswerGood;
 document.getElementById('bad').onclick = getAnswerBad;
 document.getElementById('mapinfo').onclick = printMap;
-document.getElementById('backtoflag').onclick = showFlag;
+document.getElementById('flagbutton').onclick = showFlag;
 
 // Runs once at page load to set up the quiz area and show first flag
 function setQuiz () {
@@ -324,19 +324,33 @@ function printFlag () {
 		function(){
 			$(this).removeClass(animation);
 		})
-	$('#answer_buttons').addClass('on');
-	$('#play_panel').addClass('off');
+	$('#answer_buttons').addClass('visible');
+	// $('#play_panel').addClass('off');
+	$('#play').addClass('off');
 	$('#hintbutton').removeClass('off');
 	$('#good').removeClass('hidden');
 	$('#bad').removeClass('hidden');
+	$('#mapinfo').removeClass('hidden');
+	$('#mapinfo').addClass('visible');
 };
 
 function printMap () {
 	var map="https://www.google.com/maps/embed/v1/search?key=AIzaSyA00nFCVfgsnGqEIEpmO-sjelodI3op1MI&q="+countryflag;
 	document.getElementById('map').src=map;
 	$('#flag').addClass('off');
+	$('#map').removeClass('off');
 	$('#map').addClass('on');
-	$('#backtoflag').addClass('on');
+	$('#hintpanel').removeClass('on');
+	$('#flagbutton').removeClass('off');
+	$('#flagbutton').addClass('on');
+	$('#answer_buttons').removeClass('visible');
+	$('#hintbutton').removeClass('on');
+	$('#hintbutton').addClass('off');
+	$('#play').removeClass('on');
+	$('#play').addClass('off');
+	// $('#hintbutton').addClass('off');
+	// $('#good').addClass('hidden');
+	// $('#bad').addClass('hidden');
 	animation="animated flipInX";
 	$("#map").addClass(animation).one(endanimation,
 		function(){
@@ -347,12 +361,26 @@ function printMap () {
 function showFlag () {
 	$('#flag').removeClass('off');
 	$('#map').removeClass('on');
-	$('#backtoflag').removeClass('on');
+	$('#flagbutton').removeClass('on');
+	$('#hintpanel').removeClass('on');
+	$('#answer_buttons').addClass('visible');
+	// $('#good').removeClass('hidden');
+	// $('#bad').removeClass('hidden');
+	// $('#hintbutton').removeClass('off');
 }
 
 function getHints () {
 	console.log('getHints firing');
-	$('#hintpanel').toggleClass('on');	
+	$('#hintpanel').addClass('on');
+	$('#flag').addClass('off');
+	$('#map').addClass('off');
+	$('#hintbutton').addClass('off');
+	$('#flagbutton').removeClass('off');
+	$('#flagbutton').addClass('on');
+	// $('#hintbutton').addClass('off');
+	// $('#good').addClass('hidden');
+	// $('#bad').addClass('hidden');
+	$('#answer_buttons').removeClass('visible');
 };
 
 function getAnswerGood (){
@@ -372,9 +400,13 @@ function getAnswerGood (){
 	updateScore();
 	$('#hintpanel').removeClass('on');
 	$('#hintbutton').addClass('off');
-	$('#play_panel').removeClass('off');
+	$('#play').removeClass('off');
+	$('#play').addClass('on');
 	$('#guessfeedback').addClass('on');
 	$('#bad').addClass('hidden');
+	$('#mapinfo').removeClass('visible');
+	$('#mapinfo').addClass('hidden');
+	showFlag();
 };
 
 function getAnswerBad (){
@@ -395,9 +427,13 @@ function getAnswerBad (){
 	updateScore();
 	$('#hintpanel').removeClass('on');
 	$('#hintbutton').addClass('off');
-	$('#play_panel').removeClass('off');
+	$('#play').removeClass('off');
+	$('#play').addClass('on');
 	$('#guessfeedback').addClass('on');
 	$('#good').addClass('hidden');
+	$('#mapinfo').removeClass('visible');
+	$('#mapinfo').addClass('hidden');
+	showFlag();
 };
 
 function updateScore(){
@@ -877,7 +913,7 @@ var country_names = [
 		"Gabon",
 		"United Kingdom",
 		"Grenada",
-		"Georgia",
+		"Georgia Republic",
 		"Ghana",
 		"Gambia",
 		"Guinea",
@@ -906,7 +942,7 @@ var country_names = [
 		"Cambodia",
 		"Kiribati",
 		"Comoros",
-		"Saint Kitts & Nevis",
+		"Saint Kitts and Nevis",
 		"North Korea",
 		"South Korea",
 		"Kosovo",
