@@ -16,7 +16,7 @@ Author: Kio McLoughlin
 
 * {
      box-sizing: border-box;
-     outline: 1px dotted red;
+     /*outline: 1px dotted red;*/
 
 }
 
@@ -49,22 +49,17 @@ Author: Kio McLoughlin
      }
 
      h1 {
-          font-family: 'Playfair Display';
-          font-style: italic;
-          font-weight: 400;
-          font-size: 1.5em;
+          font-weight: 300;
+          font-size: 2em;
      }
 
      h2 {
-          font-family: 'Playfair Display';
-          font-style: italic;
           font-weight: 400;
           font-size: 1.8em;
           margin: 0;
      }
 
      p {
-          font-family: 'lato';
           font-weight: 400;
           font-size: .8em;
      }
@@ -275,6 +270,7 @@ Author: Kio McLoughlin
 
      .flagdisplay {
           margin: 1em auto;
+          border: solid 1px grey;
           max-width: 90vw;
           max-height:35vh;
           -o-object-fit: scale-down;
