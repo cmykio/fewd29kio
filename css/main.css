@@ -279,7 +279,7 @@ Author: Kio McLoughlin
           max-height:35vh;
           -o-object-fit: scale-down;
           object-fit: scale-down;
-          -webkit-box-shadow: 0em .5em 2em 0em rgba(0,0,0,0.75);
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
      }
 
 
@@ -292,7 +292,7 @@ Author: Kio McLoughlin
      iframe {
           position: absolute;
           display: none;
-          -webkit-box-shadow: 0em .5em 2em 0em rgba(0,0,0,0.75);
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
      }
 
 
