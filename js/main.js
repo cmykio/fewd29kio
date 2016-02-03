@@ -327,6 +327,8 @@ function printFlag () {
 	$('#answer_buttons').addClass('on');
 	$('#play_panel').addClass('off');
 	$('#hintbutton').removeClass('off');
+	$('#good').removeClass('hidden');
+	$('#bad').removeClass('hidden');
 };
 
 function printMap () {
@@ -371,6 +373,8 @@ function getAnswerGood (){
 	$('#hintpanel').removeClass('on');
 	$('#hintbutton').addClass('off');
 	$('#play_panel').removeClass('off');
+	$('#guessfeedback').addClass('on');
+	$('#bad').addClass('hidden');
 };
 
 function getAnswerBad (){
@@ -392,6 +396,8 @@ function getAnswerBad (){
 	$('#hintpanel').removeClass('on');
 	$('#hintbutton').addClass('off');
 	$('#play_panel').removeClass('off');
+	$('#guessfeedback').addClass('on');
+	$('#good').addClass('hidden');
 };
 
 function updateScore(){
