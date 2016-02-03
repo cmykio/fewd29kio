@@ -4,7 +4,8 @@
 
 // Responsive Navigation and slider - just getting it functional for now
 $(document).ready(function(){
-    
+
+     
 	$('.nav-icon').on('click', function(){
 		$('.site-nav ul').slideToggle();
 		// this slideToggle is part of the effect library in jQuery library - has lots of things you can do
@@ -218,15 +219,6 @@ controller.addScene(scene9);
 
 
 
-// THIS IS THE TOGGLE CLASS WORKING
-$('#classchangetester').on('click', function(){
-	$('#map').toggleClass('on');
-});
-
-
-
-
-
 
 
 
@@ -332,6 +324,7 @@ function printFlag () {
 	$('#bad').removeClass('hidden');
 	$('#mapinfo').removeClass('hidden');
 	$('#mapinfo').addClass('visible');
+	$('#specificfeedback').removeClass('on');
 };
 
 function printMap () {
@@ -406,6 +399,7 @@ function getAnswerGood (){
 	$('#bad').addClass('hidden');
 	$('#mapinfo').removeClass('visible');
 	$('#mapinfo').addClass('hidden');
+	$('#specificfeedback').addClass('on');
 	showFlag();
 };
 
@@ -433,6 +427,7 @@ function getAnswerBad (){
 	$('#good').addClass('hidden');
 	$('#mapinfo').removeClass('visible');
 	$('#mapinfo').addClass('hidden');
+	$('#specificfeedback').addClass('on');
 	showFlag();
 };
 
@@ -440,7 +435,19 @@ function updateScore(){
 	guessnumber = guessnumber + 1;
 	console.log('the score is ' + score);
 	console.log('the total number of guesses is ' + guessnumber);
-	document.getElementById('yourscore').innerText = 'Your score is ' + score + ' out of a total of ' + guessnumber + ' guesses.'
+	document.getElementById('yourscore').innerText = score
+	document.getElementById('totalscore').innerText = '/' + guessnumber
+	// need to break the animations here into two subfunctions
+	animation = "animated fadeInDownBig";
+	$("#yourscore").addClass(animation).one(endanimation,
+		function(){
+			$(this).removeClass(animation);
+		})
+	animation = "animated fadeInUpBig";
+	$("#totalscore").addClass(animation).one(endanimation,
+		function(){
+			$(this).removeClass(animation);
+		})
 };
 
 var flags_list = [
