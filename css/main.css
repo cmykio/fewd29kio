@@ -273,6 +273,10 @@ Author: Kio McLoughlin
           display: none;
      }
 
+     .showflag {
+          display: none;
+     }
+
      .hintpanel {
           display: none;
      }

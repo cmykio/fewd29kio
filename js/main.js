@@ -265,11 +265,10 @@ var endanimation = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimation
 window.onload = setQuiz;
 document.getElementById('play').onclick = getCountry;
 document.getElementById('hintbutton').onclick = getHints;
-
 document.getElementById('good').onclick = getAnswerGood;
 document.getElementById('bad').onclick = getAnswerBad;
 document.getElementById('mapinfo').onclick = printMap;
-
+document.getElementById('backtoflag').onclick = showFlag;
 
 // Runs once at page load to set up the quiz area and show first flag
 function setQuiz () {
@@ -333,12 +332,21 @@ function printFlag () {
 function printMap () {
 	var map="https://www.google.com/maps/embed/v1/search?key=AIzaSyA00nFCVfgsnGqEIEpmO-sjelodI3op1MI&q="+countryflag;
 	document.getElementById('map').src=map;
+	$('#flag').addClass('off');
+	$('#map').addClass('on');
+	$('#backtoflag').addClass('on');
 	animation="animated flipInX";
 	$("#map").addClass(animation).one(endanimation,
 		function(){
 			$(this).removeClass(animation);
 		})
 };
+
+function showFlag () {
+	$('#flag').removeClass('off');
+	$('#map').removeClass('on');
+	$('#backtoflag').removeClass('on');
+}
 
 function getHints () {
 	console.log('getHints firing');
