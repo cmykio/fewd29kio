@@ -94,6 +94,7 @@ var scene2 = new ScrollMagic.Scene({
 })
 .setClassToggle("#navslide1", 'arrow')
 .setClassToggle('#navslide2', 'active')
+// .setClassToggle('#arrowdown', 'hidden');
 // .setClassToggle('#pin2', 'cardcolor2')
 .setPin(pin2)
 .addIndicators()

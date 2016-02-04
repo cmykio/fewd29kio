@@ -13,7 +13,7 @@
 
 		
 		<link rel="stylesheet" href="css/animate.css">
-		<link rel="stylesheet" href="css/hover.css" >
+		<!-- <link rel="stylesheet" href="css/hover.css" > -->
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/main.css">
 		
@@ -84,12 +84,15 @@
 					<!--  -->
 					<!--  -->
 					<div id="trigger1" class="scene scenecolor1">
-						<div id="pin1" class="card cardcolor1">
-							<div class="cardtext">
+						<div id="pin1" class="card cardcolor1 animated fadeInDown">
+							<div class="cardtext animated fadeInUp">
 							<blockquote>
 								<h1>This block quote from Roman Mars</h1>
 							</blockquote>
 								<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo	consequat.</p>
+							</div>
+							<div id="arrowdown" class="scrollarrow animated fadeInUp">
+								<img src="icons/arrow-down-bold-circle-outline.png" alt="downward arrow">
 							</div>
 						</div>
 					</div>
@@ -236,13 +239,13 @@
 							<div id="bottom_panel" class="quiz_controls_panel">
 							<div class="quiz_panel">
 								<div id="answer_buttons" class="answer_controls">
-									<button id="good" class="control2 hvr-bounce-to-bottom">Good Design &#10004;</button>
-									<button id="bad" class="control2 hvr-bounce-to-bottom">Could be Better &#10008;</button>
+									<button id="good" class="button guess">Good Design &#10004;</button>
+									<button id="bad" class="button guess">Could be Better &#10008;</button>
 								</div>
-								<div id='play_panel' class="">
-									<button id="play" class="playcontrol hvr-bounce-to-bottom"><span id="playdisplay"></span></button>
-									<button id="hintbutton" class="hintcontrol hvr-bounce-to-bottom off">See Principles Reminder</button>
-									<button id="flagbutton" class="showflag off">Show Flag</button>	
+								<div id='play_panel' class="play_controls">
+									<button id="play" class="button playcontrol"><span id="playdisplay"></span></button>
+									<button id="hintbutton" class="button hintcontrol off">See Principles Reminder</button>
+									<button id="flagbutton" class="button showflag off">Show Flag</button>	
 								</div>
 								
 							</div>
