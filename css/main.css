@@ -368,13 +368,14 @@ Shadow: #727272 grey
           max-height: 20vh
      }
 
-     .quiz_controls_panel {
+     .quiz_panel {
           position: relative;
           display: block;
           min-height: 15vh;
           max-height: 15vh
           padding-bottom: 5vh;
           color: #ffffff;
+          font-size: 1em;
      }
 
 
@@ -426,6 +427,7 @@ Shadow: #727272 grey
           right: 5vw;
           top: -4em;
           font-style: italic;
+
      }
 
      .scoring {
@@ -433,6 +435,11 @@ Shadow: #727272 grey
           font-size: 5em;
           z-index: 20;
           -webkit-animation-delay: .1s;
+          color: #FFEB3B;
+     }
+
+     .totalling {
+
      }
      
      .answer_explanation {
@@ -452,23 +459,16 @@ Shadow: #727272 grey
           padding: .1em;
      }
 
-
-
-
-
-
-
-
      .answer_controls {
           position: relative;
           visibility: hidden;
-          font-size: .8em;
+          font-size: 1.2em;
      }
 
      .play_controls{
           float: left;
           max-height: 2em;
-          margin: 1vh 0;
+          margin: 2vw 0;
      }
 
      .playcontrol {
@@ -496,15 +496,17 @@ Shadow: #727272 grey
           background: #3498db;
           padding: .625em 1em;
           text-decoration: none;
-          
+          border: none;
+          outline:none;
      }
+
 
      .guess {
           float: left;
           display: block;
-          margin-right: 1vw;
+          margin-right: 2vw;
           /*position: absolute;*/
-          width: 43.5vw;
+          width: 43vw;
      }
 
 
