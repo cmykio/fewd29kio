@@ -97,6 +97,7 @@ Shadow: #727272 grey
 @media screen and (min-width: 5em) {
      body {
           min-height: 100vh;
+          font-family: 'Fira Sans', sans-serif;
      }
 
      .site-container {
@@ -112,12 +113,12 @@ Shadow: #727272 grey
 
      h1 {
           font-weight: 300;
-          font-size: 2em;
+          font-size: 1em;
      }
 
      h2 {
           font-weight: 300;
-          font-size: 1.8em;
+          font-size: .8em;
           margin: 0;
      }
 
@@ -125,7 +126,10 @@ Shadow: #727272 grey
           font-weight: 400;
           font-size: .8em;
      }
-     
+
+     .dropcap {
+          /*font-style: italic;*/
+     }
 
      a {
           text-decoration: none;
@@ -145,13 +149,6 @@ Shadow: #727272 grey
           display:inline-block;
      }
      /*END TOP NAV STYLING*/
-
-
-     /*BEGIN SITE CONTENT STYLING*/
-     .site-content {
-
-     }
-     /*END SITE CONTENT STYLING*/
 
 
      /*BEGIN SIDEBAR NAV STYLING*/
@@ -416,11 +413,24 @@ Shadow: #727272 grey
           display: block;
      }
 
+     .principles_hint {
+          position: absolute;
+          display: none;
+          text-align: center;
+          background-color: #607D8B;
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
+          padding: .1em;
+          -webkit-animation-delay: 0s;
+          -webkit-animation-duration: .1s;
+     }
+
      .mapdisplay {
           position: absolute;
           display: none;
           box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
-          -webkit-animation-delay: 2s;
+          -webkit-animation-delay: 1s;
+          -webkit-animation-duration: 1s;
+          z-index: 10;
      }
 
      .scoreboard {
@@ -435,7 +445,6 @@ Shadow: #727272 grey
           box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
           text-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
           z-index: 2;
-
      }
 
      .scoring {
@@ -444,10 +453,6 @@ Shadow: #727272 grey
           z-index: 20;
           -webkit-animation-delay: .1s;
           color: #ffffff;
-     }
-
-     .totalling {
-
      }
 
      .gamerules {
@@ -478,13 +483,7 @@ Shadow: #727272 grey
           margin: 0;     
      }
 
-     .principles_hint {
-          display: none;
-          text-align: center;
-          background-color: #607D8B;
-          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
-          padding: .1em;
-     }
+     
 
      .answer_controls {
           position: relative;
@@ -558,12 +557,14 @@ Shadow: #727272 grey
           display: none;
      }*/
 
-     /*.hidden {
-          visibility: hidden;
-     }*/
+    
 
      .visible {
           visibility: visible;
+     }
+
+     .hidden {
+          visibility: hidden;
      }
 
 

@@ -254,7 +254,7 @@ var flag_to_print = 0;
 var countryflag = 0;
 var image_file = 0;
 var playlabel = 'Get Started!';
-var animation;
+var animation = 0;
 var endanimation = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
 var startcount = 0;
 
@@ -281,7 +281,6 @@ function setQuiz () {
 		function(){
 			$(this).removeClass(playanimation);
 		});
-
 };
 
 // Returns a random number which is used to call an index in an array of country codes
@@ -311,10 +310,10 @@ function getCountry () {
 
 function printCountryName (){
 	console.log('printCountryName is firing');
-	animation="animated bounceInDown";
-	$("#countrytitle").addClass(animation).one(endanimation,
+	var cnanimation="animated bounceInDown";
+	$("#countrytitle").addClass(cnanimation).one(endanimation,
 		function(){
-			$(this).removeClass(animation);
+			$(this).removeClass(cnanimation);
 		});
 	document.getElementById('result').innerText = countryflag;
 	showMapInfoButton();
@@ -345,27 +344,31 @@ function getFlag () {
 function printFlag () {
 	console.log('printFlag is on')
 	$("#flag").addClass('on');
-	animation="animated bounceInUp";
-	$("#flag").addClass(animation).on(endanimation,
+	var flanimation="animated bounceInUp";
+	$("#flag").addClass(flanimation).on(endanimation,
 		function(){
-			$(this).removeClass(animation);
+			$(this).removeClass(flanimation);
 		})
 	introGuessControls();
 }
 
 function introGuessControls (){
 	console.log('introGuessControlsIn: loading controls on first screen')
-	$('#answer_buttons').addClass('visible');
-	animation="animated bounceInLeft";
-	$("#good").addClass(animation).on(endanimation,
-		function(){
-			$(this).removeClass(animation);
-		});
-	animation="animated bounceInRight";
-	$("#bad").addClass(animation).on(endanimation,
-		function(){
-			$(this).removeClass(animation);
-		});
+	
+	// var gcanimation="animated bounceInLeft";
+	// $("#good").addClass(gcanimation).one(endanimation,
+	// 	function(){
+	// 		$("#good").removeClass();
+	// 		$("#good").addClass("button guess");
+	// 	});
+	// var bcanimation="animated bounceInRight";
+	// $("#bad").addClass(bcanimation).one(endanimation,
+	// 	function(){
+	// 		$("#bad").removeClass();
+	// 		$("#bad").addClass("button guess");
+	// 	});
+	// $('#answer_buttons').removeClass();
+	$('#answer_buttons').addClass("visible")
 }
 
 function hidePlayButton () {
@@ -383,7 +386,8 @@ function hidePlayButton () {
 function showPrinciplesButton () {
 	console.log('showPrinciplesButton is on')
 	$('#showprinciples').addClass('on');
-	$('#showprinciples').fadeIn(1000);
+	$('#showprinciples').fadeIn(2000);
+	$('#showprinciples').removeClass("fadeIn");
 	// animation="animated bounceInUp";
 	// $('#showprinciples').addClass(animation).on(endanimation,
 	// 	function(){
@@ -408,6 +412,7 @@ function hideFlag () {
  			// 	displayPrinciples ();
  			// });
  	hideGuessControls ();
+ 	hideMapInfoButton ();
  	hidePrinciplesButton ();
  	displayPrinciples();
 }
@@ -419,6 +424,7 @@ function hideGuessControls (){
 	 	function(){
 	 		$(this).removeClass(animation);
 			$('#answer_buttons').removeClass('visible');
+			// $('#answer_buttons').removeClass("animated fadeOut");
 	});
 }
 
@@ -435,24 +441,20 @@ function hidePrinciplesButton () {
 
 function displayPrinciples () {
 	console.log('displayPrinciples is on')
-	$('#principles_panel').addClass('on');
-	animation="animated bounceInDown";
-	$('#principles_panel').addClass(animation).on(endanimation,
-			function(){
-			$('#principles_panel').removeClass(animation);
+	$('#principles_panel').removeClass();
+	$('#principles_panel').attr("class", "principles_hint on");
+	// $('#principles_panel').removeClass('hidden');
+	// animation="animated bounceInDown";
+	// $('#principles_panel').addClass(animation).on(endanimation,
+	// 		function(){
+	// 		$('#principles_panel').removeClass(animation);
 			showBacktoFlagFromPrinciplesButton ();
-			});	
+			// });	
 }
 
 function showBacktoFlagFromPrinciplesButton () {
 	console.log('showBacktoFlagFromPrinciplesButton firing')
 	$('#backtoflagfromprinciplesbutton').addClass('on');
-	// dont think this is needed any longer
-	// animation="animated fadeIn";
-	// $('#backtoflagfromprinciplesbutton').addClass(animation).on(endanimation,
-	// 	function(){
-	// 		$(this).removeClass(animation);
-	// 	});
 }
 // END GROUP 2 FUNCTIONS document.getElementById('showprinciples').onclick = hideFlag;
 
@@ -469,6 +471,7 @@ function BacktoFlagFromPrinciples () {
 		});
 	hidePrinciples ();
 	hideMap ();
+	showMapInfoButton ()
 	// introGuessControls ();
 }
 
@@ -479,7 +482,8 @@ function hidePrinciples () {
 	// $('#principles_panel').addClass(principlesoutanimation).on(endanimation,
 	// 	function(){
 	// 		$('#principles_panel').removeClass(principlesoutanimation);
-	 $('#principles_panel').removeClass("on");
+	$('#principles_panel').removeClass();
+	$('#principles_panel').attr("class", "principles_hint");
 	printFlag();
 	// 	});
 }
@@ -501,6 +505,7 @@ function getAnswerGood (){
 	} else {
 		document.getElementById('quizresponse').innerText = "No, sorry, it's not great..."
 	}
+	hideMapInfoButton();
 	hidePrinciplesButton();
 	showFeedback();
 	showPlay();
@@ -516,6 +521,11 @@ function getAnswerGood (){
 	
 	// showFlag();
 };
+
+function hideMapInfoButton () {
+	console.log('hideMapInfoButton is on')
+	$('#mapinfo').removeClass('on');
+}
 
 function showFeedback() {
 	$('#specificfeedback').addClass('on');
@@ -557,6 +567,7 @@ function getAnswerBad (){
 	} else {
 		document.getElementById('quizresponse').innerText = 'No, sorry you are wrong.'
 	}
+	hideMapInfoButton ();
 	hidePrinciplesButton();
 	showFeedback();
 	showPlay();
@@ -609,15 +620,19 @@ function hideFeedbackandScore () {
 
 // START GROUP 8 FUNCTIONS document.getElementById('mapinfo').onclick = printMap;
 function printMap () {
-	$('#principles_panel').removeClass('on');
+	// $('#principles_panel').removeClass();
+	// $('#principles_panel').addClass("on");
 	var map="https://www.google.com/maps/embed/v1/search?key=AIzaSyA00nFCVfgsnGqEIEpmO-sjelodI3op1MI&q="+countryflag;
 	document.getElementById('map').src=map;
-	$('#map').removeClass('animated bounceInDown');
+
+	$('#principles_panel').removeClass();
+	$('#principles_panel').attr("class", "principles_hint");
+
 	$('#map').addClass('on');
-	animation="";
-	$("#map").addClass(animation).on(endanimation,
+	mapanimation="animated flipInX";
+	$("#map").addClass(mapanimation).on(endanimation,
 		function(){
-			$('#map').removeClass("animated bounceInRight");
+			$('#map').removeClass("animated flipInX");
 		});
 	hideFlag ();
 	
@@ -864,7 +879,11 @@ function showFlag () {
 // };
 
 
-
+// We retrieve our drop cap elements using a class selector...
+    var dropcaps = document.querySelectorAll(".dropcap"); 
+    // ...then give them a height of three lines. 
+    // By default, the drop cap's baseline will also be the third paragraph line.
+    window.Dropcap.layout(dropcaps,4); 
 
 
 
