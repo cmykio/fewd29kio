@@ -91,8 +91,8 @@
 							</blockquote>
 								<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo	consequat.</p>
 							</div>
-							<div id="arrowdown" class="scrollarrow animated fadeInUp">
-								<img src="icons/arrow-down-bold-circle-outline.png" alt="downward arrow">
+							<div id="arrowdown" class="scrollarrow animated bounceInDown">
+								<img src="icons/keyboard_arrow_down_black_72X72.png" alt="downward arrow">
 							</div>
 						</div>
 					</div>
@@ -190,12 +190,12 @@
 						<div id="pin10" class = "quizcard cardcolor10">
 
 							<div id="top_panel" class="image_panel">
-								<div class ="quiztitle">
+								<div id="countrytitle" class ="quiztitle">
 									<h2 id="result"></h2>
 									<a id="mapinfo" class="where_button"><sup><p>Where?<p></sup></a>
 								</div>
 								
-								<img id="flag" class="flagdisplay" alt="flag">
+								<img id="flag" class="flagdisplay">
 						
 								<iframe id="map" class="mapdisplay"
 									width= 100%
@@ -204,8 +204,8 @@
 									allowfullscreen>
 								</iframe>
 
-								<div id="hintpanel" class="principles_hint">
-									<h1>The Principles</h1>
+								<div id="principles_panel" class="principles_hint">
+									<h1>The NAVA Principles</h1>
 									<ul>
 										<li><p>Keep it simple.</p></li>
 										<li><p>Meaningful symbolism.</p></li>
@@ -219,8 +219,12 @@
 
 
 							<div id="middle_panel" class="feedback_panel">
-							<div id="feedback">
-								<div class="scoreboard">
+								<div id="rules" class="gamerules">
+									<h2>Know your Principles</h2>
+									<p>See how well you&rsquo;ve grasped the NAVA Principles, by reviewing the world flags. You can access hints, too, if you need to.</p>
+									<p>Click Get Started to begin.</p>
+								</div>
+								<div id="scoreboard" class="scoreboard">
 									<span id="yourscore" class="scoring"></span>
 									<span id="totalscore" class="totalling"></span>
 								</div>
@@ -229,7 +233,7 @@
 									<p>This is the answer section, will be displayed in explanation below.</p>
 									<span id="explanation"></span>
 								</div>
-							</div>
+	
 							</div>
 
 
@@ -242,9 +246,10 @@
 									<button id="bad" class="button guess">Bad Flag &#10008;</button>
 								</div>
 								<div id='play_panel' class="play_controls">
-									<button id="play" class="button playcontrol"><span id="playdisplay"></span></button>
-									<button id="hintbutton" class="button hintcontrol off">See Principles Reminder</button>
-									<button id="flagbutton" class="button showflag off">Show Flag</button>	
+									<button id="play" class="button playcontrol on"><span id="playdisplay"></span></button>
+									<button id="showprinciples" class="button hintcontrol">See Principles Reminder</button>
+									<button id="backtoflagfromprinciplesbutton" class="button showflag">Back to Flag</button>	
+									<button id="backtoflagfrommapbutton" class="button showflag">Back to Flag</button>	
 								</div>
 							</div>		
 						</div>

@@ -253,44 +253,47 @@ var score = 0;
 var flag_to_print = 0;
 var countryflag = 0;
 var image_file = 0;
-var playlabel = 'Play';
+var playlabel = 'Get Started!';
 var animation;
 var endanimation = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
+var startcount = 0;
 
 window.onload = setQuiz;
 document.getElementById('play').onclick = getCountry;
-document.getElementById('hintbutton').onclick = getHints;
+document.getElementById('showprinciples').onclick = hideFlag;
+document.getElementById('backtoflagfromprinciplesbutton').onclick = BacktoFlagFromPrinciples;
 document.getElementById('good').onclick = getAnswerGood;
 document.getElementById('bad').onclick = getAnswerBad;
 document.getElementById('mapinfo').onclick = printMap;
-document.getElementById('flagbutton').onclick = showFlag;
+
+// document.getElementById('backtoflagfrommapbutton').onclick = hideBacktoFlagButton;
+
+
 
 // Runs once at page load to set up the quiz area and show first flag
 function setQuiz () {
-	flag_position_in_array = Math.floor(Math.random()*196)
-	console.log(flag_position_in_array);
-	if (flag_position_in_array != 'undefined') {
-		flag_to_print = flags_list[flag_position_in_array];
-		countryflag = country_names[flag_position_in_array];
-		console.log(flag_to_print);
-		console.log(countryflag);
-		image_file = "../fewd29kio/flags-big/"+flag_to_print+".png"
-		document.getElementById('flag').src=image_file;
-		document.getElementById('result').innerText = countryflag;
-		document.getElementById('playdisplay').innerText = playlabel;
-		animation="animated flipInX";
-		$("#flag").addClass(animation).one(endanimation,
-			function(){
-				$(this).removeClass(animation);
-			})
-	} else {
-		setQuiz();
-	}
+	document.getElementById('playdisplay').innerText = playlabel;
+	$('#mapinfo').addClass('off');
+	$('#rules').addClass('on');
+	$('#play').addClass('on');
+	var playanimation = "animated bounceInUp";
+	$("#play").addClass(playanimation).one(endanimation,
+		function(){
+			$(this).removeClass(playanimation);
+		});
+
 };
 
 // Returns a random number which is used to call an index in an array of country codes
 // this will determine what flag and flag labels display
 function getCountry () {
+	console.log('getCountry is on')
+	animation="animated bounceOutRight";
+	$("#rules").addClass(animation).one(endanimation,
+		function(){
+			$(this).removeClass(animation);
+			$("#rules").removeClass('on');
+		});
 	flag_position_in_array = Math.floor(Math.random()*196)
 	console.log(flag_position_in_array);
 	if (flag_position_in_array != 'undefined') {
@@ -298,87 +301,192 @@ function getCountry () {
 		countryflag = country_names[flag_position_in_array];
 		console.log(flag_to_print);
 		console.log(countryflag);
-		printFlag();
+		printCountryName();
+		hidePlayButton();
+		hideFeedbackandScore ()
 	} else {
 		getCountry();
 	}
 };
 
-// Returns a flag image from directory
-// Also relabels the 'Play' button to 'Hints', so the same button can be used to call another
-// function to display hints re flag design principles
-function printFlag () {
-	console.log('printFlag is firing');
-	image_file = "../fewd29kio/flags-big/"+flag_to_print+".png"
-	playlabel = 'Play Again';
-	document.getElementById('flag').src=image_file;
+function printCountryName (){
+	console.log('printCountryName is firing');
+	animation="animated bounceInDown";
+	$("#countrytitle").addClass(animation).one(endanimation,
+		function(){
+			$(this).removeClass(animation);
+		});
 	document.getElementById('result').innerText = countryflag;
-	document.getElementById('playdisplay').innerText = playlabel;
-	animation="animated flipInX";
-	$("#flag").addClass(animation).one(endanimation,
-		function(){
-			$(this).removeClass(animation);
-		})
-	$('#answer_buttons').addClass('visible');
-	// $('#play_panel').addClass('off');
-	$('#play').addClass('off');
-	$('#hintbutton').removeClass('off');
-	$('#good').removeClass('hidden');
-	$('#bad').removeClass('hidden');
-	$('#mapinfo').removeClass('hidden');
-	$('#mapinfo').addClass('visible');
-	$('#specificfeedback').removeClass('on');
-};
-
-function printMap () {
-	var map="https://www.google.com/maps/embed/v1/search?key=AIzaSyA00nFCVfgsnGqEIEpmO-sjelodI3op1MI&q="+countryflag;
-	document.getElementById('map').src=map;
-	$('#flag').addClass('off');
-	$('#map').removeClass('off');
-	$('#map').addClass('on');
-	$('#hintpanel').removeClass('on');
-	$('#flagbutton').removeClass('off');
-	$('#flagbutton').addClass('on');
-	$('#answer_buttons').removeClass('visible');
-	$('#hintbutton').removeClass('on');
-	$('#hintbutton').addClass('off');
-	$('#play').removeClass('on');
-	$('#play').addClass('off');
-	// $('#hintbutton').addClass('off');
-	// $('#good').addClass('hidden');
-	// $('#bad').addClass('hidden');
-	animation="animated flipInX";
-	$("#map").addClass(animation).one(endanimation,
-		function(){
-			$(this).removeClass(animation);
-		})
-};
-
-function showFlag () {
-	$('#flag').removeClass('off');
-	$('#map').removeClass('on');
-	$('#flagbutton').removeClass('on');
-	$('#hintpanel').removeClass('on');
-	$('#answer_buttons').addClass('visible');
-	// $('#good').removeClass('hidden');
-	// $('#bad').removeClass('hidden');
-	// $('#hintbutton').removeClass('off');
+	showMapInfoButton();
+	getFlag();
 }
 
-function getHints () {
-	console.log('getHints firing');
-	$('#hintpanel').addClass('on');
-	$('#flag').addClass('off');
-	$('#map').addClass('off');
-	$('#hintbutton').addClass('off');
-	$('#flagbutton').removeClass('off');
-	$('#flagbutton').addClass('on');
-	// $('#hintbutton').addClass('off');
-	// $('#good').addClass('hidden');
-	// $('#bad').addClass('hidden');
-	$('#answer_buttons').removeClass('visible');
+function showMapInfoButton () {
+	console.log('showMapInfoButton is on')
+	$('#mapinfo').addClass('on');
+}
+
+function getFlag () {
+	console.log('getFlag is firing');
+	image_file = "../fewd29kio/flags-big/"+flag_to_print+".png"
+	document.getElementById('flag').src=image_file;
+	printFlag();
+		
+	// $('#play_panel').addClass('off');
+	// $('#play').addClass('off');
+	
+	// $('#good').removeClass('hidden');
+	// $('#bad').removeClass('hidden');
+	// $('#mapinfo').removeClass('hidden');
+	// $('#mapinfo').addClass('visible');
+	// $('#specificfeedback').removeClass('on');
 };
 
+function printFlag () {
+	console.log('printFlag is on')
+	$("#flag").addClass('on');
+	animation="animated bounceInUp";
+	$("#flag").addClass(animation).on(endanimation,
+		function(){
+			$(this).removeClass(animation);
+		})
+	introGuessControls();
+}
+
+function introGuessControls (){
+	console.log('introGuessControlsIn: loading controls on first screen')
+	$('#answer_buttons').addClass('visible');
+	animation="animated bounceInLeft";
+	$("#good").addClass(animation).on(endanimation,
+		function(){
+			$(this).removeClass(animation);
+		});
+	animation="animated bounceInRight";
+	$("#bad").addClass(animation).on(endanimation,
+		function(){
+			$(this).removeClass(animation);
+		});
+}
+
+function hidePlayButton () {
+	console.log('hidePlayButton is on')
+	$('#play').fadeOut(500);
+	// animation="animated fadeOut";
+	// $("#play").addClass(animation).on(endanimation,
+	// 	function(){
+	// 		$(this).removeClass(animation);
+			$('#play').removeClass('on');
+			showPrinciplesButton();
+		// });
+}
+
+function showPrinciplesButton () {
+	console.log('showPrinciplesButton is on')
+	$('#showprinciples').addClass('on');
+	$('#showprinciples').fadeIn(1000);
+	// animation="animated bounceInUp";
+	// $('#showprinciples').addClass(animation).on(endanimation,
+	// 	function(){
+	// 		$(this).removeClass(animation);
+	// 	});
+}
+// END OF GROUP 1 FUNCTIONS document.getElementById('play').onclick
+
+
+
+
+
+
+// START GROUP 2 FUNCTIONS document.getElementById('showprinciples').onclick = hideFlag;
+function hideFlag () {
+	console.log('hideFlag is on')
+	// animation="animated bounceOutDown";
+	// $('#flag').addClass(animation).on(endanimation,
+	// 		function(){
+ // 				$(this).removeClass(animation);
+ 				$('#flag').removeClass('on');
+ 			// 	displayPrinciples ();
+ 			// });
+ 	hideGuessControls ();
+ 	hidePrinciplesButton ();
+ 	displayPrinciples();
+}
+
+function hideGuessControls (){
+	console.log('hide GuessControls')
+	animation="animated fadeOut";
+	$("#answer_buttons").addClass(animation).on(endanimation,
+	 	function(){
+	 		$(this).removeClass(animation);
+			$('#answer_buttons').removeClass('visible');
+	});
+}
+
+function hidePrinciplesButton () {
+	console.log('hidePrinciplesButton firing')
+	$('#showprinciples').fadeOut(1000);
+	// var prince_button_animation="animated fadeOut";
+	// $('#showprinciples').addClass(prince_button_animation).on(endanimation,
+	// 	function(){
+	// 		$(this).removeClass(prince_button_animation);
+			$('#showprinciples').removeClass('on');
+		// });
+}
+
+function displayPrinciples () {
+	console.log('displayPrinciples is on')
+	$('#principles_panel').addClass('on');
+	animation="animated bounceInDown";
+	$('#principles_panel').addClass(animation).on(endanimation,
+			function(){
+			$('#principles_panel').removeClass(animation);
+			showBacktoFlagFromPrinciplesButton ();
+			});	
+}
+
+function showBacktoFlagFromPrinciplesButton () {
+	console.log('showBacktoFlagFromPrinciplesButton firing')
+	$('#backtoflagfromprinciplesbutton').addClass('on');
+	// dont think this is needed any longer
+	// animation="animated fadeIn";
+	// $('#backtoflagfromprinciplesbutton').addClass(animation).on(endanimation,
+	// 	function(){
+	// 		$(this).removeClass(animation);
+	// 	});
+}
+// END GROUP 2 FUNCTIONS document.getElementById('showprinciples').onclick = hideFlag;
+
+
+
+// START GROUP 3 FUNCTIONS document.getElementById('backtoflagfromprinciplesbutton').onclick = BacktoFlagFromPrinciples;
+function BacktoFlagFromPrinciples () {
+	console.log('BacktoFlagFromPrinciples firing')
+	animation="animated fadeOut";
+	$('#backtoflagfromprinciplesbutton').addClass(animation).on(endanimation,
+		function(){
+			$(this).removeClass(animation);
+			$('#backtoflagfromprinciplesbutton').removeClass('on');
+		});
+	hidePrinciples ();
+	hideMap ();
+	// introGuessControls ();
+}
+
+function hidePrinciples () {
+	console.log('hidePrinciples is on')
+	// $('#principles_panel').attr("class", "principles_hint");
+	// var principlesoutanimation="animated bounceOutUp";
+	// $('#principles_panel').addClass(principlesoutanimation).on(endanimation,
+	// 	function(){
+	// 		$('#principles_panel').removeClass(principlesoutanimation);
+	 $('#principles_panel').removeClass("on");
+	printFlag();
+	// 	});
+}
+// END GROUP 3 FUNCTIONS document.getElementById('backtoflagfromprinciplesbutton').onclick = BacktoFlagFromPrinciples;
+
+
+// START GROUP 4 FUNCTIONS document.getElementById('good').onclick = getAnswerGood;
 function getAnswerGood (){
 	console.log('getAnswerGood is now firing');
 	guess = 'good';
@@ -393,22 +501,50 @@ function getAnswerGood (){
 	} else {
 		document.getElementById('quizresponse').innerText = "No, sorry, it's not great..."
 	}
+	hidePrinciplesButton();
+	showFeedback();
+	showPlay();
 	updateScore();
-	$('#hintpanel').removeClass('on');
-	$('#hintbutton').addClass('off');
-	$('#play').removeClass('off');
-	$('#play').addClass('on');
-	$('#guessfeedback').addClass('on');
-	$('#bad').addClass('hidden');
-	$('#mapinfo').removeClass('visible');
-	$('#mapinfo').addClass('hidden');
-	$('#specificfeedback').addClass('on');
-	showFlag();
+	// $('#hintpanel').removeClass('on');
+	// $('#hintbutton').addClass('off');
+	// $('#play').removeClass('off');
+	// $('#play').addClass('on');
+	// $('#bad').addClass('hidden');
+	// $('#mapinfo').removeClass('visible');
+	// $('#mapinfo').addClass('hidden');
+	// $('#specificfeedback').addClass('on');
+	
+	// showFlag();
 };
 
+function showFeedback() {
+	$('#specificfeedback').addClass('on');
+	animation="animated bounceInLeft";
+	$("#specificfeedback").addClass(animation).on(endanimation,
+		function(){
+			$(this).removeClass(animation);
+		});
+}
+
+function showPlay () {
+	$('#play').fadeIn(1000).delay(2000);
+	$('#play').addClass('on');
+	relabelPlay();
+}
+
+function relabelPlay () {
+	console.log('relabelPlay is on')
+	playlabel = 'Play Again';
+	document.getElementById('playdisplay').innerText = playlabel;
+}
+// END GROUP 4 FUNCTIONS document.getElementById('good').onclick = getAnswerGood;
+
+
+
+
+// START GROUP 5 FUNCTIONS document.getElementById('good').onclick = getAnswerBad;
 function getAnswerBad (){
 	console.log('getAnswerBad is now firing');
-	console.log('getAnswerGood is now firing');
 	guess = 'bad';
 	answerposition = flag_position_in_array + 1;
 	console.log(guess);
@@ -421,37 +557,317 @@ function getAnswerBad (){
 	} else {
 		document.getElementById('quizresponse').innerText = 'No, sorry you are wrong.'
 	}
+	hidePrinciplesButton();
+	showFeedback();
+	showPlay();
 	updateScore();
-	$('#hintpanel').removeClass('on');
-	$('#hintbutton').addClass('off');
-	$('#play').removeClass('off');
-	$('#play').addClass('on');
-	$('#guessfeedback').addClass('on');
-	$('#good').addClass('hidden');
-	$('#mapinfo').removeClass('visible');
-	$('#mapinfo').addClass('hidden');
-	$('#specificfeedback').addClass('on');
-	showFlag();
 };
+// END GROUP 5 FUNCTIONS document.getElementById('bad').onclick = getAnswerBad;
 
+
+// START GROUP 6 FUNCTION SPECIAL - UPDATE SCORE
 function updateScore(){
 	guessnumber = guessnumber + 1;
 	console.log('the score is ' + score);
 	console.log('the total number of guesses is ' + guessnumber);
+	$('#scoreboard').addClass('visible');
 	document.getElementById('yourscore').innerText = score
 	document.getElementById('totalscore').innerText = '/' + guessnumber
-	// need to break the animations here into two subfunctions
-	animation = "animated fadeInDownBig";
-	$("#yourscore").addClass(animation).one(endanimation,
-		function(){
-			$(this).removeClass(animation);
-		})
-	animation = "animated fadeInUpBig";
-	$("#totalscore").addClass(animation).one(endanimation,
-		function(){
-			$(this).removeClass(animation);
-		})
+	animateScore ();	
 };
+
+function animateScore() {
+	animation = "animated bounceInLeft";
+	$("#yourscore").addClass(animation).on(endanimation,
+		function(){
+			$(this).removeClass(animation);
+		})
+	animation = "animated bounceInUp";
+	$("#totalscore").addClass(animation).on(endanimation,
+		function(){
+			$(this).removeClass(animation);
+		})
+	animation="animated bounceInRight";
+	$("#scoreboard").addClass(animation).on(endanimation,
+		function(){
+			$(this).removeClass(animation);
+		});
+}
+// END GROUP 6 FUNCTION SPECIAL - UPDATE SCORE
+
+
+
+// START GROUP 7 FUNCTIONS TO SET THE BOARD AGAIN FROM THE SECOND ROUND
+function hideFeedbackandScore () {
+	$('#scoreboard').removeClass('visible');
+	$('#specificfeedback').removeClass('on');
+}
+
+// END GROUP 7 FUNCTIONS TO SET THE BOARD AGAIN FROM THE SECOND ROUND
+
+
+
+// START GROUP 8 FUNCTIONS document.getElementById('mapinfo').onclick = printMap;
+function printMap () {
+	$('#principles_panel').removeClass('on');
+	var map="https://www.google.com/maps/embed/v1/search?key=AIzaSyA00nFCVfgsnGqEIEpmO-sjelodI3op1MI&q="+countryflag;
+	document.getElementById('map').src=map;
+	$('#map').removeClass('animated bounceInDown');
+	$('#map').addClass('on');
+	animation="";
+	$("#map").addClass(animation).on(endanimation,
+		function(){
+			$('#map').removeClass("animated bounceInRight");
+		});
+	hideFlag ();
+	
+	// $('#flagbutton').removeClass('off');
+	// $('#flagbutton').addClass('on');
+	// $('#answer_buttons').removeClass('visible');
+	// $('#hintbutton').removeClass('on');
+	// $('#hintbutton').addClass('off');
+	// $('#play').removeClass('on');
+	// $('#play').addClass('off');
+};
+
+function hideMap () {
+	console.log('hideMap is on')
+	// animation="animated bounceOutRight";
+	// $('#map').addClass(animation).on(endanimation,
+	// 	function(){
+	// 		$(this).removeClass(animation);
+	// $('#map').fadeOut(1000);
+			$('#map').removeClass('on');
+		// 	printFlag ();
+		// });
+}
+
+// END GROUP 8 FUNCTIONS document.getElementById('mapinfo').onclick = printMap;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function hideFlag_displayPrinciples () {
+// 	console.log('hideFlag_displayPrinciples is on')
+// 	var flaganimation="animated bounceOutDown";
+// 	$('#flag').addClass(flaganimation).on(endanimation,
+// 		function(){
+// 			$(this).removeClass(flaganimation);
+// 			$('#flag').removeClass('on');
+// 			console.log('displayPrinciples firing')
+// 			
+// 					showBacktoFlagButton();
+// 				
+// 		});
+// 	hidePrinciplesButton();
+// 	hideGuessControls();
+	
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Returns a flag image from directory
+// Also relabels the 'Play' button to 'Hints', so the same button can be used to call another
+// function to display hints re flag design principles
+
+
+
+
+function showFlag () {
+	animation="animated bounceOutUp";
+	$("#hintpanel").addClass(animation).on(endanimation,
+		function(){
+			$(this).removeClass(animation);
+			$('#hintpanel').removeClass('on');
+			$('#flag').removeClass('off');
+
+			animation="animated bounceInDown";
+			$("#flag").addClass(animation).on(endanimation,
+				function(){
+				$(this).removeClass(animation);
+				animation="animated fadeOut";
+				$("#flagbutton").addClass(animation).on(endanimation,
+					function(){
+						$(this).removeClass(animation);
+						$('#flagbutton').removeClass('on');
+					});
+				});
+
+			$('#answer_buttons').addClass('visible');
+			animation="animated bounceInLeft";
+			$("#good").addClass(animation).on(endanimation,
+				function(){
+					$(this).removeClass(animation);
+				});
+			animation="animated bounceInRight";
+			$("#bad").addClass(animation).on(endanimation,
+				function(){
+					$(this).removeClass(animation);
+				});			
+		});
+
+
+	animation="animated bounceOutRight";
+	$("#map").addClass(animation).on(endanimation,
+		function(){
+			$(this).removeClass(animation);
+			$('#map').removeClass('on');
+			$('#flag').removeClass('off');
+
+			animation="animated bounceInDown";
+			$("#flag").addClass(animation).on(endanimation,
+				function(){
+				$(this).removeClass(animation);
+				animation="animated fadeOut";
+				$("#flagbutton").addClass(animation).on(endanimation,
+					function(){
+						$(this).removeClass(animation);
+						$('#flagbutton').removeClass('on');
+					});
+				});
+
+			$('#answer_buttons').addClass('visible');
+			animation="animated bounceInLeft";
+			$("#good").addClass(animation).on(endanimation,
+				function(){
+					$(this).removeClass(animation);
+				});
+			animation="animated bounceInRight";
+			$("#bad").addClass(animation).on(endanimation,
+				function(){
+					$(this).removeClass(animation);
+				});			
+		});
+
+
+				
+	
+
+	$('#map').removeClass('on');
+			
+			
+			
+	// $('#good').removeClass('hidden');
+	// $('#bad').removeClass('hidden');
+	// $('#hintbutton').removeClass('off');
+};
+
+// function getHints () {
+// 	animation="animated bounceOutUp";
+// 	$("#flag").addClass(animation).on(endanimation,
+// 		function(){
+// 			$(this).removeClass(animation);
+// 			console.log('getHints firing');
+// 			$('#hintpanel').addClass('on');
+// 			animation="animated bounceInDown";
+// 			$("#hintpanel").addClass(animation).on(endanimation,
+// 				function(){
+// 					$(this).removeClass(animation);
+// 				});
+// 			animation="animated fadeOut";
+// 			$("#good").addClass(animation).on(endanimation,
+// 				function(){
+// 					$(this).removeClass(animation);
+// 					$('#answer_buttons').removeClass('visible');
+// 				});
+// 			$("#bad").addClass(animation).on(endanimation,
+// 				function(){
+// 					$(this).removeClass(animation);
+// 				});
+// 			$('#flag').addClass('off');
+// 			$('#map').addClass('off');
+// 			$('#hintbutton').addClass('off');
+// 			$('#flagbutton').removeClass('off');
+// 			$('#flagbutton').addClass('on');
+// 		});	
+// };
+
+
+
+
+
+
 
 var flags_list = [
 		"AD", 
@@ -893,7 +1309,7 @@ var country_names = [
 		"Central African Republic",
 		"Congo",
 		"Switzerland",
-		"Cote d'Ivoire",
+		"Cote d’Ivoire",
 		"Chile",
 		"Cameroon",
 		"China",
@@ -1047,7 +1463,7 @@ var country_names = [
 		"Uruguay",
 		"Uzbekistan",
 		"Holy See (Vatican City State)",
-		"Saint Vincent & the Grenadines",
+		"Saint Vincent and the Grenadines",
 		"Venezuela",
 		"Viet Nam",
 		"Vanuatu",

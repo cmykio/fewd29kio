@@ -116,7 +116,7 @@ Shadow: #727272 grey
      }
 
      h2 {
-          font-weight: 400;
+          font-weight: 300;
           font-size: 1.8em;
           margin: 0;
      }
@@ -216,7 +216,7 @@ Shadow: #727272 grey
           position: absolute;
           left:40%;
           bottom: -20%;
-          animation-duration: 2s;
+          animation-duration: 1.5s;
      }
      /*BEGIN SCENE STORY PANELS STYLING FOR MAIN PAGE*/
      .scene {
@@ -330,7 +330,7 @@ Shadow: #727272 grey
 
      .cardcolor10 {
           color: #FFFFFF;
-          background-color: #F44336;
+          background-color: #0288D1;
           box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
      }
 
@@ -373,7 +373,7 @@ Shadow: #727272 grey
           display: block;
           min-height: 15vh;
           max-height: 15vh
-          padding-bottom: 5vh;
+          
           color: #ffffff;
           font-size: 1em;
      }
@@ -381,13 +381,18 @@ Shadow: #727272 grey
 
 
      .quiztitle {
+          display: block;
           position: relative;
           margin: 0;
+          padding: 0em 2em;
           text-align: center;
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
+          background-color: #03A9F4;
      }
 
      .where_button {
           position: absolute;
+          display: none;
           top: .1em;
           right:.1em;
           color: #ffffff;
@@ -396,6 +401,7 @@ Shadow: #727272 grey
      }
 
      .flagdisplay {
+          display: none;
           margin: 1em auto;
           max-width: 90vw;
           max-height:35vh;
@@ -410,41 +416,62 @@ Shadow: #727272 grey
           display: block;
      }
 
-
-     iframe {
+     .mapdisplay {
           position: absolute;
           display: none;
           box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
-     }
-
-
-     .hintpanel {
-          display: none;
+          -webkit-animation-delay: 2s;
      }
 
      .scoreboard {
+          visibility: hidden;
           position: absolute;
-          right: 5vw;
-          top: -4em;
+          right: -2vw;
+          /*top: -2em;*/
+          width: 18vw;
           font-style: italic;
+          background-color: #FF5722;
+          text-align: center;
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
+          text-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
+          z-index: 2;
 
      }
 
      .scoring {
           display: inline-block;
-          font-size: 5em;
+          font-size: 3em;
           z-index: 20;
           -webkit-animation-delay: .1s;
-          color: #FFEB3B;
+          color: #ffffff;
      }
 
      .totalling {
 
      }
-     
-     .answer_explanation {
+
+     .gamerules {
           display: none;
-          margin: 0;     
+          position: absolute;
+          min-height: 100%;
+          width: 80vw;
+          top: -15em;
+          padding: 1em;
+          background-color: #009688;
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65); 
+     }
+
+     .answer_explanation {
+          position: absolute;
+          display: none;
+          min-height: 100%;
+          top: -2.5em;
+          width: 95%;
+          margin: 0;
+          padding: .5em;
+          background-color: #03A9F4;
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65); 
+          z-index: 1;    
      } 
 
      .answer_explanation p {
@@ -472,28 +499,36 @@ Shadow: #727272 grey
      }
 
      .playcontrol {
-          /*display: block;*/
-          /*float: left;*/
-          /*margin: .5em 1%;*/
           width: 88vw;
+          display: none;
      }
 
      .hintcontrol {
           width: 88vw;
+          display: none;
      }
 
      .showflag {
-          display: none;
           width: 88vw;
+          display: none;
      }
-
-    
-
-     .button {
+     
+     .play_controls .button {
           -webkit-border-radius: 0;
           -moz-border-radius: 0;
           border-radius: 0%;
-          background: #3498db;
+          background: #0288D1;
+          padding: .625em 1em;
+          text-decoration: none;
+          border: solid 3px #FF5722;
+          outline: ;
+     }
+
+     .answer_controls .button {
+          -webkit-border-radius: 0;
+          -moz-border-radius: 0;
+          border-radius: 0%;
+          background: #FF5722;
           padding: .625em 1em;
           text-decoration: none;
           border: none;
@@ -509,12 +544,6 @@ Shadow: #727272 grey
           width: 43vw;
      }
 
-
-
-
-
-
-
      .btn:hover {
           background: #B2EBF2;
           text-decoration: none;
@@ -523,16 +552,15 @@ Shadow: #727272 grey
 
      .on {
           display: block;
-          -webkit-animation-delay: 1s;
      }
 
-     .off {
+     /*.off {
           display: none;
-     }
+     }*/
 
-     .hidden {
+     /*.hidden {
           visibility: hidden;
-     }
+     }*/
 
      .visible {
           visibility: visible;
