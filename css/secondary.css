@@ -91,8 +91,8 @@ Shadow: #727272 grey
 /* LAYOUT                   
 /*******************************************/
 
-/*BASELINE BREAKPOINT FOR SMALLEST VIEWPORT*/
-@media screen and (min-width: 5em) {
+/*BREAKPOINT 1 FOR SMALLEST VIEWPORT*/
+@media screen and (min-width: 22.5em) {
      body {
           min-height: 100vh;
           font-family: 'Fira Sans', sans-serif;
@@ -101,7 +101,124 @@ Shadow: #727272 grey
      .site-container {
           max-width: 100%;
           margin: 0 auto;
+          color: #F5F5F5
      }
+
+     .watchpagebackground {
+          background-color: #FF5722;
+          min-height: 100vh;
+     }
+
+     .watchcontainer {
+          background-color: #4CAF50;
+          max-width: 100%;
+          margin: 0 auto;
+          padding: 5em 1.5em;
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
+     }
+
+     .watch {
+          padding: .5em 1em;
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
+     }
+
+     h2 {
+          text-align: center;
+     }
+
+     p:first-of-type::first-letter {
+          initial-letter: 2;
+     }
+
+     .youtube {
+          margin: 1.5em 0;
+          position: relative;
+          padding-bottom: 56.25%; /* 16:9 */
+          padding-top: 1.2em;
+          height: 0;
+
+     }
+
+     .youtube iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
+     }
+
+     .soundcloud {
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
+     }
+}
+
+
+/*BREAKPOINT 2 FOR MEDIUM VIEWPORT*/
+@media screen and (min-width: 48em) {
+
+}
+
+/*BREAKPOINT 3 FOR LARGE VIEWPORT*/
+@media screen and (min-width: 48em) {
+
+}
+
+
+
+     
+
+     
+
+     
+
+     
+
+     
+
+     .youtube {
+
+     }
+
+     .soundcloud {
+
+     }
+
+
+     .aboutpagebackground {
+          background-color: #FF4081;
+          min-height: 100vh;
+     }
+
+     .credits_container {
+          background-color: #607D8B;
+          max-width: 70%;
+          margin: 0 auto;
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
+     }
+
+     .credits_titles {
+
+     }
+
+     .credits_body {
+
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
      .site-header {
           position: fixed;
@@ -109,21 +226,12 @@ Shadow: #727272 grey
           z-index: 11;
      }
 
-     h1 {
-          font-weight: 300;
-          font-size: 1em;
+     
+
+     
      }
 
-     h2 {
-          font-weight: 300;
-          /*font-size: .8em;*/
-          margin: 0;
-     }
 
-     p {
-          font-weight: 400;
-          font-size: .8em;
-     }
 
      .dropcap {
           /*font-style: italic;*/

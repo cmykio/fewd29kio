@@ -94,8 +94,26 @@ Shadow: #727272 grey
 /* LAYOUT                   
 /*******************************************/
 
-/*BASELINE BREAKPOINT FOR SMALLEST VIEWPORT*/
-@media screen and (min-width: 5em) {
+/*BREAKPOINT 1 FOR SMALLEST VIEWPORT*/
+@media screen and (min-width: 22.5em) {
+
+}
+
+
+/*BREAKPOINT 2 FOR MEDIUM VIEWPORT*/
+@media screen and (min-width: 48em) {
+
+}
+
+/*BREAKPOINT 3 FOR LARGE VIEWPORT*/
+@media screen and (min-width: 48em) {
+     
+}
+
+
+
+
+@media screen and (min-width: 22.5em) {
      body {
           min-height: 100vh;
           font-family: 'Fira Sans', sans-serif;
