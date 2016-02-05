@@ -24,7 +24,7 @@ $('.main_h li a').click(function() {
         $('.navigation').removeClass('open-nav');
         $('.main_h').removeClass('open-nav');
     }
-});<br>
+});
 
 }); 
 // this is closing the ready method

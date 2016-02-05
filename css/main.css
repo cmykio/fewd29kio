@@ -94,21 +94,136 @@ Shadow: #727272 grey
 /* LAYOUT                   
 /*******************************************/
 
-/*BREAKPOINT 1 FOR SMALLEST VIEWPORT*/
+/*START BREAKPOINT 0 FOR SMALLEST VIEWPORT*/
+@media screen and (min-width: 22.5em) {
+     body {
+          min-height: 100vh;
+          font-family: 'Fira Sans', sans-serif;
+     }
+
+     .site-container {
+          width: 100%;
+          margin: 0 auto;
+          color: #F5F5F5;
+     }
+
+     /*BEGIN SCROLLMAGIC RELATED STYLING*/
+
+     /*END SCROLLMAGIC RELATED STYLING*/
+
+
+
+
+
+
+     .scrollarrow {
+          display: block;
+          position: absolute;
+          left:40%;
+          bottom: -10%;
+          animation-duration: 1.5s;
+     }
+
+
+
+     
+     .site-footer {
+          display: none;
+          color: #FF5722;
+          display: inline-block;
+          background-color: rgba(255, 255, 255, 0.93);
+          opacity: 1;
+          position: fixed;
+          margin: auto 0;
+          bottom: 0;
+          width: 100%;
+          z-index: 10;
+          text-align: center;
+          font-weight: 300;
+     }
+
+     .footerlabel {
+          display: none;
+     }
+
+     .footer-nav {
+          display: none;
+     }
+
+     .footer-nav ul {
+          list-style: none;
+     }
+
+     .footer-nav li {
+          display: none;
+     }
+
+     .footer-nav a {
+          text-decoration: none;
+     }
+}
+/*END BREAKPOINT 0 FOR SMALLEST VIEWPORT*/
+
+
+/*START BREAKPOINT 1 FOR SMALLEST VIEWPORT*/
 @media screen and (min-width: 22.5em) {
 
 }
+/*END BREAKPOINT 1 FOR SMALLEST VIEWPORT*/
 
 
-/*BREAKPOINT 2 FOR MEDIUM VIEWPORT*/
+/*STARTREAKPOINT 2 FOR MEDIUM VIEWPORT*/
 @media screen and (min-width: 48em) {
 
-}
 
-/*BREAKPOINT 3 FOR LARGE VIEWPORT*/
+
+
+     .site-footer {
+          display: inline-block;
+     }
+
+     .site-footer {
+          display: none;
+          color: #FF5722;
+          display: inline-block;
+          background-color: rgba(255, 255, 255, 0.93);
+          opacity: .8;
+          position: fixed;
+          margin: auto 0;
+          bottom: 0;
+          width: 100%;
+          z-index: 10;
+          text-align: center;
+          font-weight: 300;
+     }
+
+     .footerlabel {
+          display: inline-block;
+     }
+
+     .footer-nav {
+          display: inline-block;
+     }
+
+     .footer-nav ul {
+          list-style: none;
+     }
+
+     .footer-nav li {
+          display:inline-block;
+     }
+
+     .footer-nav a {
+          text-decoration: none;
+     }
+}
+/*END BREAKPOINT 2 FOR SMALLEST VIEWPORT*/
+
+/*START BREAKPOINT 3 FOR LARGE VIEWPORT*/
 @media screen and (min-width: 48em) {
      
 }
+/*END BREAKPOINT 3 FOR SMALLEST VIEWPORT*/
 
 
 
@@ -227,13 +342,7 @@ Shadow: #727272 grey
      }*/
      /*END SCROLLMAGIC CLASS TOGGLES STYLING*/
 
-     .scrollarrow {
-          display: block;
-          position: absolute;
-          left:40%;
-          bottom: -20%;
-          animation-duration: 1.5s;
-     }
+     
      /*BEGIN SCENE STORY PANELS STYLING FOR MAIN PAGE*/
      .scene {
           height: 100vh;
