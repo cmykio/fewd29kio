@@ -1,0 +1,238 @@
+/* 
+Project Name: Flag Design Quiz
+Client: FEWD29 GA Final Project
+Author: Kio McLoughlin
+*/
+
+/******************************************
+/* COLOURS
+/*******************************************/
+
+/* add a list of colours used in the project */
+SCENE 1
+Text: #FFFFFF white
+Paper: #F44336 red
+Background | Dropcap: #FF9800 orange
+Shadow: #727272 grey
+
+SCENE 2
+Text: #FFFFFF white
+Paper: #009688 teal 
+Background | Dropcap: #CDDC39 lime
+Shadow: #727272 grey
+
+SCENE 3
+Text: #FFFFFF white
+Paper: #607D8B blue grey
+Background | Dropcap: #FF4081 pink
+Shadow: #727272 grey
+
+SCENE 4
+Text: #212121 black
+Paper: #FFC107 yellow
+Background | Dropcap: #536DFE violet
+Shadow: #727272 grey
+
+SCENE 5
+Text: #FFFFFF white
+Paper: #4CAF50 green
+Background | Dropcap: #7C4DFF purple
+Shadow: #727272 grey
+
+SCENE 6
+Text: #FFFFFF white
+Paper: #FF5722 orange
+Background | Dropcap: #536DFE lilac
+Shadow: #727272 grey
+
+SCENE 7
+Text: #FFFFFF white
+Paper: #673AB7
+Background | Dropcap: #FFC107
+Shadow: #727272 grey
+
+SCENE 8
+Text: #212121 black
+Paper: #8BC34A light green
+Background | Dropcap: #448AFF blue
+Shadow: #727272 grey
+
+SCENE 9
+Text: #FFFFFF white
+Paper: #2196F3 blue
+Background | Dropcap: #FF5722 orange
+Shadow: #727272 grey
+
+SCENE 10
+Text: 
+Paper:
+Background | Dropcap: #F5F5F5 white
+Shadow: #727272 grey
+
+
+
+
+/******************************************
+/* SENSIBLE DEFAULTS                   
+/*******************************************/
+
+* {
+     box-sizing: border-box;
+}
+
+/******************************************
+/* TYPOGRAPHY
+/*******************************************/
+
+/* add type styles here */
+/*Fira+Sans:400,300,500,700,500italic,300italic,400italic*/
+
+/******************************************
+/* LAYOUT                   
+/*******************************************/
+
+.main_h {
+ position: fixed;
+ top: 0px;
+ max-height: 70px;
+ z-index: 999;
+ width: 100%;
+ padding-top: 17px;
+ background: none;
+ overflow: hidden;
+ -webkit-transition: all 0.3s;
+ transition: all 0.3s;
+ opacity: 0;
+ top: -100px;
+ padding-bottom: 6px;
+ font-family: "Montserrat", sans-serif;
+}
+@media only screen and (max-width: 766px) {
+
+.main_h {
+ padding-top: 25px;
+}
+}
+
+.open-nav {
+ max-height: 400px !important;
+}
+
+.open-nav .mobile-toggle {
+ transform: rotate(-90deg);
+ -webkit-transform: rotate(-90deg);
+}
+
+.sticky {
+ background-color: rgba(255, 255, 255, 0.93);
+ opacity: 1;
+ top: 0px;
+ border-bottom: 1px solid gainsboro;
+}
+
+nav {
+ float: right;
+ width: 60%;
+}
+@media only screen and (max-width: 766px) {
+
+nav {
+ width: 100%;
+}
+}
+
+nav ul {
+ list-style: none;
+ overflow: hidden;
+ text-align: right;
+ float: right;
+}
+@media only screen and (max-width: 766px) {
+
+nav ul {
+ padding-top: 10px;
+ margin-bottom: 22px;
+ float: left;
+ text-align: center;
+ width: 100%;
+}
+}
+
+nav ul li {
+ display: inline-block;
+ margin-left: 35px;
+ line-height: 1.5;
+}
+@media only screen and (max-width: 766px) {
+
+nav ul li {
+ width: 100%;
+ padding: 7px 0;
+ margin: 0;
+}
+}
+
+nav ul a {
+ color: #888888;
+ text-transform: uppercase;
+ font-size: 12px;
+}
+
+.mobile-toggle {
+ display: none;
+ cursor: pointer;
+ font-size: 20px;
+ position: absolute;
+ right: 22px;
+ top: 0;
+ width: 30px;
+ -webkit-transition: all 200ms ease-in;
+ -moz-transition: all 200ms ease-in;
+ transition: all 200ms ease-in;
+}
+@media only screen and (max-width: 766px) {
+
+.mobile-toggle {
+ display: block;
+}
+}
+
+.mobile-toggle span {
+ width: 30px;
+ height: 4px;
+ margin-bottom: 6px;
+ border-radius: 1000px;
+ background: #8f8f8f;
+ display: block;
+}
+
+
+/******************************************
+/* HELPER CLASSES
+/*******************************************/
+
+/* Clearfix */
+.clearfix:before,
+.clearfix:after {
+     content: " ";
+     display: table;
+}
+.clearfix:after {
+     clear:both;
+}
+
+.is-hidden {
+     display: none;
+}
+.is-visible {
+     display: block;
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES                   
+/*******************************************/
+
+
+
+
