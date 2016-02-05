@@ -78,9 +78,6 @@ Shadow: #727272 grey
 
 * {
      box-sizing: border-box;
-     outline: 3px solid grey;
-     background-color: blue;
-
 }
 
 /******************************************
@@ -88,7 +85,7 @@ Shadow: #727272 grey
 /*******************************************/
 
 /* add type styles here */
-
+/*Fira+Sans:400,300,500,700,500italic,300italic,400italic*/
 
 /******************************************
 /* LAYOUT                   
@@ -119,7 +116,7 @@ Shadow: #727272 grey
 
      h2 {
           font-weight: 300;
-          font-size: .8em;
+          /*font-size: .8em;*/
           margin: 0;
      }
 
