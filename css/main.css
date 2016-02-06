@@ -229,6 +229,10 @@ Shadow: #727272 grey
      }
 
      .backgroundfills {
+          height: 100vh;
+     }
+
+     .card {
           margin: 0 auto;
           min-height: 88vh;
           max-height: 88vh;
@@ -236,7 +240,15 @@ Shadow: #727272 grey
           min-width: 80vw;
           padding: 25vh 5vw;
           border: solid, .2em, #727272;
-     }     
+     }    
+
+margin: 0 auto;
+          width: 80%;
+          margin: 0 auto;
+          padding: 5em 1.5em;
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
+
+
 
      .scenecolor1 {
           background-color: #FF9800;
@@ -682,179 +694,6 @@ Shadow: #727272 grey
      
 }
 /*END BREAKPOINT 3 FOR SMALLEST VIEWPORT*/
-
-
-
-
-
-
-
-
-
-/****************************CUT CSS FROM BELOW HERE*************************/
-
-
-
-     
-
-
-
-     /*don't think this is needed*/
-     /*.flagreturn {
-          display: none;
-          float: left;
-          margin: .5em 1%;
-          width: 88vw;
-          font-family: 'lato';
-          font-weight: 400;
-          font-size: 1em;
-     }*/
-      /*.quiz_controls {
-          position: absolute;
-          bottom: 0;
-          width: 90vw;
-     }*/
-
-     
-
-
-     /*END FLAG AND QUIZ DISPLAY STYLING*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     /*BEGIN SITE FOOTER AND NAV STYLING*/
-     .site-footer {
-          display: none;
-          position: fixed;
-          background-color: lightblue;
-          padding-left: 20%;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          width: 100%;
-          z-index: 10;
-     }
-
-     .footer-nav {
-          display: inline-block;
-     }
-
-     .footer-nav ul {
-          list-style: none;
-     }
-
-     .footer-nav li {
-          display:inline-block;
-     }
-     /*END SITE FOOTER AND NAV STYLING*/
-}
-/*END BASELINE VIEWPORT STYLING*/
-
-/*BREAKPOINT 2*/
-@media screen and (min-width: 10em) {
-     .site-container {
-          background-color: grey;
-     }
-}
-/*END BREAKPOINT 2*/
-
-
-
-/*BREAKPOINT 3*/
-@media screen and (min-width: 20em) {
-     .site-container {
-          background-color: yellow;
-     }
-}
-/*END BREAKPOINT 3*/
-
-
-
-/*BREAKPOINT 4*/
-@media screen and (min-width: 30em) {
-     .site-container {
-          background-color: lightblue;
-     }
-}
-/*END BREAKPOINT 4*/
-
-
-
-/*BREAKPOINT 5*/
-@media screen and (min-width: 40em) {
-     .site-container {
-          background-color: lightblue;
-     }
-}
-/*END BREAKPOINT 5*/
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************NAVIGATION EXPERIMENTING*/
-/*Need to change this to get the nav operational - it'll need to linked to the media queries - as it's the screensize at the mo that's making it w*/
-/*Navigation tomfoolery - need to refactor this, but it's appearing*/
-/*
-.nav-icon,
-.nav-icon:before,
-.nav-icon:after {
-     content:"";
-     position:absolute;
-     right:1em;
-     width:2em;
-     height:2em;
-     border-top:0.25em solid #fff45a;
-}
-
-change this to EMS
-@media screen and (max-width: 640px) {
-     .nav-icon { display:block; }
-}
-
-.nav-icon:before {
-     top:0.25em;
-     right:0;
-}
-.nav-icon:after {
-     top:0.75em;
-     right:0;
-}*/
-/******************************NAVIGATION EXPERIMENTING*/
-
-
-
-
-
 
 
 /******************************************
