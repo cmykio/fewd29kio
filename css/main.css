@@ -599,12 +599,7 @@ Shadow: #727272 grey
           display: block;
      }
 
-     /*.off {
-          display: none;
-     }*/
-
     
-
      .visible {
           visibility: visible;
      }
@@ -670,6 +665,12 @@ Shadow: #727272 grey
           padding: 15vh 5vw;
           border: solid, .2em, #727272;
      } 
+
+     .quizalignment {
+          padding: 0vh;
+
+     }
+
 
 }
 /*END BREAKPOINT 1 FOR SMALLEST VIEWPORT*/
