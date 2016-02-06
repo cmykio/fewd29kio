@@ -507,11 +507,33 @@ Shadow: #727272 grey
      }
 
      
+     /**********needs attention for button layout**********/
+     .guess1 {
+          float: left;
+          display: inline-block;
+          /*margin-right: 2vw;*/
+          /*width: 22em;*/
+          min-width: 10em;
+          max-width: 22em;
+     }
+
+     .guess2 {
+          float: right;
+          display: inline-block;
+          /*width: 22em;*/
+          min-width: 10em;
+          max-width: 22em;
+     }
+
 
      .answer_controls {
-          position: relative;
+          display: block;
+          /*position: relative;*/
           visibility: hidden;
-          font-size: 1.2em;
+          width: 100%;
+          max-height: 3.1875em;
+          /*font-size: 1.2em;*/
+          text-align: center;
      }
 
      .play_controls{
@@ -521,17 +543,17 @@ Shadow: #727272 grey
      }
 
      .playcontrol {
-          width: 88vw;
+          width: 90vw;
           display: none;
      }
 
      .hintcontrol {
-          width: 88vw;
+          width: 90vw;
           display: none;
      }
 
      .showflag {
-          width: 88vw;
+          width: 90vw;
           display: none;
      }
      
@@ -543,7 +565,7 @@ Shadow: #727272 grey
           padding: .625em 1em;
           text-decoration: none;
           border: solid 3px #FF5722;
-          max-width: 45em;
+          max-width: 90%;
           margin: 0 auto;
      }
 
@@ -559,13 +581,11 @@ Shadow: #727272 grey
      }
 
 
-     .guess {
-          float: left;
-          display: inline-block;
-          margin-right: 2vw;
-          /*position: absolute;*/
-          width: 43vw;
-     }
+
+
+
+
+
 
      .button:hover {
           background: #FF5252;
@@ -714,12 +734,21 @@ Shadow: #727272 grey
           font-size: 1em;
      }
 
-     .guess {
+     .guess1 {
           float: left;
           display: inline-block;
-          margin-right: 2vw;
-          /*position: absolute;*/
-          width: 40vw;
+          /*margin-right: 2vw;*/
+          /*width: 22em;*/
+          min-width: 19em;
+          max-width: 22em;
+     }
+
+     .guess2 {
+          float: right;
+          display: inline-block;
+          /*width: 22em;*/
+          min-width: 19em;
+          max-width: 22em;
      }
 
 
@@ -780,7 +809,7 @@ Shadow: #727272 grey
      .card {
           width: 65%;
           max-width: 56.25em;
-          height: 40%;
+          height: 50%;
           margin: 0 auto;
           padding: 5vh 5vw;
           border: solid, .2em, #727272;
@@ -792,7 +821,7 @@ Shadow: #727272 grey
 
      h2 {
           font-weight: 300;
-          font-size: 2.5em;
+          font-size: 2.2em;
           margin: 0;
      }
 
@@ -802,7 +831,7 @@ Shadow: #727272 grey
 
      p {
           font-weight: 300;
-          font-size: 1.5em;
+          font-size: 1.3em;
      }
 
      blockquote {
@@ -820,6 +849,24 @@ Shadow: #727272 grey
      cite {
           font-size: 1.35em;
      }
+
+     .guess1 {
+          float: left;
+          display: inline-block;
+          /*margin-right: 2vw;*/
+          /*width: 22em;*/
+          min-width: 22em;
+          /*max-width: 22em;*/
+     }
+
+     .guess2 {
+          float: right;
+          display: inline-block;
+          /*width: 22em;*/
+          min-width: 22em;
+          /*max-width: 22em;*/
+     }
+
      
 }
 /*END BREAKPOINT 3 FOR LARGE VIEWPORT*/
