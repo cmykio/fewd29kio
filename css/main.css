@@ -161,7 +161,7 @@ Shadow: #727272 grey
      }
 
      /*BEGIN SIDEBAR NAV STYLING*/
-     .sidebar-nav {
+     /*.sidebar-nav {
           display:none;
           position: fixed;
           bottom: 0;
@@ -195,7 +195,7 @@ Shadow: #727272 grey
           border-radius: 50%;
           background: red;
           margin: 0 auto;
-     }
+     }*/
 
     /* .sidebar-nav .arrow {
           position: absolute;
@@ -224,11 +224,12 @@ Shadow: #727272 grey
 
      /*BEGIN SCROLLMAGIC RELATED STYLING*/
           /*BEGIN SCENE STORY PANELS STYLING FOR MAIN PAGE*/
-     .scene {
+     .stagecontainer {
           height: 100vh;
      }
 
-     .card {
+     .backgroundfills {
+          margin: 0 auto;
           min-height: 88vh;
           max-height: 88vh;
           max-width: 100vw;
@@ -236,12 +237,6 @@ Shadow: #727272 grey
           padding: 25vh 5vw;
           border: solid, .2em, #727272;
      }     
-
-     .cardtext {
-          /*padding-bottom: 2em;*/
-          /*box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);*/
-     }
-
 
      .scenecolor1 {
           background-color: #FF9800;
@@ -621,7 +616,15 @@ Shadow: #727272 grey
 
 
 /*START BREAKPOINT 1 FOR SMALLEST VIEWPORT*/
-@media screen and (min-width: 22.5em) {
+@media screen and (min-width: 23em) {
+     .card {
+
+          margin: 0 auto;
+           width: 80%;
+          margin: 0 auto;
+          padding: 5em 1.5em;
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
+     }     
 
 }
 /*END BREAKPOINT 1 FOR SMALLEST VIEWPORT*/

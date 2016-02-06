@@ -219,7 +219,7 @@ Shadow: #727272 grey
 
 
 /*START BREAKPOINT 1 FOR SMALLEST VIEWPORT*/
-@media screen and (min-width: 22.5em) {
+@media screen and (min-width: 23em) {
      .site-container {
           width: 100%;
           margin: 0 auto;

@@ -258,7 +258,7 @@ function showMapInfoButton () {
 
 function getFlag () {
 	console.log('getFlag is firing');
-	image_file = "../fewd29kio/flags-big/"+flag_to_print+".png"
+	image_file = "flags-normal/"+flag_to_print+".png"
 	document.getElementById('flag').src=image_file;
 	printFlag();
 		
