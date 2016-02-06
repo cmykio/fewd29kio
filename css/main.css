@@ -78,8 +78,6 @@ Shadow: #727272 grey
 
 * {
      box-sizing: border-box;
-     outline: 3px solid grey;
-
 }
 
 /******************************************
@@ -95,7 +93,7 @@ Shadow: #727272 grey
 /*******************************************/
 
 /*START BREAKPOINT 0 FOR SMALLEST VIEWPORT*/
-@media screen and (min-width: 22.5em) {
+@media screen and (min-width: 5em) {
      body {
           min-height: 100vh;
           font-family: 'Fira Sans', sans-serif;
@@ -107,183 +105,60 @@ Shadow: #727272 grey
           color: #F5F5F5;
      }
 
-     /*BEGIN SCROLLMAGIC RELATED STYLING*/
-
-     /*END SCROLLMAGIC RELATED STYLING*/
-
-
-
-
-
-
-     .scrollarrow {
-          display: block;
-          position: absolute;
-          left:40%;
-          bottom: -10%;
-          animation-duration: 1.5s;
-     }
-
-
-
-     
-     .site-footer {
-          display: none;
-          color: #FF5722;
-          display: inline-block;
-          background-color: rgba(255, 255, 255, 0.93);
-          opacity: 1;
-          position: fixed;
-          margin: auto 0;
-          bottom: 0;
-          width: 100%;
-          z-index: 10;
-          text-align: center;
-          font-weight: 300;
-     }
-
-     .footerlabel {
-          display: none;
-     }
-
-     .footer-nav {
-          display: none;
-     }
-
-     .footer-nav ul {
-          list-style: none;
-     }
-
-     .footer-nav li {
-          display: none;
-     }
-
-     .footer-nav a {
-          text-decoration: none;
-     }
-}
-/*END BREAKPOINT 0 FOR SMALLEST VIEWPORT*/
-
-
-/*START BREAKPOINT 1 FOR SMALLEST VIEWPORT*/
-@media screen and (min-width: 22.5em) {
-
-}
-/*END BREAKPOINT 1 FOR SMALLEST VIEWPORT*/
-
-
-/*STARTREAKPOINT 2 FOR MEDIUM VIEWPORT*/
-@media screen and (min-width: 48em) {
-
-
-
-
-     .site-footer {
-          display: inline-block;
-     }
-
-     .site-footer {
-          display: none;
-          color: #FF5722;
-          display: inline-block;
-          background-color: rgba(255, 255, 255, 0.93);
-          opacity: .8;
-          position: fixed;
-          margin: auto 0;
-          bottom: 0;
-          width: 100%;
-          z-index: 10;
-          text-align: center;
-          font-weight: 300;
-     }
-
-     .footerlabel {
-          display: inline-block;
-     }
-
-     .footer-nav {
-          display: inline-block;
-     }
-
-     .footer-nav ul {
-          list-style: none;
-     }
-
-     .footer-nav li {
-          display:inline-block;
-     }
-
-     .footer-nav a {
-          text-decoration: none;
-     }
-}
-/*END BREAKPOINT 2 FOR SMALLEST VIEWPORT*/
-
-/*START BREAKPOINT 3 FOR LARGE VIEWPORT*/
-@media screen and (min-width: 48em) {
-     
-}
-/*END BREAKPOINT 3 FOR SMALLEST VIEWPORT*/
-
-
-
-
-@media screen and (min-width: 22.5em) {
-     body {
-          min-height: 100vh;
-          font-family: 'Fira Sans', sans-serif;
-     }
-
-     .site-container {
-          max-width: 100%;
-          margin: 0 auto;
-     }
-
-     .site-header {
-          position: fixed;
-          width: 100%;
-          z-index: 11;
-     }
-
      h1 {
-          font-weight: 300;
-          font-size: 1em;
+          font-weight: 500;
      }
 
      h2 {
           font-weight: 300;
-          font-size: .8em;
+          font-size: 1em;
           margin: 0;
      }
 
+     h2:first-of-type::first-letter {
+          initial-letter: 2;
+     }
+
      p {
-          font-weight: 400;
+          font-weight: 300;
           font-size: .8em;
      }
 
+     blockquote {
+          margin-top: 0;
+          font-weight: 500;
+          font-size: 1.2em;
+          border-right: solid .5em #FF9800;
+          border-bottom: solid .5em #FF9800;
+          padding: .5em;
+          box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
+     }
+
+     cite {
+          font-size: .75em;
+     }
+
      .dropcap {
-          /*font-style: italic;*/
+          text-shadow: 19px 18px 0px rgba(0,0,0,0.65);
      }
 
      a {
           text-decoration: none;
+     }
+
+     .promptcontainer {
+          display: block;
+          position: relative;
+          text-align: center;
+     }
+
+     .scrollprompt {
+          /*margin: 0 auto;*/
      } 
 
-
-     /*BEGIN TOP NAV STYLING*/
-     .site-nav {
-          /*padding-left: 30%;*/
+     .summary {
+          padding-left: 2em;
      }
-
-     .site-nav ul {
-          list-style: none;
-     }
-
-     .site-nav li {
-          display:inline-block;
-     }
-     /*END TOP NAV STYLING*/
-
 
      /*BEGIN SIDEBAR NAV STYLING*/
      .sidebar-nav {
@@ -319,7 +194,7 @@ Shadow: #727272 grey
           height: 2.5vh;
           border-radius: 50%;
           background: red;
-          margin: 1em 0;
+          margin: 0 auto;
      }
 
     /* .sidebar-nav .arrow {
@@ -334,19 +209,39 @@ Shadow: #727272 grey
      }*/
      /*END SIDEBAR NAV STYLING*/
 
+     .arrowcontainer {
+          display: block;
+          position: relative;
+          text-align: center;
+     }
+
+     .scrollarrow {
+          display: inline-block;
+          margin: 0 auto;
+          animation-duration: 1.5s;
+     }
 
 
-     /*BEGIN SCROLLMAGIC CLASS TOGGLES - THIS DEFINES CLASS INJECTIONS AT CERTAIN TRIGGER POINTS IN THE PAGE*/
-     /*.active {
-          color: blue;
-     }*/
-     /*END SCROLLMAGIC CLASS TOGGLES STYLING*/
-
-     
-     /*BEGIN SCENE STORY PANELS STYLING FOR MAIN PAGE*/
+     /*BEGIN SCROLLMAGIC RELATED STYLING*/
+          /*BEGIN SCENE STORY PANELS STYLING FOR MAIN PAGE*/
      .scene {
           height: 100vh;
      }
+
+     .card {
+          min-height: 88vh;
+          max-height: 88vh;
+          max-width: 100vw;
+          min-width: 80vw;
+          padding: 25vh 5vw;
+          border: solid, .2em, #727272;
+     }     
+
+     .cardtext {
+          /*padding-bottom: 2em;*/
+          /*box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);*/
+     }
+
 
      .scenecolor1 {
           background-color: #FF9800;
@@ -377,27 +272,16 @@ Shadow: #727272 grey
      }
 
      .scenecolor8 {
-          background-color: #448AFF;
+          background-color: #607D8B;
      }
 
      .scenecolor9 {
-          background-color: #FF5722;
+          background-color: #FFC107;
      }
 
      .scenecolor10 {
           background-color: #FFC107;
      }
-
-
-
-     .card {
-          min-height: 75vh;
-          max-height: 75vh;
-          max-width: 100vw;
-          min-width: 80vw;
-          padding: 25vh 5vw;
-          border: solid, .2em, #727272;
-     }     
 
      .cardcolor1 {
           color: #FFFFFF;
@@ -455,18 +339,10 @@ Shadow: #727272 grey
 
      .cardcolor10 {
           color: #FFFFFF;
-          background-color: #0288D1;
+          background-color: #F44336;
           box-shadow: 19px 18px 0px -3px rgba(0,0,0,0.65);
      }
-
-
-
-
-     .cardtext {
-     /*drop caps in here*/
-     }
-
-     /*END SCENE STORY PANELS STYLING FOR MAIN PAGE
+     /*END SCROLLMAGIC RELATED STYLING*/
 
 
      /*BEGIN STYLING AROUND FLAG AND QUIZ DISPLAY SECTION*/
@@ -694,6 +570,126 @@ Shadow: #727272 grey
      .hidden {
           visibility: hidden;
      }
+      /*END STYLING AROUND FLAG AND QUIZ DISPLAY SECTION*/
+
+
+
+
+
+
+
+     
+     .site-footer {
+          display: none;
+          color: #FF5722;
+          display: inline-block;
+          background-color: rgba(255, 255, 255, 0.93);
+          opacity: 1;
+          position: fixed;
+          margin: auto 0;
+          bottom: 0;
+          width: 100%;
+          z-index: 10;
+          text-align: center;
+          font-weight: 300;
+     }
+
+     .footerlabel {
+          display: none;
+     }
+
+     .footer-nav {
+          display: none;
+     }
+
+     .footer-nav ul {
+          list-style: none;
+     }
+
+     .footer-nav li {
+          display: none;
+     }
+
+     .footer-nav a {
+          text-decoration: none;
+     }
+}
+/*END BREAKPOINT 0 FOR SMALLEST VIEWPORT*/
+
+
+/*START BREAKPOINT 1 FOR SMALLEST VIEWPORT*/
+@media screen and (min-width: 22.5em) {
+
+}
+/*END BREAKPOINT 1 FOR SMALLEST VIEWPORT*/
+
+
+/*START BREAKPOINT 2 FOR MEDIUM VIEWPORT*/
+@media screen and (min-width: 48em) {
+
+
+
+
+     .site-footer {
+          display: inline-block;
+     }
+
+     .site-footer {
+          display: none;
+          color: #FF5722;
+          display: inline-block;
+          background-color: rgba(255, 255, 255, 0.93);
+          opacity: .8;
+          position: fixed;
+          margin: auto 0;
+          bottom: 0;
+          width: 100%;
+          z-index: 10;
+          text-align: center;
+          font-weight: 300;
+     }
+
+     .footerlabel {
+          display: inline-block;
+     }
+
+     .footer-nav {
+          display: inline-block;
+     }
+
+     .footer-nav ul {
+          list-style: none;
+     }
+
+     .footer-nav li {
+          display:inline-block;
+     }
+
+     .footer-nav a {
+          text-decoration: none;
+     }
+}
+/*END BREAKPOINT 2 FOR SMALLEST VIEWPORT*/
+
+/*START BREAKPOINT 3 FOR LARGE VIEWPORT*/
+@media screen and (min-width: 64em) {
+     
+}
+/*END BREAKPOINT 3 FOR SMALLEST VIEWPORT*/
+
+
+
+
+
+
+
+
+
+/****************************CUT CSS FROM BELOW HERE*************************/
+
+
+
+     
 
 
 
