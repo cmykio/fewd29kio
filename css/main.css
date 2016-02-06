@@ -508,6 +508,12 @@ Shadow: #727272 grey
 
      
      /**********needs attention for button layout**********/
+     .play_controls{
+          float: left;
+          max-height: 2em;
+          margin: 2vw 0;
+     }
+
      .guess1 {
           float: left;
           display: inline-block;
@@ -536,11 +542,7 @@ Shadow: #727272 grey
           text-align: center;
      }
 
-     .play_controls{
-          float: left;
-          max-height: 2em;
-          margin: 2vw 0;
-     }
+     
 
      .playcontrol {
           width: 90vw;
