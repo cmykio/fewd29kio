@@ -508,14 +508,14 @@ Shadow: #727272 grey
 
      
      /**********needs attention for button layout**********/
-<<<<<<< HEAD
+
      .play_controls{
           float: left;
           max-height: 2em;
           margin: 2vw 0;
      }
 
-=======
+
      .buttons_container {
           display: block;
           position: relative;
@@ -523,7 +523,7 @@ Shadow: #727272 grey
           background-color: ;
           min-height: 20vh;
      }
->>>>>>> master
+
      .guess1 {
           float: left;
           display: inline-block;
@@ -621,10 +621,7 @@ Shadow: #727272 grey
 
 
      .on {
-          display: block;
-     }
-
-    
+          displa  
      .visible {
           visibility: visible;
      }
