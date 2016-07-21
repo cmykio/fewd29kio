@@ -508,20 +508,10 @@ Shadow: #727272 grey
 
      
      /**********needs attention for button layout**********/
-
      .play_controls{
           float: left;
           max-height: 2em;
           margin: 2vw 0;
-     }
-
-
-     .buttons_container {
-          display: block;
-          position: relative;
-          margin-top: 50%;
-          background-color: ;
-          min-height: 20vh;
      }
 
      .guess1 {
@@ -543,9 +533,7 @@ Shadow: #727272 grey
 
 
      .answer_controls {
-          display: inline-block;
-          position: absolute;
-          text-align: center;
+          display: block;
           /*position: relative;*/
           visibility: hidden;
           width: 100%;
@@ -554,18 +542,7 @@ Shadow: #727272 grey
           text-align: center;
      }
 
-<<<<<<< HEAD
      
-=======
-     .play_controls{
-          position: absolute;
-          bottom: 0;
-          /*float: left;*/
-          text-align: center;
-          max-height: 2em;
-          margin: 0;
-     }
->>>>>>> master
 
      .playcontrol {
           width: 90vw;
@@ -621,7 +598,10 @@ Shadow: #727272 grey
 
 
      .on {
-          displa  
+          display: block;
+     }
+
+    
      .visible {
           visibility: visible;
      }
@@ -684,16 +664,12 @@ Shadow: #727272 grey
           max-height: 50%;
           max-width: 100vw;
           min-width: 80vw;
-          padding-top: 15vh:; 
-          padding-left: 5vw;
-          padding-right: 5vw;
-          padding-bottom: 0;
+          padding: 15vh 5vw;
           border: solid, .2em, #727272;
      } 
 
      .quizalignment {
-          padding: 0;
-          height: 35em;
+          padding: 0vh;
 
      }
 
