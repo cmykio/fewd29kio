@@ -258,7 +258,7 @@ function showMapInfoButton () {
 
 function getFlag () {
 	console.log('getFlag is firing');
-	image_file = "flags-normal/"+flag_to_print+".png"
+	image_file = "http:cmykio.github.io/fewd29kio/flags-normal/"+flag_to_print+".png"
 	document.getElementById('flag').src=image_file;
 	printFlag();
 		
@@ -432,9 +432,11 @@ function getAnswerGood (){
 	console.log('the answer from the file is '+ answer);
 	if (answer === guess) {
 		document.getElementById('quizresponse').innerText = 'You got it!'
+		document.getElementById('explanation').innerText = "Some bla bla that Kio needs to fill in"
 		score = score + 1;
 	} else {
 		document.getElementById('quizresponse').innerText = "No, sorry, it's not great..."
+		document.getElementById('explanation').innerText = "Some bla bla that Kio needs to fill in"
 	}
 	hideMapInfoButton();
 	hidePrinciplesButton();
@@ -494,9 +496,11 @@ function getAnswerBad (){
 	console.log('the answer from the file is '+ answer);
 	if (answer === guess) {
 		document.getElementById('quizresponse').innerText = 'You Got it!'
+		document.getElementById('explanation').innerText = "Some bla bla that Kio needs to fill in"
 		score = score + 1;
 	} else {
-		document.getElementById('quizresponse').innerText = 'No, sorry you are wrong.'
+		document.getElementById('quizresponse').innerText = 'No, sorry, not really.'
+		document.getElementById('explanation').innerText = "Some bla bla that Kio needs to fill in"
 	}
 	hideMapInfoButton ();
 	hidePrinciplesButton();
@@ -589,225 +593,6 @@ function hideMap () {
 }
 
 // END GROUP 8 FUNCTIONS document.getElementById('mapinfo').onclick = printMap;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function hideFlag_displayPrinciples () {
-// 	console.log('hideFlag_displayPrinciples is on')
-// 	var flaganimation="animated bounceOutDown";
-// 	$('#flag').addClass(flaganimation).on(endanimation,
-// 		function(){
-// 			$(this).removeClass(flaganimation);
-// 			$('#flag').removeClass('on');
-// 			console.log('displayPrinciples firing')
-// 			
-// 					showBacktoFlagButton();
-// 				
-// 		});
-// 	hidePrinciplesButton();
-// 	hideGuessControls();
-	
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Returns a flag image from directory
-// Also relabels the 'Play' button to 'Hints', so the same button can be used to call another
-// function to display hints re flag design principles
-
-
-
-
-function showFlag () {
-	animation="animated bounceOutUp";
-	$("#hintpanel").addClass(animation).on(endanimation,
-		function(){
-			$(this).removeClass(animation);
-			$('#hintpanel').removeClass('on');
-			$('#flag').removeClass('off');
-
-			animation="animated bounceInDown";
-			$("#flag").addClass(animation).on(endanimation,
-				function(){
-				$(this).removeClass(animation);
-				animation="animated fadeOut";
-				$("#flagbutton").addClass(animation).on(endanimation,
-					function(){
-						$(this).removeClass(animation);
-						$('#flagbutton').removeClass('on');
-					});
-				});
-
-			$('#answer_buttons').addClass('visible');
-			animation="animated bounceInLeft";
-			$("#good").addClass(animation).on(endanimation,
-				function(){
-					$(this).removeClass(animation);
-				});
-			animation="animated bounceInRight";
-			$("#bad").addClass(animation).on(endanimation,
-				function(){
-					$(this).removeClass(animation);
-				});			
-		});
-
-
-	animation="animated bounceOutRight";
-	$("#map").addClass(animation).on(endanimation,
-		function(){
-			$(this).removeClass(animation);
-			$('#map').removeClass('on');
-			$('#flag').removeClass('off');
-
-			animation="animated bounceInDown";
-			$("#flag").addClass(animation).on(endanimation,
-				function(){
-				$(this).removeClass(animation);
-				animation="animated fadeOut";
-				$("#flagbutton").addClass(animation).on(endanimation,
-					function(){
-						$(this).removeClass(animation);
-						$('#flagbutton').removeClass('on');
-					});
-				});
-
-			$('#answer_buttons').addClass('visible');
-			animation="animated bounceInLeft";
-			$("#good").addClass(animation).on(endanimation,
-				function(){
-					$(this).removeClass(animation);
-				});
-			animation="animated bounceInRight";
-			$("#bad").addClass(animation).on(endanimation,
-				function(){
-					$(this).removeClass(animation);
-				});			
-		});
-
-
-				
-	
-
-	$('#map').removeClass('on');
-			
-			
-			
-	// $('#good').removeClass('hidden');
-	// $('#bad').removeClass('hidden');
-	// $('#hintbutton').removeClass('off');
-};
-
-// function getHints () {
-// 	animation="animated bounceOutUp";
-// 	$("#flag").addClass(animation).on(endanimation,
-// 		function(){
-// 			$(this).removeClass(animation);
-// 			console.log('getHints firing');
-// 			$('#hintpanel').addClass('on');
-// 			animation="animated bounceInDown";
-// 			$("#hintpanel").addClass(animation).on(endanimation,
-// 				function(){
-// 					$(this).removeClass(animation);
-// 				});
-// 			animation="animated fadeOut";
-// 			$("#good").addClass(animation).on(endanimation,
-// 				function(){
-// 					$(this).removeClass(animation);
-// 					$('#answer_buttons').removeClass('visible');
-// 				});
-// 			$("#bad").addClass(animation).on(endanimation,
-// 				function(){
-// 					$(this).removeClass(animation);
-// 				});
-// 			$('#flag').addClass('off');
-// 			$('#map').addClass('off');
-// 			$('#hintbutton').addClass('off');
-// 			$('#flagbutton').removeClass('off');
-// 			$('#flagbutton').addClass('on');
-// 		});	
-// };
 
 
 // We retrieve our drop cap elements using a class selector...
@@ -1019,211 +804,205 @@ var flags_list = [
 ]
 
 
-
-
-
-
-
-
-
+// mock country answers - these need updating
 var answer_codes = [
-		"AD", "bad",
-		"AE", "good",		
-		"AF",
-		"AG",
-		"AL",
-		"AM",
-		"AO",
-		"AR",
-		"AT",
-		"AU",
-		"AZ",
-		"BA",
-		"BB",
-		"BD",
-		"BE",
-		"BF",
-		"BG",
-		"BH",
-		"BI",
-		"BJ",
-		"BN",
-		"BO",
-		"BR",
-		"BS",
-		"BT",
-		"BW",
-		"BY",
-		"BZ",
-		"CA",
-		"CD",
-		"CF",
-		"CG",
-		"CH",
-		"CI",
-		"CL",
-		"CM",
-		"CN",
-		"CO",
-		"CR",
-		"CU",
-		"CV",
-		"CY",
-		"CZ",
-		"DE",
-		"DJ",
-		"DK",
-		"DM",
-		"DO",
-		"DZ",
-		"EC",
-		"EE",
-		"EG",
-		"EH",
-		"ER",
-		"ES",
-		"ET",
-		"FI",
-		"FJ",
-		"FM",
-		"FR",
-		"GA",
-		"GB",
-		"GD",
-		"GE",
-		"GH",
-		"GM",
-		"GN",
-		"GQ",
-		"GR",
-		"GT",
-		"GW",
-		"GY",
-		"HN",
-		"HR",
-		"HT",
-		"HU",
-		"ID",
-		"IE",
-		"IL",
-		"IN",
-		"IQ",
-		"IR",
-		"IS",
-		"IT",
-		"JM",
-		"JO",
-		"JP",
-		"KE",
-		"KG",
-		"KH",
-		"KI",
-		"KM",
-		"KN",
-		"KP",
-		"KR",
-		"KS",
-		"KW",
-		"KZ",
-		"LA",
-		"LB",
-		"LC",
-		"LI",
-		"LK",
-		"LR",
-		"LS",
-		"LT",
-		"LU",
-		"LV",
-		"LY",
-		"MA",
-		"MC",
-		"MD",
-		"ME",
-		"MG",
-		"MH",
-		"MK",
-		"ML",
-		"MM",
-		"MN",
-		"MR",
-		"MT",
-		"MU",
-		"MV",
-		"MW",
-		"MX",
-		"MY",
-		"MZ",
-		"NA",
-		"NE",
-		"NG",
-		"NI",
-		"NL",
-		"NO",
-		"NP",
-		"NR",
-		"NZ",
-		"OM",
-		"PA",
-		"PE",
-		"PG",
-		"PH",
-		"PK",
-		"PL",
-		"PT",
-		"PW",
-		"PY",
-		"QA",
-		"RO",
-		"RS",
-		"RU",
-		"RW",
-		"SA",
-		"SB",
-		"SC",
-		"SD",
-		"SE",
-		"SG",
-		"SI",
-		"SK",
-		"SL",
-		"SM",
-		"SN",
-		"SO",
-		"SR",
-		"ST",
-		"SV",
-		"SY",
-		"SZ",
-		"TD",
-		"TG",
-		"TH",
-		"TJ",
-		"TL",
-		"TM",
-		"TN",
-		"TO",
-		"TR",
-		"TT",
-		"TV",
-		"TW",
-		"TZ",
-		"UA",
-		"UG",
-		"US",
-		"UY",
-		"UZ",
-		"VA",
-		"VC",
-		"VE",
-		"VN",
-		"VU",
-		"WS",
-		"YE",
-		"ZA",
-		"ZM",
-		"ZW"
-];
+"AD”, ”bad",
+"AE”, ”good",
+"AF", "bad",
+"AG", "good",
+"AL", "bad",
+"AM", "good",
+"AO", "bad",
+"AR", "good",
+"AT", "bad",
+"AU", "good",
+"AZ", "bad",
+"BA", "good",
+"BB", "bad",
+"BD", "good",
+"BE", "bad",
+"BF", "good",
+"BG", "bad",
+"BH", "good",
+"BI", "bad",
+"BJ", "good",
+"BN", "bad",
+"BO", "good",
+"BR", "bad",
+"BS", "good",
+"BT", "bad",
+"BW", "good",
+"BY", "bad",
+"BZ", "good",
+"CA", "bad",
+"CD", "good",
+"CF", "bad",
+"CG", "good",
+"CH", "bad",
+"CI", "good",
+"CL", "bad",
+"CM", "good",
+"CN", "bad",
+"CO", "good",
+"CR", "bad",
+"CU", "good",
+"CV", "bad",
+"CY", "good",
+"CZ", "bad",
+"DE", "good",
+"DJ", "bad",
+"DK", "good",
+"DM", "bad",
+"DO", "good",
+"DZ", "bad",
+"EC", "good",
+"EE", "bad",
+"EG", "good",
+"EH", "bad",
+"ER", "good",
+"ES", "bad",
+"ET", "good",
+"FI", "bad",
+"FJ", "good",
+"FM", "bad",
+"FR", "good",
+"GA", "bad",
+"GB", "good",
+"GD", "bad",
+"GE", "good",
+"GH", "bad",
+"GM", "good",
+"GN", "bad",
+"GQ", "good",
+"GR", "bad",
+"GT", "good",
+"GW", "bad",
+"GY", "good",
+"HN", "bad",
+"HR", "good",
+"HT", "bad",
+"HU", "good",
+"ID", "bad",
+"IE", "good",
+"IL", "bad",
+"IN", "good",
+"IQ", "bad",
+"IR", "good",
+"IS", "bad",
+"IT", "good",
+"JM", "bad",
+"JO", "good",
+"JP", "bad",
+"KE", "good",
+"KG", "bad",
+"KH", "good",
+"KI", "bad",
+"KM", "good",
+"KN", "bad",
+"KP", "good",
+"KR", "bad",
+"KS", "good",
+"KW", "bad",
+"KZ", "good",
+"LA", "bad",
+"LB", "good",
+"LC", "bad",
+"LI", "good",
+"LK", "bad",
+"LR", "good",
+"LS", "bad",
+"LT", "good",
+"LU", "bad",
+"LV", "good",
+"LY", "bad",
+"MA", "good",
+"MC", "bad",
+"MD", "good",
+"ME", "bad",
+"MG", "good",
+"MH", "bad",
+"MK", "good",
+"ML", "bad",
+"MM", "good",
+"MN", "bad",
+"MR", "good",
+"MT", "bad",
+"MU", "good",
+"MV", "bad",
+"MW", "good",
+"MX", "bad",
+"MY", "good",
+"MZ", "bad",
+"NA", "good",
+"NE", "bad",
+"NG", "good",
+"NI", "bad",
+"NL", "good",
+"NO", "bad",
+"NP", "good",
+"NR", "bad",
+"NZ", "good",
+"OM", "bad",
+"PA", "good",
+"PE", "bad",
+"PG", "good",
+"PH", "bad",
+"PK", "good",
+"PL", "bad",
+"PT", "good",
+"PW", "bad",
+"PY", "good",
+"QA", "bad",
+"RO", "good",
+"RS", "bad",
+"RU", "good",
+"RW", "bad",
+"SA", "good",
+"SB", "bad",
+"SC", "good",
+"SD", "bad",
+"SE", "good",
+"SG", "bad",
+"SI", "good",
+"SK", "bad",
+"SL", "good",
+"SM", "bad",
+"SN", "good",
+"SO", "bad",
+"SR", "good",
+"ST", "bad",
+"SV", "good",
+"SY", "bad",
+"SZ", "good",
+"TD", "bad",
+"TG", "good",
+"TH", "bad",
+"TJ", "good",
+"TL", "bad",
+"TM", "good",
+"TN", "bad",
+"TO", "good",
+"TR", "bad",
+"TT", "good",
+"TV", "bad",
+"TW", "good",
+"TZ", "bad",
+"UA", "good",
+"UG", "bad",
+"US", "good",
+"UY", "bad",
+"UZ", "good",
+"VA", "bad",
+"VC", "good",
+"VE", "bad",
+"VN", "good",
+"VU", "bad",
+"WS", "good",
+"YE", "bad",
+"ZA", "good",
+"ZM", "bad",
+"ZW", "good"
+]
 
 var country_names = [
 		"Andorra",
@@ -1423,6 +1202,13 @@ var country_names = [
 		"Zambia",
 		"Zimbabwe"
 	]
+
+
+
+
+
+
+
 
 
 }); 
