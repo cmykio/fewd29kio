@@ -258,7 +258,7 @@ function showMapInfoButton () {
 
 function getFlag () {
 	console.log('getFlag is firing');
-	image_file = "http:cmykio.github.io/fewd29kio/flags-normal/"+flag_to_print+".png/"
+	image_file = "http:cmykio.github.io/fewd29kio/flags-normal/"+flag_to_print+".png"
 	document.getElementById('flag').src=image_file;
 	printFlag();
 		
